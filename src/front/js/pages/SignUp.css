@@ -1,0 +1,99 @@
+
+
+.signup-container {
+    background-image: url(https://media.istockphoto.com/id/1363277938/es/foto/calle-bordeada-de-palmeras-con-vistas-a-los-%C3%A1ngeles-al-atardecer.jpg?s=612x612&w=0&k=20&c=NFYs8sxawR-OC-AWopHcZZKoZznPxohISxG89LVG5Ps=);
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 3px solid rgb(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 370px;
+    border-radius: 12px;
+    backdrop-filter: blur(48px);
+}
+
+.form-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 900;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin-top: 12px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+    outline: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.form-control:first-of-type {
+    margin-top: 0;
+}
+
+.form-control::placeholder {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.btn-form {
+    margin-top: 24px;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.12s ease-in-out;
+}
+
+.btn-form:hover {
+    background-color: white;
+    color: black;
+}
+
+.form-hyperlink {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-top: 12px;
+    color: rgba(235, 229, 229, 0.834);
+    transition: 12s ease-in-out;
+}
+
+.form-hyperlink:hover {
+    color: white;
+}

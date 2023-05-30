@@ -1,3 +1,38 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+img {
+    width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+footer {
+    background-color: black;
+    padding: 12px;
+    color: white;
+}
+
+
+
+
+
+
+
