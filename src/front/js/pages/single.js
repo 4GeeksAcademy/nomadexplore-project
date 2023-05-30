@@ -11,17 +11,17 @@ export const Single = props => {
 
 	return (
 		<div className="jumbotron">
-            <h1 className="textdisplay-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			<h1 className="textdisplay-4">This will show the demo element: {store.demo[params.theid].title}</h1>
 			<img src={rigoImageUrl} />
-			 
+
 
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
 				</span>
-			</Link>	
+			</Link>
 		</div>
-		
+
 	);
 };
 

@@ -13,6 +13,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SignUp } from "./pages/SignUp";
 import { Destinations } from "./pages/Destinations";
+import { Planner } from "./pages/planner";
 
 
 
@@ -35,6 +36,7 @@ const Layout = () => {
                         <Route element={<AboutUs />} path="/aboutus" />
                         <Route element={<Destinations />} path="/destinations" />
                         <Route element={<SignUp />} path="/signup" />
+                        <Route element={<Planner />} path="/planner" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>

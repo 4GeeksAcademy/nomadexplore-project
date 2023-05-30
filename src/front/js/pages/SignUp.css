@@ -1,7 +1,7 @@
 
 
 .signup-container {
-    background-image: url(https://media.istockphoto.com/id/1363277938/es/foto/calle-bordeada-de-palmeras-con-vistas-a-los-%C3%A1ngeles-al-atardecer.jpg?s=612x612&w=0&k=20&c=NFYs8sxawR-OC-AWopHcZZKoZznPxohISxG89LVG5Ps=);
+    background-image: url(https://images.pexels.com/photos/2346007/pexels-photo-2346007.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load);
     width: 100%;
     height: 100vh; 
     display: flex;
@@ -96,4 +96,46 @@
 
 .form-hyperlink:hover {
     color: white;
+}
+
+
+.planner-container {
+    background-image: url(https://images.pexels.com/photos/2757549/pexels-photo-2757549.jpeg?auto=compress&cs=tinysrgb&w=800);
+    width: 100%;
+    height: 90vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.title-container {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 3px solid rgb(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 500px;
+    border-radius: 12px;
+    backdrop-filter: blur(48px);
+}
+
+.planner-title {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.2em;
 }

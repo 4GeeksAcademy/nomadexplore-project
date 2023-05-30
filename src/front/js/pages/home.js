@@ -11,7 +11,7 @@ export const Home = () => {
 			<p>
 				<img src={rigoImageUrl} />
 			</p>
-			
+
 		</div>
 	);
 };

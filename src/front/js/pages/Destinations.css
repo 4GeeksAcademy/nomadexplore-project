@@ -1,5 +1,6 @@
 
 .destinations-container {
+    background-image: url(https://images.pexels.com/photos/2707756/pexels-photo-2707756.jpeg?auto=compress&cs=tinysrgb&w=800);
     background-color: rgba(255, 255, 255, 0.06);
     border: 3px solid rgb(255, 255, 255, 0.06);
     width: 100%;
@@ -10,6 +11,39 @@
     overflow: hidden; 
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+.text-recomendation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+.btn-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(255, 255, 255, 0.06);
+  margin-left: 70px;
+}
+
+
+.final-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  color:  rgb(244, 177, 61);
+  
+
 }
 
 .quiz-container {
@@ -68,3 +102,5 @@
     font-family: 'Times New Roman', Times, serif;
   }
 
+
+  

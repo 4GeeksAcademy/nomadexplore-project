@@ -1,19 +1,25 @@
 
 .container-about {
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-image: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=800);
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
     display: flex;
-    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.aboutus-title {
+.aboutus-text {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     font-size: 26px;
+    margin-left: 50px;
     margin-bottom: 24px;
     font-weight: 900;
     margin-top: 10px;
@@ -23,25 +29,21 @@
     letter-spacing: 0.2em;
 }
 
-.title-container {
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    overflow: hidden; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 10px;
-}
 
-.text-container {
-    display: flex;
-    text-align: justify;
-    justify-content: center;
+
+.text-container1, .text-container2, .text-container3, .text-container4, .text-container5, .text-container6{
+    justify-content:flex-start;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 20px;
-    background-color: rgba(254, 254, 254, 0.786);
-    color: rgb(50, 44, 44);
+    margin-top: 15px;
+    background-color: rgba(254, 254, 254, 0.207);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.508);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
 }
+
+

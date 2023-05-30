@@ -8,24 +8,28 @@ export const Navbar = () => {
 			<div className="navbar-container">
 				<Link to="/" className="navbar-brand">
 					<span className="brand-text">NOMAD EXPLORE</span>
-					<i className="fa-solid fa-plane"></i>
 				</Link>
+				<button className="social-buttons">
+					<i class="fa-brands fa-instagram"></i>
+					<i class="fa-brands fa-twitter"></i>
+					<i class="fa-brands fa-facebook"></i>
+				</button>
 				<div className="navbar-buttons-container">
 					<Link to="/aboutus" className="navbar-link">
 						About us
 					</Link>
 					<Link to="/demo" className="navbar-link">
-						Selection Destination
+						Select Destination
 					</Link>
 					<Link to="/signup" className="navbar-link">
 						Sign Up
 					</Link>
-					<Link to="/" className="navbar-link">
-						Login
+					<Link to="/planner" className="navbar-link">
+						Planner
 					</Link>
-
-					<i className="fa-solid fa-magnifying-glass"></i>
-					<hr className="separador" />
+					<Link to="/" className="navbar-link">
+						<i className="fa-solid fa-magnifying-glass"></i>
+					</Link>
 				</div>
 			</div>
 		</nav>

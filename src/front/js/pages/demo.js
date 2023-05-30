@@ -5,7 +5,7 @@ const imgCompras = "https://media.istockphoto.com/id/967041448/es/foto/elegante-
 const imgGastronomia = "https://media.istockphoto.com/id/1130934413/es/foto/primer-plano-de-las-manos-de-un-cocinero-masculino-sobre-un-fondo-negro-vierta-la-salsa-de-la.webp?s=1024x1024&w=is&k=20&c=gTG6wNCJvWv9Rrfq_PZT-D88GfQOVBisxU1vDGUmKYA="
 const imgEnologia = "https://media.istockphoto.com/id/1047180430/es/foto/copa-de-vino-en-mano-del-turista-en-un-paisaje-natural-de-la-toscana-con-el-verde-valle-de-las.webp?s=1024x1024&w=is&k=20&c=mwhgKSGIyXPeTrGBO3u-QdDjQNHqax653lK_o6rLYsA=";
 const imgUrban = "https://media.istockphoto.com/id/517133347/es/foto/shanghai-al-atardecer.jpg?s=612x612&w=0&k=20&c=bbwrRz5_LP-N7j7YbyWq45HYW9eSWd56SBZNBNiplRk=";
-const imgRelax = "https://media.istockphoto.com/id/1040906722/es/foto/mujer-y-hombre-buscando-en-el-mirador-del-pueblo-de-gordes-en-provenza.webp?s=1024x1024&w=is&k=20&c=JWmqqrdUY77RD9Zr3JZi6HGoOoJvIbw9CUFAZiZBbFE=";
+const imgRelax = "https://media.istockphoto.com/id/1059344876/es/foto/vacaciones-turismo-relax-en-hotel-de-playa-cerca-de-lujo-piscina.jpg?s=612x612&w=0&k=20&c=KNzL1aCme1QTo-yP8wXTI_vARXGeGiXYErNADHqZUFA=";
 const imgVidaNoc = "https://media.istockphoto.com/id/641775168/es/foto/hombres-y-mujeres-disfrutando-de-una-fiesta-de-j%C3%B3venes.jpg?s=1024x1024&w=is&k=20&c=9RxcsFmz5M8T2SbvPONTZu82TgFFCTcpVbYebOIxMh8=";
 const imgMuseos = "https://media.istockphoto.com/id/639558856/es/foto/madre-e-hija-visitando-la-ciudad-de-florencia-toscana.webp?s=1024x1024&w=is&k=20&c=1dZ3Hh-T5adehbWkDOom0pV3IQ-5kpAOTegFXqJ5I3I=";
 
@@ -31,7 +31,7 @@ const destinationWeights = [
         },
     },
     {
-        destination: "Londres",
+        destination: "London",
         weights: {
             cultura: 6,
             compras: 10,
@@ -44,7 +44,7 @@ const destinationWeights = [
         },
     },
     {
-        destination: "Mikonos",
+        destination: "Mykonos",
         weights: {
             cultura: 1,
             compras: 10,
@@ -141,11 +141,12 @@ export const Selection = () => {
     return (
         <div className="destinations-container">
             {pairIndex === imagePairs.length ? (
-                <div style={{ textAlign: "center", marginTop: "10px" }}>
-                    <h2 style={{ color: "white" }}>Tu destino recomendado es: {recommendedDestination}</h2>
-                    <button onClick={handleRecommendationClick}>
-                        Calcular Recomendación
+                <div clasName="container-recomendation">
+                    <h2 className="text-recomendation">You must go on to...</h2>
+                    <button className="btn-result" onClick={handleRecommendationClick}>
+                        Click for result
                     </button>
+                    <h2 className="final-result"> {recommendedDestination}</h2>
                 </div>
             ) : (
                 <div className="quiz-container">
