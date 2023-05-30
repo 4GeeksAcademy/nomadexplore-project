@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const imgCultura = "https://media.istockphoto.com/id/1047800728/es/foto/madre-y-ni%C3%B1os-turismo-ciudad-de-siena-toscana-italia.jpg?s=1024x1024&w=is&k=20&c=J_qCj8JivXn2qYZoKGTB2F97dPqvORZiZ-Whi0onPDI=";
-const imgCompras = "https://media.istockphoto.com/id/1369227756/es/foto/ri%C3%A9ndose-de-su-camino-a-trav%C3%A9s-del-centro-comercial.jpg?s=1024x1024&w=is&k=20&c=VwRB4XcKPB0SU6BTocS_7zuM0CKM0nfVeoPZdxDa-Do=";
+const imgCompras = "https://media.istockphoto.com/id/967041448/es/foto/elegante-mujer-coreana-en-el-centro-de-la-ciudad-de-se%C3%BAl.jpg?s=612x612&w=0&k=20&c=QouPeq0W1cQL3a4PEsIAddaJseiDz54GVMmStGvCsOA=";
 const imgGastronomia = "https://media.istockphoto.com/id/1130934413/es/foto/primer-plano-de-las-manos-de-un-cocinero-masculino-sobre-un-fondo-negro-vierta-la-salsa-de-la.webp?s=1024x1024&w=is&k=20&c=gTG6wNCJvWv9Rrfq_PZT-D88GfQOVBisxU1vDGUmKYA="
 const imgEnologia = "https://media.istockphoto.com/id/1047180430/es/foto/copa-de-vino-en-mano-del-turista-en-un-paisaje-natural-de-la-toscana-con-el-verde-valle-de-las.webp?s=1024x1024&w=is&k=20&c=mwhgKSGIyXPeTrGBO3u-QdDjQNHqax653lK_o6rLYsA=";
-const imgUrban = "https://media.istockphoto.com/id/895081824/es/foto/visitar-espa%C3%B1a-de-turista.jpg?s=1024x1024&w=is&k=20&c=im1wTq8emUvFkV1enxAjJoBHZITvjTGWXeLwfR4yxTQ=";
+const imgUrban = "https://media.istockphoto.com/id/517133347/es/foto/shanghai-al-atardecer.jpg?s=612x612&w=0&k=20&c=bbwrRz5_LP-N7j7YbyWq45HYW9eSWd56SBZNBNiplRk=";
 const imgRelax = "https://media.istockphoto.com/id/1040906722/es/foto/mujer-y-hombre-buscando-en-el-mirador-del-pueblo-de-gordes-en-provenza.webp?s=1024x1024&w=is&k=20&c=JWmqqrdUY77RD9Zr3JZi6HGoOoJvIbw9CUFAZiZBbFE=";
 const imgVidaNoc = "https://media.istockphoto.com/id/641775168/es/foto/hombres-y-mujeres-disfrutando-de-una-fiesta-de-j%C3%B3venes.jpg?s=1024x1024&w=is&k=20&c=9RxcsFmz5M8T2SbvPONTZu82TgFFCTcpVbYebOIxMh8=";
 const imgMuseos = "https://media.istockphoto.com/id/639558856/es/foto/madre-e-hija-visitando-la-ciudad-de-florencia-toscana.webp?s=1024x1024&w=is&k=20&c=1dZ3Hh-T5adehbWkDOom0pV3IQ-5kpAOTegFXqJ5I3I=";
@@ -141,8 +141,8 @@ export const Selection = () => {
     return (
         <div className="destinations-container">
             {pairIndex === imagePairs.length ? (
-                <div style={{ textAlign: "center", marginTop: "20px" }}>
-                    <h2>Tu destino recomendado es: {recommendedDestination}</h2>
+                <div style={{ textAlign: "center", marginTop: "10px" }}>
+                    <h2 style={{ color: "white" }}>Tu destino recomendado es: {recommendedDestination}</h2>
                     <button onClick={handleRecommendationClick}>
                         Calcular Recomendación
                     </button>

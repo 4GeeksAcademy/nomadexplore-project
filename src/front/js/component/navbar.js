@@ -14,21 +14,17 @@ export const Navbar = () => {
 					<Link to="/aboutus" className="navbar-link">
 						About us
 					</Link>
-					<Link to="/destinations" className="navbar-link">
-						Destinations
-					</Link>
 					<Link to="/demo" className="navbar-link">
-						Contact
+						Selection Destination
 					</Link>
 					<Link to="/signup" className="navbar-link">
 						Sign Up
 					</Link>
-					<Link to="/demo" className="navbar-link">
+					<Link to="/" className="navbar-link">
 						Login
 					</Link>
-					<Link to="/demo" className="navbar-link">
-						<i className="fa-solid fa-magnifying-glass"></i>
-					</Link>
+
+					<i className="fa-solid fa-magnifying-glass"></i>
 					<hr className="separador" />
 				</div>
 			</div>

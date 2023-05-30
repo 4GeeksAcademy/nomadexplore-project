@@ -3,7 +3,7 @@
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -24,7 +24,6 @@
 }
 
 .title-container {
-    background-image: url(https://media.istockphoto.com/id/1130336291/es/foto/palmera-tropical-y-maleta-en-fondo-de-color-ne%C3%B3n-verano-m%C3%ADnimo-y-viajes-concepto.jpg?s=612x612&w=0&k=20&c=egWyLsKusRD79H_EDBn9OD7aBfZFqwuBYzManrxbHQQ=);
     width: 100%;
     height: 30vh;
     display: flex;
@@ -33,6 +32,7 @@
     overflow: hidden; 
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 10px;
 }
 
 .text-container {
@@ -41,7 +41,7 @@
     justify-content: center;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 25px;
+    margin-top: 20px;
     background-color: rgba(254, 254, 254, 0.786);
     color: rgb(50, 44, 44);
 }
