@@ -68,11 +68,24 @@ export const SignUp = () => {
               required
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
           <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
             {message}
           </div>
-          <button type="submit" className="btn-form btn-primary">Log In</button>
-          <a className="form-hyperlink" href="">Create your account</a>
+          <button type="submit" className="btn-form btn-primary">Sign Up</button>
+          <a className="form-hyperlink" href="">Forgot your password</a>
         </form>
       </div>
     </div>
