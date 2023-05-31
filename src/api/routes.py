@@ -17,7 +17,7 @@ api = Blueprint('api', __name__)
 
 #     return jsonify(response_body), 200
 
-@api.route('sign-up', methods =['POST'])
+@api.route('/sign-up', methods =['POST'])
 def sign_up():
     data = request.json
     print(data)
