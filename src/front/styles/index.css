@@ -25,9 +25,14 @@ button {
 }
 
 footer {
-    background-color: rgb(0, 0, 0);
-    padding: 10px;
-    color: white;
+  position: absolute;
+  margin-top: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  padding: 30px;
 }
 
 

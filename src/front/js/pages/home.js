@@ -9,6 +9,7 @@ export const Home = () => {
 	return (
 		<div className="landing-container">
 
+
 			<img src={rigoImageUrl} />
 
 

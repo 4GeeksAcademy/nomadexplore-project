@@ -1,6 +1,6 @@
 
 .navbar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -9,9 +9,13 @@
   width: 100%;
   background-color: rgba(255, 255, 255, 0.06);
   overflow: hidden; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    backdrop-filter: blur(48px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(48px);
+}
+
+.navbar a:hover {
+  color:rgb(255, 159, 41);
 }
 
 .navbar-container {
