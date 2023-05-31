@@ -28,7 +28,7 @@ export const Navbar = () => {
 						Planner
 					</Link>
 					<Link to="/" className="navbar-link">
-						<i className="fa-solid fa-magnifying-glass"></i>
+						<i class="fa-solid fa-star"></i>
 					</Link>
 				</div>
 			</div>

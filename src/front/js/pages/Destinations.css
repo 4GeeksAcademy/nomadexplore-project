@@ -84,7 +84,7 @@
   .image-container {
     display: flex;
     justify-content: center;
-    margin-top: 24px; /* Ajusta el margen superior según sea necesario */
+    margin-top: 24px;
   }
   
   .image {
@@ -93,14 +93,21 @@
     margin-right: 20px; 
   }
 
-  .text2 {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-top: 0;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;
-  }
+.text2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 0;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
 
+ .btn-fav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  
+ }
 
   
