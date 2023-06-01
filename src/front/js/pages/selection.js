@@ -1,59 +1,16 @@
 import React, { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
-import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from './images'
-import profiles from './data/berlin.json';
-import destWeights from './data/weights.json';
+import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from '../data/images'
+import destinationWeights from '../data/weights.json';
 
-
+console.log('destination ponderation from json: ',destinationWeights);
 
 const imagePairs = [
     { img1: imgCultura, img2: imgCompras },
     { img1: imgGastronomia, img2: imgEnologia },
     { img1: imgUrban, img2: imgRelax },
     { img1: imgVidaNoc, img2: imgMuseos },
-];
-
-const destinationWeights = [
-    {
-        destination: "Roma",
-        weights: {
-            cultura: 10,
-            compras: 1,
-            gastronomia: 10,
-            enologia: 10,
-            urban: 5,
-            relax: 5,
-            vidaNocturna: 3,
-            museos: 10,
-        },
-    },
-    {
-        destination: "Londres",
-        weights: {
-            cultura: 6,
-            compras: 10,
-            gastronomia: 1,
-            enologia: 1,
-            urban: 9,
-            relax: 1,
-            vidaNocturna: 10,
-            museos: 10,
-        },
-    },
-    {
-        destination: "Mikonos",
-        weights: {
-            cultura: 1,
-            compras: 10,
-            gastronomia: 10,
-            enologia: 5,
-            urban: 1,
-            relax: 10,
-            vidaNocturna: 1,
-            museos: 1,
-        },
-    },
 ];
 
 export const Selection = () => {
