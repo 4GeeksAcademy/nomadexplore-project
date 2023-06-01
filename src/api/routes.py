@@ -8,11 +8,19 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route('/signup', methods=['POST'])
+def sign_up():
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+    request_body_user = request.get_json()
+    email = request_body_user['email']
 
-    return jsonify(response_body), 200
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        return jsonify('Email already exists'), 400
+
+    new_user = User(
+        email=email, password=request_body_user['password'])
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify('User added', request_body_user), 200

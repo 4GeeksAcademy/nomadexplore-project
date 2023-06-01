@@ -7,6 +7,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
 
   const handleSubmit = async (e) => {
@@ -75,9 +76,9 @@ export const SignUp = () => {
             <input
               type="password"
               className="form-control"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
