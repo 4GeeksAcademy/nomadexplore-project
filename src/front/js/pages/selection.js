@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
-// llamo a mis imagenes con un fetch desde el back
 import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from './images'
+import profiles from './data/berlin.json';
+import destWeights from './data/weights.json';
+
 
 
 const imagePairs = [

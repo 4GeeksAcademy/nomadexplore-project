@@ -1,0 +1,41 @@
+[
+    {
+        "destination": "Roma",
+        "weights": {
+            "cultura": 10,
+            "compras": 1,
+            "gastronomia": 10,
+            "enologia": 10,
+            "urban": 5,
+            "relax": 5,
+            "vidaNocturna": 3,
+            "museos": 10
+        }
+    },
+    {
+        "destination": "Londres",
+        "weights": {
+            "cultura": 6,
+            "compras": 10,
+            "gastronomia": 1,
+            "enologia": 1,
+            "urban": 9,
+            "relax": 1,
+            "vidaNocturna": 10,
+            "museos": 10
+        }
+    },
+    {
+        "destination": "Mikonos",
+        "weights": {
+            "cultura": 1,
+            "compras": 10,
+            "gastronomia": 10,
+            "enologia": 5,
+            "urban": 1,
+            "relax": 10,
+            "vidaNocturna": 1,
+            "museos": 1
+        }
+    }
+]

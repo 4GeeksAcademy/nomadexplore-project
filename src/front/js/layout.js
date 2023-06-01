@@ -30,6 +30,7 @@ const Layout = () => {
 
                         <Route element={<Selection />} path="/" />
                         <Route element={<Recomendation />} path="/reco" />
+                        <Route element={<Recomendation />} path="/reco/:id" />
                         {/* <Route element={<Home />} path="/" /> */}
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
