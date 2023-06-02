@@ -33,6 +33,7 @@ footer {
   background-color: transparent;
   color: white;
   padding: 30px;
+  backdrop-filter: blur(10px);
 }
 
 

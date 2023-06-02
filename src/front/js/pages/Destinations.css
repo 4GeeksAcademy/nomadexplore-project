@@ -56,7 +56,7 @@
     width: 800px;
     height: 450px;
     color: white;
-    backdrop-filter: blur(48px);
+    backdrop-filter: blur(10px);
 }
 
     
