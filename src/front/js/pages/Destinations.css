@@ -88,10 +88,19 @@
     cursor: pointer;
   }
   
-  .image {
-    width: 300px; 
+   .image {
+    width: 50%; 
     height: 200px;
     margin-right: 20px; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .image:hover{
+    box-shadow: 0px 0px 9px 4px #140d3e;
+  }
+
+  .image:active{
+    transform: scale(0.8);
   }
 
 .text2 {
