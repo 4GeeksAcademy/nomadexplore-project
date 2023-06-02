@@ -16,3 +16,21 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+# [GET] /users Listar todos los usuarios del blog
+@api.route('/user', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    all_users = list(map(lambda x: x.serialize(), users))
+    return jsonify(all_users), 200
+
+# post user
+@api.route('/signup', methods=['POST'])
+def add_users():
+
+    request_body_user = request.get_json()
+    new_user = User(
+        email=request_body_user['email'], password=request_body_user['password'])
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify('user added:', request_body_user), 200

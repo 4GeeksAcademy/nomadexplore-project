@@ -1,54 +1,80 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+    return {
+        store: {
+            userSelections: {
+                cultura: 0,
+                compras: 0,
+                gastronomia: 0,
+                enologia: 0,
+                urban: 0,
+                relax: 0,
+                vidaNocturna: 0,
+                museos: 0,
+            },
+            message: null,
+            demo: [
+                {
+                    title: "FIRST",
+                    background: "white",
+                    initial: "white"
+                },
+                {
+                    title: "SECOND",
+                    background: "white",
+                    initial: "white"
+                }
+            ]
+        },
+        actions: {
+            addUserSelection: (category, value) => {
+                const store = getStore();
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+                const updatedUserSelection = {
+                    ...store.userSelections,
+                    [category]: store.userSelections[category] + value
+                };
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+                setStore({ userSelections: updatedUserSelection });
+            },
+            resetUserSelections: () => {
+                const initialUserSelections = {
+                    cultura: 0,
+                    compras: 0,
+                    gastronomia: 0,
+                    enologia: 0,
+                    urban: 0,
+                    relax: 0,
+                    vidaNocturna: 0,
+                    museos: 0
+                };
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+                setStore({ userSelections: initialUserSelections });
+            },
+            exampleFunction: () => {
+                getActions().changeColor(0, "green");
+            },
+            getMessage: async () => {
+                try {
+                    const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
+                    const data = await resp.json();
+                    setStore({ message: data.message });
+                    return data;
+                } catch (error) {
+                    console.log("Error loading message from backend", error);
+                }
+            },
+            changeColor: (index, color) => {
+                const store = getStore();
+
+                const demo = store.demo.map((elm, i) => {
+                    if (i === index) elm.background = color;
+                    return elm;
+                });
+
+                setStore({ demo: demo });
+            }
+        }
+    };
 };
 
 export default getState;

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
 import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from '../data/images'
 import destinationWeights from '../data/weights.json';
 
-console.log('destination ponderation from json: ',destinationWeights);
+console.log('destination ponderation from json: ', destinationWeights);
 
 const imagePairs = [
     { img1: imgCultura, img2: imgCompras },
@@ -14,6 +15,7 @@ const imagePairs = [
 ];
 
 export const Selection = () => {
+    const { store, actions } = useContext(Context);
     const navigate = useNavigate(); // hook que funciona como link pero se puede usar en js
     const [pairIndex, setPairIndex] = useState(0);
     const [recommendedDestination, setRecommendedDestination] = useState(null);
@@ -31,39 +33,44 @@ export const Selection = () => {
     console.log("user weight: ", userWeights);
 
     const setNextPair = () => {
-        setPairIndex(pairIndex + 1);
+        if (pairIndex === imagePairs.length - 1) {
+            handleNavigate();
+        } else {
+            setPairIndex(pairIndex + 1);
+        }
     };
+
 
     const clickImage = (category, value) => {
         setUserWeights((prevUserWeights) => ({
             ...prevUserWeights,
             [category]: prevUserWeights[category] + value,
         }));
+        actions.addUserSelection(category, value);
         setNextPair();
-        // handleNavigateAuto()
     };
 
     const clickImage1 = () => {
         if (pairIndex === 0) {
-            clickImage("cultura", 1);
+            clickImage("cultura", 10);
         } else if (pairIndex === 1) {
-            clickImage("gastronomia", 1);
+            clickImage("gastronomia", 10);
         } else if (pairIndex === 2) {
-            clickImage("urban", 1);
+            clickImage("urban", 10);
         } else if (pairIndex === 3) {
-            clickImage("vidaNocturna", 1);
+            clickImage("vidaNocturna", 10);
         }
     };
 
     const clickImage2 = () => {
         if (pairIndex === 0) {
-            clickImage("compras", 1);
+            clickImage("compras", 10);
         } else if (pairIndex === 1) {
-            clickImage("enologia", 1);
+            clickImage("enologia", 10);
         } else if (pairIndex === 2) {
-            clickImage("relax", 1);
+            clickImage("relax", 10);
         } else if (pairIndex === 3) {
-            clickImage("museos", 1);
+            clickImage("museos", 10);
         }
     };
 
@@ -99,11 +106,6 @@ export const Selection = () => {
         navigate("/reco")
     }
 
-    // const handleNavigateAuto = () => {
-    //     if (pairIndex === imagePairs.length-1) {
-    //         navigate("/reco")
-    //     }
-    // }
 
     return (
         <div
@@ -114,47 +116,47 @@ export const Selection = () => {
             }}
         >
             <div style={{ margin: "auto", textAlign: "center" }}>
-                {pairIndex === imagePairs.length ? (
+                {/* {pairIndex === imagePairs.length ? (
                     <div style={{ textAlign: "center", marginTop: "20px" }}>
                         <h2>Tu destino recomendado es: {recommendedDestination}</h2>
                         <button onClick={handleRecommendationClick}>
                             Calcular Recomendación
                         </button>
                     </div>
-                ) : (
-                    <div>
-                        <h2>
-                            Click en la imagen que más te guste // Serie: {pairIndex + 1}
-                        </h2>
-                        <div style={{ display: "flex", justifyContent: "center" }}>
-                            <div
-                                style={{
-                                    border: "1px solid black",
-                                    padding: "10px",
-                                    marginRight: "20px",
-                                }}
-                            >
-                                <img
-                                    src={imagePairs[pairIndex].img1}
-                                    alt="Imagen 1"
-                                    style={{ width: "200px", height: "200px", cursor: "pointer" }}
-                                    onClick={clickImage1}
-                                />
-                            </div>
-                            <div style={{ border: "1px solid black", padding: "10px" }}>
-                                <img
-                                    src={imagePairs[pairIndex].img2}
-                                    alt="Imagen 2"
-                                    style={{ width: "200px", height: "200px", cursor: "pointer" }}
-                                    onClick={clickImage2}
-                                />
-                            </div>
+                ) : ( */}
+                <div>
+                    <h2>
+                        Click en la imagen que más te guste // Serie: {pairIndex + 1}
+                    </h2>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <div
+                            style={{
+                                border: "1px solid black",
+                                padding: "10px",
+                                marginRight: "20px",
+                            }}
+                        >
+                            <img
+                                src={imagePairs[pairIndex].img1}
+                                alt="Imagen 1"
+                                style={{ width: "200px", height: "200px", cursor: "pointer" }}
+                                onClick={clickImage1}
+                            />
                         </div>
-                        <button onClick={handleNavigate} style={{ margin: '20px' }}>
-                            test navigate
-                        </button>
+                        <div style={{ border: "1px solid black", padding: "10px" }}>
+                            <img
+                                src={imagePairs[pairIndex].img2}
+                                alt="Imagen 2"
+                                style={{ width: "200px", height: "200px", cursor: "pointer" }}
+                                onClick={clickImage2}
+                            />
+                        </div>
                     </div>
-                )}
+                    <button onClick={handleNavigate} style={{ margin: '20px' }}>
+                        test navigate
+                    </button>
+                </div>
+                {/* )} */}
             </div>
         </div>
     );
