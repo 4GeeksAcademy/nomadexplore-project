@@ -9,5 +9,8 @@
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }

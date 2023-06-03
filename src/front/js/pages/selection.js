@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState,useEffect ,useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
@@ -6,6 +6,7 @@ import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax
 import destinationWeights from '../data/weights.json';
 
 console.log('destination ponderation from json: ', destinationWeights);
+
 
 const imagePairs = [
     { img1: imgCultura, img2: imgCompras },
@@ -18,19 +19,10 @@ export const Selection = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate(); // hook que funciona como link pero se puede usar en js
     const [pairIndex, setPairIndex] = useState(0);
-    const [recommendedDestination, setRecommendedDestination] = useState(null);
-    const [userWeights, setUserWeights] = useState({
-        cultura: 0,
-        compras: 0,
-        gastronomia: 0,
-        enologia: 0,
-        urban: 0,
-        relax: 0,
-        vidaNocturna: 0,
-        museos: 0,
-    });
-
-    console.log("user weight: ", userWeights);
+    
+    useEffect(() => {
+        actions.resetUserSelections();
+    }, []);
 
     const setNextPair = () => {
         if (pairIndex === imagePairs.length - 1) {
@@ -40,12 +32,11 @@ export const Selection = () => {
         }
     };
 
+    const handleNavigate = () => {
+        navigate("/reco")
+    }
 
     const clickImage = (category, value) => {
-        setUserWeights((prevUserWeights) => ({
-            ...prevUserWeights,
-            [category]: prevUserWeights[category] + value,
-        }));
         actions.addUserSelection(category, value);
         setNextPair();
     };
@@ -74,39 +65,6 @@ export const Selection = () => {
         }
     };
 
-    const calculateRecommendation = () => {
-        let maxScore = 0;
-        let recommendedDestination = null;
-
-        for (const i in destinationWeights) {
-            const destinationWeight = destinationWeights[i];
-            const { destination, weights } = destinationWeight;
-            let score = 0;
-
-            for (const category in userWeights) {
-                score += userWeights[category] * weights[category];
-            }
-
-            console.log(`Destination: ${destination}, Score: ${score}`); // Imprimir destino y puntaje en la consola
-
-            if (score > maxScore) {
-                maxScore = score;
-                recommendedDestination = destination;
-            }
-        }
-        setRecommendedDestination(recommendedDestination);
-        console.log("Recommended Destination:", recommendedDestination); // Imprimir destino recomendado en la consola
-    };
-
-    const handleRecommendationClick = () => {
-        calculateRecommendation();
-    };
-
-    const handleNavigate = () => {
-        navigate("/reco")
-    }
-
-
     return (
         <div
             style={{
@@ -116,14 +74,6 @@ export const Selection = () => {
             }}
         >
             <div style={{ margin: "auto", textAlign: "center" }}>
-                {/* {pairIndex === imagePairs.length ? (
-                    <div style={{ textAlign: "center", marginTop: "20px" }}>
-                        <h2>Tu destino recomendado es: {recommendedDestination}</h2>
-                        <button onClick={handleRecommendationClick}>
-                            Calcular Recomendación
-                        </button>
-                    </div>
-                ) : ( */}
                 <div>
                     <h2>
                         Click en la imagen que más te guste // Serie: {pairIndex + 1}
@@ -156,7 +106,6 @@ export const Selection = () => {
                         test navigate
                     </button>
                 </div>
-                {/* )} */}
             </div>
         </div>
     );

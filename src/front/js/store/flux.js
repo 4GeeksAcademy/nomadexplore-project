@@ -50,9 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                 setStore({ userSelections: initialUserSelections });
             },
-            exampleFunction: () => {
-                getActions().changeColor(0, "green");
-            },
+
             getMessage: async () => {
                 try {
                     const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
@@ -63,16 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log("Error loading message from backend", error);
                 }
             },
-            changeColor: (index, color) => {
-                const store = getStore();
 
-                const demo = store.demo.map((elm, i) => {
-                    if (i === index) elm.background = color;
-                    return elm;
-                });
-
-                setStore({ demo: demo });
-            }
         }
     };
 };
