@@ -18,7 +18,7 @@ export const Navbar = () => {
 					<Link to="/aboutus" className="navbar-link">
 						About Us
 					</Link>
-					<Link to="/demo" className="navbar-link">
+					<Link to="/selection" className="navbar-link">
 						Select Destination
 					</Link>
 					<Link to="/signup" className="navbar-link">
