@@ -8,8 +8,6 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

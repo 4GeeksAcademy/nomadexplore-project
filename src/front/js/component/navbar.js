@@ -22,7 +22,10 @@ export const Navbar = () => {
 						Select Destination
 					</Link>
 					<Link to="/signup" className="navbar-link">
-						Log In
+						Sign Up
+					</Link>
+					<Link to="/login" className="navbar-link">
+						Login
 					</Link>
 					<Link to="/planner" className="navbar-link">
 						Planner
