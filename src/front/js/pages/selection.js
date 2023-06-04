@@ -103,7 +103,7 @@ export const Selection = () => {
                         </div>
                     </div>
                     <button onClick={handleNavigate} style={{ margin: '20px' }}>
-                        test navigate
+                        navigate to recomentation
                     </button>
                 </div>
             </div>
