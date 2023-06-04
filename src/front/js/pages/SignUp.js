@@ -9,6 +9,7 @@ export const SignUp = () => {
   const [message, setMessage] = useState("");
 
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,8 +34,7 @@ export const SignUp = () => {
   };
 
   if (message) return <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
-    {message}
-  </div>;
+    {message} </div>;
 
 
   return (
@@ -71,8 +71,8 @@ export const SignUp = () => {
           <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
             {message}
           </div>
-          <button type="submit" className="btn-form btn-primary">Log In</button>
-          <a className="form-hyperlink" href="">Create your account</a>
+          <button type="submit" className="btn-form btn-primary">Sign Up</button>
+          <a className="form-hyperlink" href="">Forgot your password</a>
         </form>
       </div>
     </div>

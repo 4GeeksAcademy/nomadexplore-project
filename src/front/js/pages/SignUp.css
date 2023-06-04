@@ -42,7 +42,7 @@
 .form-label {
     font-size: 16px;
     font-weight: 500;
-    padding: 12px 24px;
+    padding: 6px 12px;
     border-radius: 6px;
     margin-top: 12px;
     background-color: transparent;
@@ -67,13 +67,13 @@
 }
 
 .btn-form {
-    margin-top: 24px;
+    margin-top: 18px;
     font-size: 12px;
     font-weight: 900;
     padding: 12px;
     width: 100%;
     border-radius: 6px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.601);
     color: white;
     border: 2px solid white;
     cursor: pointer;
@@ -81,7 +81,7 @@
 }
 
 .btn-form:hover {
-    background-color: white;
+    background-color: rgba(247, 129, 4, 0.793);
     color: black;
 }
 
