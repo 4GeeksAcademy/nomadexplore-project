@@ -61,11 +61,15 @@ def get_user_favs():
     # Recorre los gatos y agrega sus datos a la lista
     for fav in favs:
         fav_data.append({
-            "id": fav.id,
-            "name": fav.destination
+            "id_fav": fav.id,
+            "id_user": fav.user_id,
+            "destination": fav.destination,
         })
 
     return jsonify(fav_data), 200
+
+# get de favorito por user
+
 
 @api.route("/favs/<int:user_id>", methods=["GET"])
 # @jwt_required()
@@ -83,8 +87,35 @@ def get_user_id_favs(user_id):
     # Recorre los gatos y agrega sus datos a la lista
     for fav in favs:
         fav_data.append({
-            "id": fav.id,
-            "name": fav.destination
+            "id_fav:": fav.id,
+            "id_user": fav.user_id,
+            "destination": fav.destination,
         })
 
     return jsonify(fav_data), 200
+
+
+@api.route("/favs", methods=["POST"])
+def post_fav():
+    data = request.json
+    destination = data.get("recommendedDestination")
+
+    if not destination or not current_logged_user_id:
+        return jsonify({"error": "Destino obligatorio"}), 400
+
+    # Verifica si el destino ya está en favoritos
+    existing_fav = Favorites.query.filter_by(
+        destination=destination, user_id=current_logged_user_id
+    ).first()
+
+    if existing_fav:
+        return jsonify({"error": "El destino ya está en favoritos"}), 400
+
+    # Crea un nuevo objeto Favorites relacionado con el usuario actual
+    fav = Favorites(destination=destination, user_id=current_logged_user_id)
+
+    # Guarda el nuevo favorito en la base de datos
+    db.session.add(fav)
+    db.session.commit()
+
+    return jsonify({"success": "Destino agregado exitosamente"}), 200

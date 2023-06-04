@@ -31,10 +31,10 @@ class Favorites(db.Model):
     def __repr__(self):
         return f'<Favorites {self.destination}>'
 
-    # def serialize(self):
-        # return {
-            # 'id_favorite': self.id,
-            # 'user_id': self.user_id,
-            # 'user_email': self.user.email,
-            # 'destination': self.destination.serialize() if self.destination else None,
-        # }
+    def serialize(self):
+        return {
+            'id_favorite': self.id,
+            'user_id': self.user_id,
+            'user_email': self.user.email,
+            'destination': self.destination.serialize() if self.destination else None,
+        }
