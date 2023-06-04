@@ -30,6 +30,7 @@ export const Navbar = () => {
 					<Link to="/" className="navbar-link">
 						<i className="fa-solid fa-star"></i>
 					</Link>
+				
 				</div>
 			</div>
 		</nav>

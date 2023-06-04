@@ -9,8 +9,8 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+# @api.route('/hello', methods=['POST', 'GET'])
+# def handle_hello():
 
     response_body = {
         "message": "Yeah baby!!! I'm a message that came from the funky backend, check the network tab on the google inspector and you will see the GET request"
