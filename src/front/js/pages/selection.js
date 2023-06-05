@@ -73,7 +73,7 @@ export const Selection = () => {
                 flexDirection: "column",
             }}
         >
-            <div style={{ margin: "auto", textAlign: "center" }}>
+            <div style={{ margin: "auto", textAlign: "center", marginTop: '10px' }}>
                 <div>
                     <h2>
                         Click en la imagen que más te guste // Serie: {pairIndex + 1}
@@ -102,9 +102,6 @@ export const Selection = () => {
                             />
                         </div>
                     </div>
-                    <button onClick={handleNavigate} style={{ margin: '20px' }}>
-                        navigate to recomentation
-                    </button>
                 </div>
             </div>
         </div>

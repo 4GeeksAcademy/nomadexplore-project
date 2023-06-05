@@ -36,5 +36,5 @@ class Favorites(db.Model):
             'id_favorite': self.id,
             'user_id': self.user_id,
             'user_email': self.user.email,
-            'destination': self.destination.serialize() if self.destination else None,
+            'destination': self.destination,
         }

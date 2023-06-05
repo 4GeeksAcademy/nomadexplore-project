@@ -94,9 +94,9 @@ def get_user_id_favs(user_id):
 
     return jsonify(fav_data), 200
 
-
+# POST FAVORITE
 @api.route("/favs", methods=["POST"])
-def post_fav():
+def post_favorite():
     data = request.json
     destination = data.get("recommendedDestination")
 
@@ -119,3 +119,20 @@ def post_fav():
     db.session.commit()
 
     return jsonify({"success": "Destino agregado exitosamente"}), 200
+
+#DELETE FAVORITE
+@api.route('/favs/<int:id_fav>', methods=['DELETE'])
+def delete_favorite(id_fav):
+
+    user_id = current_logged_user_id
+
+    favorite = Favorites.query.filter_by(user_id=user_id, id=id_fav).first()
+
+    if favorite is None:
+        return jsonify({'msg' : 'funky favorito no encontrado'}), 404
+
+    db.session.delete(favorite)
+    db.session.commit()
+
+    response_body = {'msg' : 'funky favorito eliminado'}
+    return jsonify(response_body), 200
