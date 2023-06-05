@@ -1,70 +1,67 @@
 import { useState } from "react";
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import "./SignUp.css"
+import "./Login.css"
 
-export const Login = () =>{
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [loginSuccess, setLoginSuccess] = useState(false);
-    const [loginError, setLoginError] = useState(false);
-    const navigate = useNavigate();
+export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+  const navigate = useNavigate();
 
 
-    const Usuario = {
-        "email": email,
-        "password": password
+  const Usuario = {
+    "email": email,
+    "password": password
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      console.log("email a enviar: ", email)
+      console.log("password a enviar: ", password)
+
+
+      const response = await fetch(process.env.BACKEND_URL + "/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Usuario)
+      });
+
+      if (response.ok) {
+        setLoginSuccess(true);
+        setLoginError(false);
+        const data = await response.json();
+        const token = data.token;
+        const email = data.email;
+
+        localStorage.setItem("miTokenJWT", token);
+        localStorage.setItem("loggedUserEmail", email);
+
+        setLoginSuccess(true);
+
+        setEmail('');
+        setPassword('');
+        navigate('/')
+      } else {
+        setLoginSuccess(false);
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setLoginSuccess(false);
+      setLoginError(true);
     }
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-            // Ejercicio 3: En este fetch hay DOS errores que impiden enviar correctamente el usuario y la contraseña al servidor Flask. 
-            // Además, falta enviar el email y la contraseña en el cuerpo de la petición POST
-
-            console.log("email a enviar: ", email)
-            console.log("password a enviar: ", password)
-
-
-            const response = await fetch(process.env.BACKEND_URL + "/api/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(Usuario)
-            });
-
-            if (response.ok) {
-                setLoginSuccess(true);
-                setLoginError(false);
-                const data = await response.json();
-                const token = data.token;
-                const email = data.email;
-
-                localStorage.setItem("miTokenJWT", token);
-                localStorage.setItem("loggedUserEmail", email);
-
-                setLoginSuccess(true);
-
-                setEmail('');
-                setPassword('');
-                navigate('/')
-            } else {
-                setLoginSuccess(false);
-                setLoginError(true);
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            setLoginSuccess(false);
-            setLoginError(true);
-        }
-    };
-
-return (
-    <div className="signup-container">
+  return (
+    <div className="login-container">
       <div className="form-container">
-        <h2 className="form-title">WELCOME BACK</h2>
+        <h2 className="form-title">HERE WE GO!</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
