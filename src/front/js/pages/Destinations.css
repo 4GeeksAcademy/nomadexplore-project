@@ -1,6 +1,6 @@
 
 .destinations-container {
-    background-image: url(https://images.pexels.com/photos/2707756/pexels-photo-2707756.jpeg?auto=compress&cs=tinysrgb&w=800);
+    background-image: url(https://images.unsplash.com/photo-1499591934245-40b55745b905?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80);
     background-color: rgba(255, 255, 255, 0.06);
     border: 3px solid rgb(255, 255, 255, 0.06);
     width: 100%;
@@ -74,7 +74,7 @@
 
 .subtitle-destinations {
     text-align: center;
-    color: rgb(244, 177, 61);
+    color: rgb(128, 244, 61);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 24px;
@@ -96,7 +96,7 @@
   }
 
   .image:hover{
-    box-shadow: 0px 0px 9px 4px #140d3e;
+    box-shadow: 0px 0px 9px 4px #53ef3b;
   }
 
   .image:active{
@@ -109,7 +109,6 @@
   display: flex;
   margin-top: 0;
   font-size: 16px;
-  font-family: 'Times New Roman', Times, serif;
 }
 
  .btn-fav {
