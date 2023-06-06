@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
+import "./recomendation.css"
 
 export const Recomendation = () => {
     const { store, actions } = useContext(Context);
@@ -41,12 +42,12 @@ export const Recomendation = () => {
     }, []);
 
     return (
-        <div>
-            <div style={{ textAlign: "center", marginLeft: "50px", marginRight: "50px" }}>
-                <h2 style={{marginTop: "0px"}}>Tu destino recomendado es:</h2>
-                <h1>{recommendedDestination}</h1>
-                <p>{recommendedDescription}</p>
-            </div>
+        <div className="recommendation-container">
+        <div className="recommendation-content">
+            <h2>Tu destino recomendado es:</h2>
+            <h1 className="recommended-destination">{recommendedDestination}</h1>
+            <p className="recommended-description">{recommendedDescription}</p>
         </div>
+    </div>
     )
 }
