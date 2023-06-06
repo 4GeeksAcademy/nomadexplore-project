@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .recommendation-container {
+    position: relative;
+    height: 100vh;
+    background-color: #000000;
+  }
+  
+  .recommendation-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recommended-destination {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .recommended-description {
+    font-size: 18px;
+    color: #666666;
+  }
