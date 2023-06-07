@@ -76,7 +76,7 @@ export const Selection = () => {
             <div style={{ margin: "auto", textAlign: "center", marginTop: '10px' }}>
                 <div>
                     <h2>
-                        Click en la imagen que más te guste // Serie: {pairIndex + 1}
+                        Click en la imagen que más te guste // Par: {pairIndex + 1}
                     </h2>
                     <div style={{ display: "flex", justifyContent: "center" }}>
                         <div

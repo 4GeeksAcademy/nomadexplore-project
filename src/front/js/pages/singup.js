@@ -6,7 +6,6 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -19,24 +18,25 @@ export const SignUp = () => {
         body: JSON.stringify({ email, password }),
       });
 
+      const data = await response.json(); // Analizar la respuesta del servidor
+
       if (response.ok) {
         console.log("User created");
         // Aquí puedes hacer algo con la respuesta exitosa, como redireccionar o mostrar un mensaje de éxito.
-        setMessage('¡Usuario creado con éxito!')
+        setMessage('¡Usuario creado con éxito!');
       } else {
         console.error("Error creating user. Maybe you are using an existing email?");
-        // Aquí puedes manejar el caso de error, como mostrar un mensaje de error o hacer algo más.
+        if (data.error === "user_exists") {
+          setMessage("El usuario ya está registrado. Por favor, inicia sesión en su lugar."); // Mensaje específico para usuario existente
+        } else {
+          setMessage("Hubo un error al crear el usuario. Por favor, intenta nuevamente.");
+        }
       }
     } catch (error) {
       console.error("Error:", error);
       // Aquí puedes manejar cualquier error de red u otro tipo de error.
     }
   };
-
-  if (message) return <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
-    {message}
-  </div>;
-
 
   return (
     <div>
@@ -68,12 +68,15 @@ export const SignUp = () => {
             required
           />
         </div>
-        <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
-          {message}
-        </div>
-        <button type="submit" className="btn btn-primary">Sign Up</button>
+        {message && (
+          <div className="alert alert-danger" role="alert">
+            {message}
+          </div>
+        )}
+        <button type="submit" className="btn btn-primary">
+          Sign Up
+        </button>
       </form>
     </div>
   );
 };
-
