@@ -12,8 +12,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: blur(10px);
-  
 }
+
 
 .navbar::after {
   content: "";
@@ -55,7 +55,7 @@
 
 .navbar-link {
   margin-left: 70px;
-  margin-right: 30px;
+  margin-right: 20px;
   color: rgb(255, 255, 255);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-decoration: none;
@@ -64,6 +64,7 @@
   .social-buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-right: 20px;
   }
 

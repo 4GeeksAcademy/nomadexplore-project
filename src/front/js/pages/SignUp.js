@@ -33,7 +33,7 @@ export const SignUp = () => {
     }
   };
 
-  if (message) return <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
+  if (message) return <div className={`alert alert-success message-container ${!message && 'd-none'}`} role="alert">
     {message} </div>;
 
 
