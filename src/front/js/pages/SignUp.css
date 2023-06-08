@@ -12,7 +12,7 @@
     background-size: cover;
    
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
         img {
             width: 100%;
             height: auto;
@@ -97,6 +97,16 @@
 .form-hyperlink:hover {
     color: white;
 }
+
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: rgba(0, 0, 0, 0.909);
+    font-weight: 500;
+    font-size: 40px;
+  }
 
 
 .planner-container {

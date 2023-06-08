@@ -11,7 +11,8 @@ export const Navbar = () => {
 				</Link>
 				<button className="social-buttons">
 					<i className="fa-brands fa-instagram"></i>
-					<i className="fa-brands fa-twitter"></i>
+					<a href="https://twitter.com/nomadexplore" style={{ color: "white" }} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i>
+					</a>
 					<i className="fa-brands fa-facebook"></i>
 				</button>
 				<div className="navbar-buttons-container">
@@ -33,7 +34,7 @@ export const Navbar = () => {
 					<Link to="/" className="navbar-link">
 						<i className="fa-solid fa-star"></i>
 					</Link>
-				
+
 				</div>
 			</div>
 		</nav>
