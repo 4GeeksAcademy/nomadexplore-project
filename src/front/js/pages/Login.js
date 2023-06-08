@@ -1,45 +1,67 @@
 import { useState } from "react";
 import React from "react";
-import "./SignUp.css"
+import { useNavigate } from 'react-router-dom';
+import "./Login.css"
 
-
-export const SignUp = () => {
+export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+  const navigate = useNavigate();
 
+
+  const Usuario = {
+    "email": email,
+    "password": password
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(process.env.BACKEND_URL + "/api/signup", {
+      console.log("email a enviar: ", email)
+      console.log("password a enviar: ", password)
+
+
+      const response = await fetch(process.env.BACKEND_URL + "/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(Usuario)
       });
 
       if (response.ok) {
-        console.log("Registered User");
-        setMessage('¡Yeah! Welcome to Nomad Explore')
+        setLoginSuccess(true);
+        setLoginError(false);
+        const data = await response.json();
+        const token = data.token;
+        const email = data.email;
+
+        localStorage.setItem("miTokenJWT", token);
+        localStorage.setItem("loggedUserEmail", email);
+
+        setLoginSuccess(true);
+
+        setEmail('');
+        setPassword('');
+        navigate('/')
       } else {
-        console.error("Error register user. Maybe you are using an existing email?");
+        setLoginSuccess(false);
+        setLoginError(true);
       }
     } catch (error) {
       console.error("Error:", error);
+      setLoginSuccess(false);
+      setLoginError(true);
     }
   };
 
-  if (message) return <div className={`alert alert-success message-container ${!message && 'd-none'}`} role="alert">
-    {message} </div>;
-
-
   return (
-    <div className="signup-container">
+    <div className="login-container">
       <div className="form-container">
-        <h2 className="form-title">WELCOME TO EXPLORE</h2>
+        <h2 className="form-title">HERE WE GO!</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -67,10 +89,7 @@ export const SignUp = () => {
               required
             />
           </div>
-          <div className={`alert alert-success ${!message && 'd-none'}`} role="alert">
-            {message}
-          </div>
-          <button type="submit" className="btn-form btn-primary">Sign Up</button>
+          <button type="submit" className="btn-form btn-primary">Log in</button>
           <a className="form-hyperlink" href="">Forgot your password</a>
         </form>
       </div>

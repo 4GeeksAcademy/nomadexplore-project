@@ -19,11 +19,14 @@ export const Navbar = () => {
 					<Link to="/aboutus" className="navbar-link">
 						About Us
 					</Link>
-					<Link to="/demo" className="navbar-link">
+					<Link to="/selection" className="navbar-link">
 						Select Destination
 					</Link>
 					<Link to="/signup" className="navbar-link">
 						Sign Up
+					</Link>
+					<Link to="/login" className="navbar-link">
+						Login
 					</Link>
 					<Link to="/planner" className="navbar-link">
 						Planner
@@ -31,6 +34,7 @@ export const Navbar = () => {
 					<Link to="/" className="navbar-link">
 						<i className="fa-solid fa-star"></i>
 					</Link>
+
 				</div>
 			</div>
 		</nav>

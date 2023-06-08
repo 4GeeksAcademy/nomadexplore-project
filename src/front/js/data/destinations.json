@@ -1,0 +1,44 @@
+[
+    {
+        "destination": "Roma",
+        "description": "Descubre Roma, una ciudad que te cautivará con su cultura, gastronomía, enología y museos. Recorre sus antiguas calles y admira monumentos emblemáticos como el Coliseo y el Foro Romano. Disfruta de la deliciosa gastronomía, desde pasta carbonara hasta auténtica pizza romana, acompañada de los mejores vinos italianos. Sumérgete en la historia y el arte en los magníficos museos de la ciudad, como el Museo del Vaticano. Roma te invita a vivir una experiencia única llena de cultura, sabores y arte.",
+            "weights": {
+            "cultura": 10,
+            "compras": 1,
+            "gastronomia": 10,
+            "enologia": 10,
+            "urban": 5,
+            "relax": 5,
+            "vidaNocturna": 3,
+            "museos": 10
+        }
+    },
+    {
+        "destination": "Londres",
+        "description": "Descubre Londres, una ciudad llena de cultura, compras, vida nocturna y museos. Sumérgete en su historia visitando lugares icónicos como el Palacio de Buckingham y la Torre de Londres. Disfruta de compras en Oxford Street y Covent Garden. Vive la vibrante vida nocturna con pubs tradicionales y bares modernos. Explora museos impresionantes como el Museo Británico y la Galería Nacional. Londres te espera con una experiencia única llena de historia, compras, entretenimiento nocturno y arte.",
+        "weights": {
+            "cultura": 6,
+            "compras": 10,
+            "gastronomia": 1,
+            "enologia": 1,
+            "urban": 9,
+            "relax": 1,
+            "vidaNocturna": 10,
+            "museos": 10
+        }
+    },
+    {
+        "destination": "Mikonos",
+        "description": "Embárcate en una escapada a Mikonos, donde encontrarás el equilibrio perfecto entre relajación, gastronomía y compras. Disfruta de sus hermosas playas y ambiente tranquilo, ideales para desconectar y recargar energías. Deléitate con la exquisita gastronomía local, desde auténticos platos griegos hasta mariscos frescos a orillas del mar. Explora las pintorescas calles de la ciudad, llenas de encanto y tiendas exclusivas, donde podrás encontrar desde moda local hasta elegantes joyas. Mikonos te ofrece una experiencia única de relax, sabores deliciosos y oportunidades de compras para que disfrutes al máximo tu visita.",
+        "weights": {
+            "cultura": 1,
+            "compras": 10,
+            "gastronomia": 10,
+            "enologia": 5,
+            "urban": 1,
+            "relax": 10,
+            "vidaNocturna": 1,
+            "museos": 1
+        }
+    }
+]

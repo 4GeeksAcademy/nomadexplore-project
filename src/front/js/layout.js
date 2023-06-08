@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Selection } from "./pages/demo";
+import { Selection } from "./pages/selection";
 import { AboutUs } from "./pages/AboutUs"
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
@@ -13,8 +13,9 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SignUp } from "./pages/SignUp";
 import { Destinations } from "./pages/Destinations";
+import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
-
+import { Login } from "./pages/Login";
 
 
 //create your first component
@@ -32,10 +33,12 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Selection />} path="/demo" />
+                        <Route element={<Recomendation />} path="/destination" />
+                        <Route element={<Selection />} path="/selection" />
                         <Route element={<AboutUs />} path="/aboutus" />
                         <Route element={<Destinations />} path="/destinations" />
                         <Route element={<SignUp />} path="/signup" />
+                        <Route element={<Login />} path="/login" />
                         <Route element={<Planner />} path="/planner" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
