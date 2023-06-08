@@ -43,11 +43,11 @@ export const Recomendation = () => {
 
     return (
         <div className="recommendation-container">
-        <div className="recommendation-content">
-            <h2>Tu destino recomendado es:</h2>
-            <h1 className="recommended-destination">{recommendedDestination}</h1>
-            <p className="recommended-description">{recommendedDescription}</p>
+            <div className="recommendation-content">
+                <h2>Tu destino recomendado es cc:</h2>
+                <h1 className="recommended-destination">{recommendedDestination}</h1>
+                <p className="recommended-description">{recommendedDescription}</p>
+            </div>
         </div>
-    </div>
     )
 }
