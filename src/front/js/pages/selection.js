@@ -2,22 +2,30 @@ import React, { useState,useEffect ,useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
-import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from '../data/images'
-import destinationWeights from '../data/weights.json';
+import imagesDB from '../data/imagesDB.json';
+import { string } from "prop-types";
 
-console.log('destination ponderation from json: ', destinationWeights);
+// console.log('length:', Object.keys(imagesDB[0].cultura).length);
 
+const randomUrl = (categoria) => {
+    let string = 'url'
+    length = Object.keys(imagesDB[0][categoria]).length
+    string += Math.floor(Math.random()*length)+1
+    return imagesDB[0][categoria][string]
+}
+
+console.log('random: ',randomUrl('cultura'));
 
 const imagePairs = [
-    { img1: imgCultura, img2: imgCompras },
-    { img1: imgGastronomia, img2: imgEnologia },
-    { img1: imgUrban, img2: imgRelax },
-    { img1: imgVidaNoc, img2: imgMuseos },
+    { img1: randomUrl('cultura'), img2: randomUrl('compras') },
+    { img1: randomUrl('gastronomia'), img2: randomUrl('enologia') },
+    { img1: randomUrl('urban'), img2: randomUrl('relax') },
+    { img1: randomUrl('vidaNocturna'), img2: randomUrl('museos') },
 ];
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
-    const navigate = useNavigate(); // hook que funciona como link pero se puede usar en js
+    const navigate = useNavigate();
     const [pairIndex, setPairIndex] = useState(0);
     
     useEffect(() => {

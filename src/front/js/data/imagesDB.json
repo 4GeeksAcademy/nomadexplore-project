@@ -1,0 +1,38 @@
+[
+    {
+        "cultura": {
+            "url1": "https://media.istockphoto.com/id/1047800728/es/foto/madre-y-ni%C3%B1os-turismo-ciudad-de-siena-toscana-italia.jpg?s=1024x1024&w=is&k=20&c=J_qCj8JivXn2qYZoKGTB2F97dPqvORZiZ-Whi0onPDI=",
+            "url2": "https://media.istockphoto.com/id/664617990/es/foto/estatua-de-felipe-iii-en-la-plaza-mayor-de-madrid.jpg?s=2048x2048&w=is&k=20&c=W9DKxQQ11uhPk6lcxxEJeXqmHPujJpa-1zHr45OUjOw=",
+            "url3": "https://media.istockphoto.com/id/1403971687/es/foto/templo-principal-del-pollo-itz%C3%A1.jpg?s=2048x2048&w=is&k=20&c=gCMU_308qsZJ2WQJZDqnBPWsre6g2GlYUizvg1IXWYM="
+        },
+        "compras": {
+            "url1": "https://media.istockphoto.com/id/1369227756/es/foto/ri%C3%A9ndose-de-su-camino-a-trav%C3%A9s-del-centro-comercial.jpg?s=1024x1024&w=is&k=20&c=VwRB4XcKPB0SU6BTocS_7zuM0CKM0nfVeoPZdxDa-Do=",
+            "url2": "https://media.istockphoto.com/id/1148923865/es/foto/las-mujeres-j%C3%B3venes-con-bolsas-de-compras-de-pie-en-la-calle.jpg?s=2048x2048&w=is&k=20&c=1GlatSNOKr3T6WlW5ez4YxLx0pX8XSQS1ZCi8O1Loc0=",
+            "url3": "https://media.istockphoto.com/id/867339374/es/foto/ir-a-ver-escaparates.jpg?s=2048x2048&w=is&k=20&c=UPfJOatZ7U7XdTQ-Rz08hqw-h7C7BaxmH5cE7CYbv84="
+        },
+        "gastronomia": {
+            "url1": "https://media.istockphoto.com/id/1130934413/es/foto/primer-plano-de-las-manos-de-un-cocinero-masculino-sobre-un-fondo-negro-vierta-la-salsa-de-la.webp?s=1024x1024&w=is&k=20&c=gTG6wNCJvWv9Rrfq_PZT-D88GfQOVBisxU1vDGUmKYA=",
+            "url2": "https://media.istockphoto.com/id/1388791676/es/foto/estilo-teppanyaki.jpg?s=2048x2048&w=is&k=20&c=BPBE0AJEYjekhnodOomf7WBWnwv53gVHsU5UBpwqzw8="
+        },
+        "enologia": {
+            "url1": "https://media.istockphoto.com/id/1047180430/es/foto/copa-de-vino-en-mano-del-turista-en-un-paisaje-natural-de-la-toscana-con-el-verde-valle-de-las.webp?s=1024x1024&w=is&k=20&c=mwhgKSGIyXPeTrGBO3u-QdDjQNHqax653lK_o6rLYsA=",
+            "url2": "https://media.istockphoto.com/id/108174246/es/foto/filas-de-barriles-en-una-amplia-bodega-de-vinos.jpg?s=2048x2048&w=is&k=20&c=og_mKRoIbgwYMMu8KxLQUqMFvvWs0qtNGg5VLCCM48E="
+        },
+        "urban": {
+            "url1": "https://media.istockphoto.com/id/895081824/es/foto/visitar-espa%C3%B1a-de-turista.jpg?s=1024x1024&w=is&k=20&c=im1wTq8emUvFkV1enxAjJoBHZITvjTGWXeLwfR4yxTQ=",
+            "url2": "https://media.istockphoto.com/id/1400112152/es/foto/autobuses-rojos-de-londres-que-se-acercan-a-trav%C3%A9s-de-la-calle-nocturna-de-los-rascacielos-de.jpg?s=2048x2048&w=is&k=20&c=NMWbWw7unEStcbQTs3OpxG9InRbloki7EgMZ_MM1nGM="
+        },
+        "relax": {
+            "url1": "https://media.istockphoto.com/id/1040906722/es/foto/mujer-y-hombre-buscando-en-el-mirador-del-pueblo-de-gordes-en-provenza.webp?s=1024x1024&w=is&k=20&c=JWmqqrdUY77RD9Zr3JZi6HGoOoJvIbw9CUFAZiZBbFE=",
+            "url2": "https://media.istockphoto.com/id/568519507/es/foto/pies-de-hombre-levantados-de-la-piscina.jpg?s=2048x2048&w=is&k=20&c=9reNgSQb_YdObSfRDpUMpNJNU3M_VJsXKoEyWl5Ly5A="
+        },
+        "vidaNocturna": {
+            "url1": "https://media.istockphoto.com/id/641775168/es/foto/hombres-y-mujeres-disfrutando-de-una-fiesta-de-j%C3%B3venes.jpg?s=1024x1024&w=is&k=20&c=9RxcsFmz5M8T2SbvPONTZu82TgFFCTcpVbYebOIxMh8=",
+            "url2": "https://media.istockphoto.com/id/1158011315/es/foto/t%C3%ADpico-portugu%C3%A9s-decoraci%C3%B3n-de-santos-populares-en-una-calle.jpg?s=2048x2048&w=is&k=20&c=Uv8qCUWUoZsAqJE5qW9ZNZwJe98kKQsJWBTibbepG44="
+        },
+        "museos": {
+            "url1": "https://media.istockphoto.com/id/639558856/es/foto/madre-e-hija-visitando-la-ciudad-de-florencia-toscana.webp?s=1024x1024&w=is&k=20&c=1dZ3Hh-T5adehbWkDOom0pV3IQ-5kpAOTegFXqJ5I3I=",
+            "url2": "https://media.istockphoto.com/id/1390107325/es/foto/la-abuela-y-la-nieta-adolescente-est%C3%A1n-mirando-las-pinturas-en-la-galer%C3%ADa-de-arte.jpg?s=2048x2048&w=is&k=20&c=hSo5dj2a1345h8W-Om39qQFzhQQ_DnbDoHvztfTDCvo="
+        }
+    }
+]

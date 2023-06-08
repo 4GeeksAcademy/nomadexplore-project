@@ -8,18 +8,10 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
+
 
 api = Blueprint('api', __name__)
-
-
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Yeah baby!!! I'm a message that came from the funky backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/login', methods=['POST'])
 def login():
@@ -45,6 +37,7 @@ def login():
         "token": access_token,
         "email": email
     }
+
 
     return jsonify(response_body), 200
 
