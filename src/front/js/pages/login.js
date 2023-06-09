@@ -40,9 +40,11 @@ export const Login = () => {
                 const data = await response.json();
                 const token = data.token;
                 const email = data.email;
+                const name = data.name;
                 console.log('data: ', data);
                 localStorage.setItem("miTokenJWT", token);
                 localStorage.setItem("loggedUserEmail", email);
+                localStorage.setItem("loggedUserName", name);
 
                 setLoginSuccess(true);
 

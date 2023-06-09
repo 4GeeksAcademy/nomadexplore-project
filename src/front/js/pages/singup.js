@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 
 export const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -15,7 +16,7 @@ export const SignUp = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
 
       const data = await response.json(); // Analizar la respuesta del servidor
@@ -39,9 +40,24 @@ export const SignUp = () => {
   };
 
   return (
-    <div style={{margin:'20px'}}>
+    <div style={{ margin: '20px' }}>
       <h2>Formulario de registro</h2>
       <form onSubmit={handleSubmit}>
+
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
@@ -55,6 +71,7 @@ export const SignUp = () => {
             required
           />
         </div>
+
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
             Password

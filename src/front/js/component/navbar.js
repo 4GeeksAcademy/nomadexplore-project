@@ -10,6 +10,8 @@ export const Navbar = () => {
 	const [loggedUserEmail, setLoggedUserEmail] = useState('');
 	const [loggedUserName, setLoggedUserName] = useState('');
 
+console.log('name local', loggedUserName);
+
 	const navigate = useNavigate();
 
 	const handleForceUpdate = () => {
@@ -18,10 +20,12 @@ export const Navbar = () => {
 	useEffect(() => {
 		const token = localStorage.getItem("miTokenJWT");
 		const loggedUserEmail = localStorage.getItem("loggedUserEmail");
+		const loggedUserName = localStorage.getItem("loggedUserName");
 
 		if (token) {
 			setTokenExists(true);
 			setLoggedUserEmail(loggedUserEmail);
+			setLoggedUserName(loggedUserName);
 
 		} else {
 			setTokenExists(false);
@@ -50,7 +54,7 @@ export const Navbar = () => {
 							<button className="btn btn-primary">Mis Favoritos</button>
 						</Link>
 						<button className="btn btn-primary" onClick={handleLogout}>
-							Hello: {loggedUserEmail}- Logout
+							Hello: {loggedUserName}- Logout
 						</button>
 					</>
 				)}

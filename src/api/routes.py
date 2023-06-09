@@ -10,9 +10,12 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
-
 api = Blueprint('api', __name__)
 
+# FAVORITE LOGGED
+current_logged_user_id = 4
+
+# LOGIN
 @api.route('/login', methods=['POST'])
 def login():
     # Obtener los datos del usuario desde el cliente
@@ -35,7 +38,8 @@ def login():
     response_body = {
         "msg": "Token create successfully",
         "token": access_token,
-        "email": email
+        "email": email,
+        "name": user.name
     }
 
 
@@ -43,13 +47,13 @@ def login():
 
 
 
-# ADD USER
+# REGISTRAR USER
 @api.route('/signup', methods=['POST'])
 def add_user():
 
     request_body_user = request.get_json()
     new_user = User(
-        email=request_body_user['email'], password=request_body_user['password'])
+        email=request_body_user['email'], name=request_body_user['name'], password=request_body_user['password'])
     db.session.add(new_user)
     db.session.commit()
     return jsonify('user added:', request_body_user), 200
@@ -60,10 +64,6 @@ def get_users():
     users = User.query.all()
     all_users = list(map(lambda x: x.serialize(), users))
     return jsonify(all_users), 200
-
-
-# FAVORITE LOGGED
-current_logged_user_id = 4
 
 # [GET] Listar favoritos
 @api.route("/favs", methods=["GET"])
