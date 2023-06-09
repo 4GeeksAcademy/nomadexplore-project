@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const [email, setEmail] = useState("");
@@ -61,7 +61,7 @@ export const Login = () => {
     };
 
     return (
-        <div>
+        <div style={{margin:'20px'}}>
             {loginSuccess && (
                 <div className="alert alert-success" role="alert">
                     ¡Login correcto!
@@ -72,7 +72,7 @@ export const Login = () => {
 
             {loginError && (
                 <div className="alert alert-danger" role="alert">
-                    Problemas con el login. Credenciales incorrectas? Mira la consola del navegador Web y el terminal de Python
+                    Problemas con el login. Credenciales incorrectas?
                 </div>
             )}
 
@@ -105,6 +105,10 @@ export const Login = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>
+                <br/>
+                <Link to="/signup">
+                <button className="btn btn-secondary">Signup</button>
+                </Link>
         </div>
     );
 };

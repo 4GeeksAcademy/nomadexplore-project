@@ -6,11 +6,13 @@ export const ListMyFavs = () => {
   const [isDeleteSuccess, setIsDeleteSuccess] = useState(false);
   const navigate = useNavigate();
 
+  const token = localStorage.getItem("miTokenJWT");
+
   const fetchFavs = async () => {
     try {
       const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
         headers: {
-          // Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -28,13 +30,13 @@ export const ListMyFavs = () => {
   };
 
 
+
   useEffect(() => {
     // const token = localStorage.getItem("miTokenJWT");
-    // if (!token) {
-    //     // No se encontró el token, redirige al usuario a la página principal
-    //     navigate("/");
-    //     return;
-    // }
+    if (!token) {
+        // No se encontró el token, redirige al usuario a la página principal
+        navigate("/");
+    }
     fetchFavs();
   }, []);
 

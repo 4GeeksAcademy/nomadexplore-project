@@ -43,7 +43,7 @@ def login():
 
 
 
-# post user
+# ADD USER
 @api.route('/signup', methods=['POST'])
 def add_user():
 
@@ -55,8 +55,6 @@ def add_user():
     return jsonify('user added:', request_body_user), 200
 
 # [GET] /users Listar todos los usuarios
-
-
 @api.route('/user', methods=['GET'])
 def get_users():
     users = User.query.all()
@@ -67,23 +65,24 @@ def get_users():
 # FAVORITE LOGGED
 current_logged_user_id = 4
 
-# [GET] /fav Listar favoritos
-
-
+# [GET] Listar favoritos
 @api.route("/favs", methods=["GET"])
-# @jwt_required()
+@jwt_required()
 def get_user_favs():
 
     # Obtengo el usuario al que pertenece el token JWT
-    # current_user = get_jwt_identity()
+    current_user = get_jwt_identity()
+
+    # ID de usuario
+    current_user_id = current_user['id']
 
     # Busca todos los gatos asociados al usuario actual
-    favs = Favorites.query.filter_by(user_id=current_logged_user_id)
+    favs = Favorites.query.filter_by(user_id=current_user_id)
 
-    # Crea una lista para almacenar los datos de los gatos
+    # Crea una lista para almacenar los datos de los favs
     fav_data = []
 
-    # Recorre los gatos y agrega sus datos a la lista
+    # Recorre los favs y agrega sus datos a la lista
     for fav in favs:
         fav_data.append({
             "id_fav": fav.id,
@@ -93,9 +92,8 @@ def get_user_favs():
 
     return jsonify(fav_data), 200
 
+
 # get de favorito por user
-
-
 @api.route("/favs/<int:user_id>", methods=["GET"])
 # @jwt_required()
 def get_user_id_favs(user_id):
@@ -119,25 +117,31 @@ def get_user_id_favs(user_id):
 
     return jsonify(fav_data), 200
 
-# POST FAVORITE
+# ADD FAVORITE
 @api.route("/favs", methods=["POST"])
+@jwt_required()
 def post_favorite():
+    current_user = get_jwt_identity()
+
+    # ID de usuario
+    current_user_id = current_user['id']
+
     data = request.json
     destination = data.get("recommendedDestination")
 
-    if not destination or not current_logged_user_id:
+    if not destination:
         return jsonify({"error": "Destino obligatorio"}), 400
 
     # Verifica si el destino ya está en favoritos
     existing_fav = Favorites.query.filter_by(
-        destination=destination, user_id=current_logged_user_id
+        destination=destination, user_id=current_user_id
     ).first()
 
     if existing_fav:
         return jsonify({"error": "El destino ya está en favoritos"}), 400
 
     # Crea un nuevo objeto Favorites relacionado con el usuario actual
-    fav = Favorites(destination=destination, user_id=current_logged_user_id)
+    fav = Favorites(destination=destination, user_id=current_user_id)
 
     # Guarda el nuevo favorito en la base de datos
     db.session.add(fav)

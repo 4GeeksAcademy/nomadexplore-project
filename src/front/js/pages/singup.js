@@ -39,7 +39,7 @@ export const SignUp = () => {
   };
 
   return (
-    <div>
+    <div style={{margin:'20px'}}>
       <h2>Formulario de registro</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

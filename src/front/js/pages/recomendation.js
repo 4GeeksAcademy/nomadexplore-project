@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
 
@@ -9,6 +10,8 @@ export const Recomendation = () => {
     const [alertVariant, setAlertVariant] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
     const [buttonClicked, setButtonClicked] = useState(false);
+
+    const navigate = useNavigate();
 
     const calculateRecommendation = () => {
         let maxScore = 0;
@@ -39,10 +42,21 @@ export const Recomendation = () => {
     }, []);
 
     const handleAddFav = async () => {
+
+        const token = localStorage.getItem("miTokenJWT");
+
+        if (!token) {
+            // Mmmmm... no tengo el token, no debería poder acceder a está página de React
+            navigate('/login');
+        }
+
+
+
         const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({ recommendedDestination }),
         });
