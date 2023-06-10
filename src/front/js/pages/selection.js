@@ -1,4 +1,4 @@
-import React, { useState,useEffect ,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import '../../styles/selection.css'
@@ -9,25 +9,27 @@ import { string } from "prop-types";
 
 const randomUrl = (categoria) => {
     let string = 'url'
-    length = Object.keys(imagesDB[0][categoria]).length
-    string += Math.floor(Math.random()*length)+1
+    let length = Object.keys(imagesDB[0][categoria]).length
+    string += Math.floor(Math.random() * length) + 1
     return imagesDB[0][categoria][string]
 }
 
-console.log('random: ',randomUrl('cultura'));
-
 const imagePairs = [
-    { img1: randomUrl('cultura'), img2: randomUrl('compras') },
-    { img1: randomUrl('gastronomia'), img2: randomUrl('enologia') },
-    { img1: randomUrl('urban'), img2: randomUrl('relax') },
-    { img1: randomUrl('vidaNocturna'), img2: randomUrl('museos') },
+    { img1: randomUrl('cultura'), img2: randomUrl('paisajes') },
+    { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
+    { img1: randomUrl('atracciones'), img2: randomUrl('vidaNocturna') },
+    { img1: randomUrl('shopping'), img2: randomUrl('aventura') },
+    { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
+    { img1: randomUrl('paisajes'), img2: randomUrl('playa') },
+    { img1: randomUrl('atracciones'), img2: randomUrl('shopping') },
+    { img1: randomUrl('vidaNocturna'), img2: randomUrl('aventura') },
 ];
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
     const [pairIndex, setPairIndex] = useState(0);
-    
+
     useEffect(() => {
         actions.resetUserSelections();
     }, []);
@@ -46,30 +48,47 @@ export const Selection = () => {
 
     const clickImage = (category, value) => {
         actions.addUserSelection(category, value);
+        console.log('store', store.userSelections);
         setNextPair();
     };
 
     const clickImage1 = () => {
         if (pairIndex === 0) {
-            clickImage("cultura", 10);
+            clickImage("cultura", 1);
         } else if (pairIndex === 1) {
-            clickImage("gastronomia", 10);
+            clickImage("gastronomia", 1);
         } else if (pairIndex === 2) {
-            clickImage("urban", 10);
+            clickImage("atracciones", 1);
         } else if (pairIndex === 3) {
-            clickImage("vidaNocturna", 10);
+            clickImage("shopping", 1);
+        } else if (pairIndex === 4) {
+            clickImage("cultura", 1);
+        } else if (pairIndex === 5) {
+            clickImage("paisajes", 1);
+        } else if (pairIndex === 6) {
+            clickImage("atracciones", 1);
+        } else if (pairIndex === 7) {
+            clickImage("vidaNocturna", 1);
         }
     };
 
     const clickImage2 = () => {
         if (pairIndex === 0) {
-            clickImage("compras", 10);
+            clickImage("paisajes", 1);
         } else if (pairIndex === 1) {
-            clickImage("enologia", 10);
+            clickImage("playas", 1);
         } else if (pairIndex === 2) {
-            clickImage("relax", 10);
+            clickImage("vidaNocturna", 1);
         } else if (pairIndex === 3) {
-            clickImage("museos", 10);
+            clickImage("aventura", 1);
+        } else if (pairIndex === 4) {
+            clickImage("gastronomia", 1);
+        } else if (pairIndex === 5) {
+            clickImage("playas", 1);
+        } else if (pairIndex === 6) {
+            clickImage("shopping", 1);
+        } else if (pairIndex === 7) {
+            clickImage("aventura", 1);
         }
     };
 

@@ -26,6 +26,7 @@ export const Recomendation = () => {
             for (const category in store.userSelections) {
                 score += store.userSelections[category] * weights[category];
             }
+            console.log(destination+":"+ score);
 
             if (score > maxScore) {
                 maxScore = score;

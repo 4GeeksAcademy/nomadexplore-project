@@ -1,44 +1,122 @@
 [
     {
-        "destination": "Roma",
-        "description": "Descubre Roma, una ciudad que te cautivará con su cultura, gastronomía, enología y museos. Recorre sus antiguas calles y admira monumentos emblemáticos como el Coliseo y el Foro Romano. Disfruta de la deliciosa gastronomía, desde pasta carbonara hasta auténtica pizza romana, acompañada de los mejores vinos italianos. Sumérgete en la historia y el arte en los magníficos museos de la ciudad, como el Museo del Vaticano. Roma te invita a vivir una experiencia única llena de cultura, sabores y arte.",
-            "weights": {
-            "cultura": 10,
-            "compras": 1,
-            "gastronomia": 10,
-            "enologia": 10,
-            "urban": 5,
-            "relax": 5,
-            "vidaNocturna": 3,
-            "museos": 10
-        }
-    },
-    {
-        "destination": "Londres",
-        "description": "Descubre Londres, una ciudad llena de cultura, compras, vida nocturna y museos. Sumérgete en su historia visitando lugares icónicos como el Palacio de Buckingham y la Torre de Londres. Disfruta de compras en Oxford Street y Covent Garden. Vive la vibrante vida nocturna con pubs tradicionales y bares modernos. Explora museos impresionantes como el Museo Británico y la Galería Nacional. Londres te espera con una experiencia única llena de historia, compras, entretenimiento nocturno y arte.",
+        "destination": "Islas Griegas",
+        "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
+        "apiID": "100XXX",
         "weights": {
-            "cultura": 6,
-            "compras": 10,
-            "gastronomia": 1,
-            "enologia": 1,
-            "urban": 9,
-            "relax": 1,
-            "vidaNocturna": 10,
-            "museos": 10
+            "cultura": 2,
+            "paisajes": 6,
+            "atracciones": 2,
+            "gastronomia": 6,
+            "playas": 10,
+            "shopping": 2,
+            "vidaNocturna": 7,
+            "aventura": 4
         }
     },
     {
-        "destination": "Mikonos",
-        "description": "Embárcate en una escapada a Mikonos, donde encontrarás el equilibrio perfecto entre relajación, gastronomía y compras. Disfruta de sus hermosas playas y ambiente tranquilo, ideales para desconectar y recargar energías. Deléitate con la exquisita gastronomía local, desde auténticos platos griegos hasta mariscos frescos a orillas del mar. Explora las pintorescas calles de la ciudad, llenas de encanto y tiendas exclusivas, donde podrás encontrar desde moda local hasta elegantes joyas. Mikonos te ofrece una experiencia única de relax, sabores deliciosos y oportunidades de compras para que disfrutes al máximo tu visita.",
+        "destination": "La Toscana",
+        "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
+        "apiID": "200XXX",
+        "weights": {
+            "cultura": 5,
+            "paisajes": 8,
+            "atracciones": 1,
+            "gastronomia": 10,
+            "playas": 1,
+            "shopping": 2,
+            "vidaNocturna": 1,
+            "aventura": 3
+        }
+    },
+    {
+        "destination": "New York",
+        "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
+        "apiID": "300XXX",
+        "weights": {
+            "cultura": 3,
+            "paisajes": 1,
+            "atracciones": 8,
+            "gastronomia": 1,
+            "playas": 1,
+            "shopping": 9,
+            "vidaNocturna": 10,
+            "aventura": 1
+        }
+    },
+    {
+        "destination": "Rivera Maya",
+        "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
+        "apiID": "400XXX",
+        "weights": {
+            "cultura": 9,
+            "paisajes": 3,
+            "atracciones": 7,
+            "gastronomia": 5,
+            "playas": 9,
+            "shopping": 2,
+            "vidaNocturna": 2,
+            "aventura": 3
+        }
+    },
+    {
+        "destination": "Patagonia",
+        "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
+        "apiID": "500XXX",
         "weights": {
             "cultura": 1,
-            "compras": 10,
-            "gastronomia": 10,
-            "enologia": 5,
-            "urban": 1,
-            "relax": 10,
+            "paisajes": 10,
+            "atracciones": 1,
+            "gastronomia": 5,
+            "playas": 1,
+            "shopping": 1,
             "vidaNocturna": 1,
-            "museos": 1
+            "aventura": 10
+        }
+    },
+    {
+        "destination": "Bankok",
+        "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
+        "apiID": "600XXX",
+        "weights": {
+            "cultura": 4,
+            "paisajes": 2,
+            "atracciones": 7,
+            "gastronomia": 7,
+            "playas": 1,
+            "shopping": 4,
+            "vidaNocturna": 9,
+            "aventura": 5
+        }
+    },
+    {
+        "destination": "Barcelona",
+        "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
+        "apiID": "700XXX",
+        "weights": {
+            "cultura": 7,
+            "paisajes": 2,
+            "atracciones": 9,
+            "gastronomia": 8,
+            "playas": 5,
+            "shopping": 6,
+            "vidaNocturna": 8,
+            "aventura": 1
+        }
+    },
+    {
+        "destination": "Tokio",
+        "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
+        "apiID": "800XXX",
+        "weights": {
+            "cultura": 9,
+            "paisajes": 1,
+            "atracciones": 3,
+            "gastronomia": 9,
+            "playas": 1,
+            "shopping": 10,
+            "vidaNocturna": 5,
+            "aventura": 2
         }
     }
 ]

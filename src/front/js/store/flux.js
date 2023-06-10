@@ -3,27 +3,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             userSelections: {
                 cultura: 0,
-                compras: 0,
+                paisajes: 0,
+                atracciones: 0,
                 gastronomia: 0,
-                enologia: 0,
-                urban: 0,
-                relax: 0,
+                playas: 0,
+                shopping: 0,
                 vidaNocturna: 0,
-                museos: 0,
+                aventura: 0
             },
-            message: null,
-            demo: [
-                {
-                    title: "FIRST",
-                    background: "white",
-                    initial: "white"
-                },
-                {
-                    title: "SECOND",
-                    background: "white",
-                    initial: "white"
-                }
-            ]
         },
         actions: {
             addUserSelection: (category, value) => {
@@ -39,29 +26,17 @@ const getState = ({ getStore, getActions, setStore }) => {
             resetUserSelections: () => {
                 const initialUserSelections = {
                     cultura: 0,
-                    compras: 0,
+                    paisajes: 0,
+                    atracciones: 0,
                     gastronomia: 0,
-                    enologia: 0,
-                    urban: 0,
-                    relax: 0,
+                    playas: 0,
+                    shopping: 0,
                     vidaNocturna: 0,
-                    museos: 0
+                    aventura: 0
                 };
 
                 setStore({ userSelections: initialUserSelections });
             },
-
-            // getMessage: async () => {
-            //     try {
-            //         const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
-            //         const data = await resp.json();
-            //         setStore({ message: data.message });
-            //         return data;
-            //     } catch (error) {
-            //         console.log("Error loading message from backend", error);
-            //     }
-            // },
-
         }
     };
 };

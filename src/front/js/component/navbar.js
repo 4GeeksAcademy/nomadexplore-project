@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const [loggedUserEmail, setLoggedUserEmail] = useState('');
 	const [loggedUserName, setLoggedUserName] = useState('');
 
-console.log('name local', loggedUserName);
+// console.log('name local', loggedUserName);
 
 	const navigate = useNavigate();
 
