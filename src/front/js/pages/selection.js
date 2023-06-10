@@ -15,14 +15,15 @@ const randomUrl = (categoria) => {
 }
 
 const imagePairs = [
-    { img1: randomUrl('cultura'), img2: randomUrl('paisajes') },
+    { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
     { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
-    { img1: randomUrl('atracciones'), img2: randomUrl('vidaNocturna') },
-    { img1: randomUrl('shopping'), img2: randomUrl('aventura') },
+    { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
     { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
-    { img1: randomUrl('paisajes'), img2: randomUrl('playa') },
-    { img1: randomUrl('atracciones'), img2: randomUrl('shopping') },
-    { img1: randomUrl('vidaNocturna'), img2: randomUrl('aventura') },
+    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+    { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
+    { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
+    { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
+    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
 ];
 
 export const Selection = () => {
@@ -58,36 +59,40 @@ export const Selection = () => {
         } else if (pairIndex === 1) {
             clickImage("gastronomia", 1);
         } else if (pairIndex === 2) {
-            clickImage("atracciones", 1);
+            clickImage("entretenimiento", 1);
         } else if (pairIndex === 3) {
-            clickImage("shopping", 1);
-        } else if (pairIndex === 4) {
             clickImage("cultura", 1);
+        } else if (pairIndex === 4) {
+            clickImage("playa", 1);
         } else if (pairIndex === 5) {
-            clickImage("paisajes", 1);
+            clickImage("entretenimiento", 1);
         } else if (pairIndex === 6) {
-            clickImage("atracciones", 1);
+            clickImage("cultura", 1);
         } else if (pairIndex === 7) {
-            clickImage("vidaNocturna", 1);
+            clickImage("gastronomia", 1);
+        } else if (pairIndex === 8) {
+            clickImage("playa", 1);
         }
     };
 
     const clickImage2 = () => {
         if (pairIndex === 0) {
-            clickImage("paisajes", 1);
+            clickImage("naturaleza", 1);
         } else if (pairIndex === 1) {
-            clickImage("playas", 1);
+            clickImage("playa", 1);
         } else if (pairIndex === 2) {
-            clickImage("vidaNocturna", 1);
-        } else if (pairIndex === 3) {
             clickImage("aventura", 1);
-        } else if (pairIndex === 4) {
+        } else if (pairIndex === 3) {
             clickImage("gastronomia", 1);
+        } else if (pairIndex === 4) {
+            clickImage("aventura", 1);
         } else if (pairIndex === 5) {
-            clickImage("playas", 1);
+            clickImage("naturaleza", 1);
         } else if (pairIndex === 6) {
-            clickImage("shopping", 1);
+            clickImage("entretenimiento", 1);
         } else if (pairIndex === 7) {
+            clickImage("naturaleza", 1);
+        } else if (pairIndex === 8) {
             clickImage("aventura", 1);
         }
     };

@@ -3,12 +3,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             userSelections: {
                 cultura: 0,
-                paisajes: 0,
-                atracciones: 0,
+                naturaleza: 0,
                 gastronomia: 0,
-                playas: 0,
-                shopping: 0,
-                vidaNocturna: 0,
+                playa: 0,
+                entretenimiento: 0,
                 aventura: 0
             },
         },
@@ -26,12 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             resetUserSelections: () => {
                 const initialUserSelections = {
                     cultura: 0,
-                    paisajes: 0,
-                    atracciones: 0,
+                    naturaleza: 0,
                     gastronomia: 0,
-                    playas: 0,
-                    shopping: 0,
-                    vidaNocturna: 0,
+                    playa: 0,
+                    entretenimiento: 0,
                     aventura: 0
                 };
 

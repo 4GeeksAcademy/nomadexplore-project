@@ -5,13 +5,11 @@
         "apiID": "100XXX",
         "weights": {
             "cultura": 2,
-            "paisajes": 6,
-            "atracciones": 2,
-            "gastronomia": 6,
-            "playas": 10,
-            "shopping": 2,
-            "vidaNocturna": 7,
-            "aventura": 4
+            "naturaleza": 10,
+            "gastronomia": 1,
+            "playa": 10,
+            "entretenimiento": 1,
+            "aventura": 3
         }
     },
     {
@@ -19,14 +17,12 @@
         "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
         "apiID": "200XXX",
         "weights": {
-            "cultura": 5,
-            "paisajes": 8,
-            "atracciones": 1,
+            "cultura": 4,
+            "naturaleza": 9,
             "gastronomia": 10,
-            "playas": 1,
-            "shopping": 2,
-            "vidaNocturna": 1,
-            "aventura": 3
+            "playa": 1,
+            "entretenimiento": 2,
+            "aventura": 1
         }
     },
     {
@@ -34,14 +30,12 @@
         "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
         "apiID": "300XXX",
         "weights": {
-            "cultura": 3,
-            "paisajes": 1,
-            "atracciones": 8,
-            "gastronomia": 1,
-            "playas": 1,
-            "shopping": 9,
-            "vidaNocturna": 10,
-            "aventura": 1
+            "cultura": 4,
+            "naturaleza": 1,
+            "gastronomia": 8,
+            "playa": 1,
+            "entretenimiento": 10,
+            "aventura": 2
         }
     },
     {
@@ -49,14 +43,12 @@
         "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
         "apiID": "400XXX",
         "weights": {
-            "cultura": 9,
-            "paisajes": 3,
-            "atracciones": 7,
-            "gastronomia": 5,
-            "playas": 9,
-            "shopping": 2,
-            "vidaNocturna": 2,
-            "aventura": 3
+            "cultura": 1,
+            "naturaleza": 3,
+            "gastronomia": 2,
+            "playa": 10,
+            "entretenimiento": 9,
+            "aventura": 1
         }
     },
     {
@@ -65,13 +57,11 @@
         "apiID": "500XXX",
         "weights": {
             "cultura": 1,
-            "paisajes": 10,
-            "atracciones": 1,
+            "naturaleza": 10,
             "gastronomia": 5,
-            "playas": 1,
-            "shopping": 1,
-            "vidaNocturna": 1,
-            "aventura": 10
+            "playa": 1,
+            "entretenimiento": 1,
+            "aventura": 9
         }
     },
     {
@@ -79,14 +69,12 @@
         "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
         "apiID": "600XXX",
         "weights": {
-            "cultura": 4,
-            "paisajes": 2,
-            "atracciones": 7,
-            "gastronomia": 7,
-            "playas": 1,
-            "shopping": 4,
-            "vidaNocturna": 9,
-            "aventura": 5
+            "cultura": 8,
+            "naturaleza": 1,
+            "gastronomia": 5,
+            "playa": 1,
+            "entretenimiento": 2,
+            "aventura": 9
         }
     },
     {
@@ -94,13 +82,11 @@
         "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
         "apiID": "700XXX",
         "weights": {
-            "cultura": 7,
-            "paisajes": 2,
-            "atracciones": 9,
-            "gastronomia": 8,
-            "playas": 5,
-            "shopping": 6,
-            "vidaNocturna": 8,
+            "cultura": 9,
+            "naturaleza": 2,
+            "gastronomia": 4,
+            "playa": 2,
+            "entretenimiento": 9,
             "aventura": 1
         }
     },
@@ -109,14 +95,12 @@
         "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
         "apiID": "800XXX",
         "weights": {
-            "cultura": 9,
-            "paisajes": 1,
-            "atracciones": 3,
-            "gastronomia": 9,
-            "playas": 1,
-            "shopping": 10,
-            "vidaNocturna": 5,
-            "aventura": 2
+            "cultura": 10,
+            "naturaleza": 1,
+            "gastronomia": 8,
+            "playa": 1,
+            "entretenimiento": 5,
+            "aventura": 1
         }
     }
 ]
