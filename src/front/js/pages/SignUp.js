@@ -1,13 +1,12 @@
 import { useState } from "react";
 import React from "react";
-import "./SignUp.css"
-
+import './SignUp.css'
 
 export const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,29 +17,47 @@ export const SignUp = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
 
+      const data = await response.json(); // Analizar la respuesta del servidor
+
       if (response.ok) {
-        console.log("Registered User");
-        setMessage('¡Yeah! Welcome to Nomad Explore')
+        console.log("User created");
+        // Aquí puedes hacer algo con la respuesta exitosa, como redireccionar o mostrar un mensaje de éxito.
+        setMessage('¡Usuario creado con éxito!');
       } else {
-        console.error("Error register user. Maybe you are using an existing email?");
+        console.error("Error creating user. Maybe you are using an existing email?");
+        if (data.error === "user_exists") {
+          setMessage("El usuario ya está registrado. Por favor, inicia sesión en su lugar."); // Mensaje específico para usuario existente
+        } else {
+          setMessage("Hubo un error al crear el usuario. Por favor, intenta nuevamente.");
+        }
       }
     } catch (error) {
       console.error("Error:", error);
+      // Aquí puedes manejar cualquier error de red u otro tipo de error.
     }
   };
-
-  if (message) return <div className={`alert alert-success message-container ${!message && 'd-none'}`} role="alert">
-    {message} </div>;
-
 
   return (
     <div className="signup-container">
       <div className="form-container">
         <h2 className="form-title">WELCOME TO EXPLORE</h2>
         <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Email
