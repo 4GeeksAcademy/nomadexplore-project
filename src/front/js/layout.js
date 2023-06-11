@@ -16,6 +16,7 @@ import { Destinations } from "./pages/Destinations";
 import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
 import { Login } from "./pages/Login";
+import { FavList } from "./pages/favList";
 // import { ListMyFavs } from "./pages/listMyfavs";
 
 
@@ -40,8 +41,8 @@ const Layout = () => {
                         <Route element={<Destinations />} path="/destinations" />
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Login />} path="/login" />
-                        {/* <Route element={<Planner />} path="/planner" /> */}
-                        <Route element={<Planner />} path="/listFavs" />
+                        <Route element={<Planner />} path="/planner" />
+                        <Route element={<FavList />} path="/fav-list" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

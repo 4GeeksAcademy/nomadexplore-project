@@ -50,6 +50,37 @@ export const Recomendation = () => {
         calculateRecommendation();
     }, []);
 
+    const handleAddFav = async () => {
+
+        const token = localStorage.getItem("miTokenJWT");
+
+        if (!token) {
+            // Mmmmm... no tengo el token, no debería poder acceder a está página de React
+            navigate('/login');
+        }
+
+        const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ recommendedDestination }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            setAlertVariant("success");
+            setAlertMessage("Favorito añadido correctamente");
+            setButtonClicked(true);
+        } else {
+            setAlertVariant("danger");
+            setAlertMessage(data.error || "Error al añadir el favorito.");
+            setButtonClicked(true);
+        }
+    };
+
     return (
         <div className="recommendation-container">
             <div className="recommendation-content">
@@ -58,6 +89,14 @@ export const Recomendation = () => {
                 <p className="recommended-description">{recommendedDescription}</p>
                 <p className="recommended-description">Valor de la propiedad apiID en el json:</p>
                 <p className="recommended-description">{recommendedApiID}</p>
+                <button onClick={handleAddFav} style={{ color: 'black', margin: '10px' }}>
+                    Agregar a favoritos
+                </button>
+            {alertMessage && (
+                <div className={`alert alert-${alertVariant}`} role="alert">
+                    {alertMessage}
+                </div>
+            )}
             </div>
         </div>
     )

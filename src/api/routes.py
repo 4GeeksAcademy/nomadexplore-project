@@ -92,3 +92,52 @@ def post_favorite():
     db.session.commit()
 
     return jsonify({"success": "Destino agregado exitosamente"}), 200
+
+# LISTAR FAVORITOS
+@api.route("/favs", methods=["GET"])
+@jwt_required()
+def get_user_favs():
+
+    # Obtengo el usuario al que pertenece el token JWT
+    current_user = get_jwt_identity()
+
+    # ID de usuario
+    current_user_id = current_user['id']
+
+    # Busca todos los gatos asociados al usuario actual
+    favs = Favorites.query.filter_by(user_id=current_user_id)
+
+    # Crea una lista para almacenar los datos de los favs
+    fav_data = []
+
+    # Recorre los favs y agrega sus datos a la lista
+    for fav in favs:
+        fav_data.append({
+            "id_fav": fav.id,
+            "id_user": fav.user_id,
+            "destination": fav.destination,
+        })
+
+    return jsonify(fav_data), 200
+
+
+# DELETE FAVORITE
+@api.route('/favs/<int:id_fav>', methods=['DELETE'])
+@jwt_required()
+def delete_favorite(id_fav):
+
+    current_user = get_jwt_identity()
+
+    # ID de usuario
+    current_user_id = current_user['id']
+
+    favorite = Favorites.query.filter_by(user_id=current_user_id, id=id_fav).first()
+
+    if favorite is None:
+        return jsonify({'msg' : 'funky favorito no encontrado'}), 404
+
+    db.session.delete(favorite)
+    db.session.commit()
+
+    response_body = {'msg' : 'funky favorito eliminado'}
+    return jsonify(response_body), 200
