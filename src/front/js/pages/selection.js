@@ -1,15 +1,27 @@
-import React, { useState,useEffect ,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { imgCultura, imgCompras, imgGastronomia, imgEnologia, imgUrban, imgRelax, imgVidaNoc, imgMuseos } from '../data/images'
-import destinationWeights from '../data/destinations.json';
+// import '../../styles/selection.css'
+import imagesDB from '../data/imagesDB.json';
+import { string } from "prop-types";
 
+const randomUrl = (categoria) => {
+    let string = 'url'
+    let length = Object.keys(imagesDB[0][categoria]).length
+    string += Math.floor(Math.random() * length) + 1
+    return imagesDB[0][categoria][string]
+}
 
 const imagePairs = [
-    { img1: imgCultura, img2: imgCompras },
-    { img1: imgGastronomia, img2: imgEnologia },
-    { img1: imgUrban, img2: imgRelax },
-    { img1: imgVidaNoc, img2: imgMuseos },
+    { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
+    { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
+    { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
+    { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
+    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+    { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
+    { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
+    { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
+    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
 ];
 
 export const Selection = () => {
@@ -35,46 +47,56 @@ export const Selection = () => {
 
     const clickImage = (category, value) => {
         actions.addUserSelection(category, value);
+        console.log('store', store.userSelections);
         setNextPair();
     };
 
     const clickImage1 = () => {
         if (pairIndex === 0) {
-            clickImage("cultura", 10);
+            clickImage("cultura", 1);
         } else if (pairIndex === 1) {
-            clickImage("gastronomia", 10);
+            clickImage("gastronomia", 1);
         } else if (pairIndex === 2) {
-            clickImage("urban", 10);
+            clickImage("entretenimiento", 1);
         } else if (pairIndex === 3) {
-            clickImage("vidaNocturna", 10);
+            clickImage("cultura", 1);
+        } else if (pairIndex === 4) {
+            clickImage("playa", 1);
+        } else if (pairIndex === 5) {
+            clickImage("entretenimiento", 1);
+        } else if (pairIndex === 6) {
+            clickImage("cultura", 1);
+        } else if (pairIndex === 7) {
+            clickImage("gastronomia", 1);
+        } else if (pairIndex === 8) {
+            clickImage("playa", 1);
         }
     };
 
     const clickImage2 = () => {
         if (pairIndex === 0) {
-            clickImage("compras", 10);
+            clickImage("naturaleza", 1);
         } else if (pairIndex === 1) {
-            clickImage("enologia", 10);
+            clickImage("playa", 1);
         } else if (pairIndex === 2) {
-            clickImage("relax", 10);
+            clickImage("aventura", 1);
         } else if (pairIndex === 3) {
-            clickImage("museos", 10);
+            clickImage("gastronomia", 1);
+        } else if (pairIndex === 4) {
+            clickImage("aventura", 1);
+        } else if (pairIndex === 5) {
+            clickImage("naturaleza", 1);
+        } else if (pairIndex === 6) {
+            clickImage("entretenimiento", 1);
+        } else if (pairIndex === 7) {
+            clickImage("naturaleza", 1);
+        } else if (pairIndex === 8) {
+            clickImage("aventura", 1);
         }
     };
 
     return (
         <div className="destinations-container">
-            {/* {pairIndex === imagePairs.length ? (
-                <div clasName="container-recomendation">
-                    <h2 className="text-recomendation">You must go on to...</h2>
-                    <button className="btn-result" onClick={handleRecommendationClick}>
-                        Click for result
-                    </button>
-                    <h2 className="final-result"> {recommendedDestination}
-                        <button className="btn-fav"><i class="fa-regular fa-star"></i></button>
-                    </h2>
-                </div>
-            ) : ( */}
                 <div className="quiz-container">
                     <h1 className="title-destinations">THIS OR THAT</h1>
                     <div className="subtitle-destinations">
@@ -90,7 +112,6 @@ export const Selection = () => {
                             alt="Imagen 2" className="image" />
                     </div>
                 </div>
-            {/* )} */}
         </div>
     );
 };

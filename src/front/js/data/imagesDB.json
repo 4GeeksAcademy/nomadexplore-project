@@ -1,0 +1,40 @@
+[
+    {
+        "cultura": {
+            "url1": "https://media.istockphoto.com/id/148543868/es/foto/parque-g%C3%BCell-en-barcelona-espa%C3%B1a.jpg?s=2048x2048&w=is&k=20&c=ujXQR7ZpYtvbTCK5UgW-O0Wq1b-TS6OOArypkH9R640=",
+            "url2": "https://media.istockphoto.com/id/1470491218/es/foto/vista-a%C3%A9rea-del-arco-del-triunfo-en-barcelona-espa%C3%B1a.jpg?s=2048x2048&w=is&k=20&c=3fKT3V9f5gVeZiOVYMq1tk5bu8cKQsl6w03M0kqxWts=",
+            "url3": "https://media.istockphoto.com/id/491698914/es/foto/gran-palacio-de-wat-phra-keaw.jpg?s=2048x2048&w=is&k=20&c=ma6TwadBmY_Fo0GirwZK1inLx60XLJGktstOK0DdJ0M=",
+            "url4": "https://media.istockphoto.com/id/1152106462/es/foto/arquitectura-en-tokio.jpg?s=2048x2048&w=is&k=20&c=NNYJyWKr6GcQWLIH22y_fkloKmaQbKGpCMWG5Mt-L5E="
+        },
+        "naturaleza": {
+            "url1": "https://media.istockphoto.com/id/514067938/es/foto/alpaca-en-la-patagonia-chileno.jpg?s=2048x2048&w=is&k=20&c=ZxkTBRBqHfEbwMV6Y5CP2TmQ2SizhaJmnB0aDTjI7Wk=",
+            "url2": "https://media.istockphoto.com/id/1148609071/es/foto/vista-de-la-carretera-a-fitz-roy-en-la-patagonia.jpg?s=2048x2048&w=is&k=20&c=lCEAIdJicRIkKafAX3h3lgqmPMnnTNe9YJbuNEM2pdI=",
+            "url3": "https://media.istockphoto.com/id/169938245/es/foto/road-hasta-la-belleza-de-toscana.jpg?s=2048x2048&w=is&k=20&c=VwRxU_cdculn_Cq69auA8DAKEagPhVC3HS8bbkQsHSE=",
+            "url4": "https://media.istockphoto.com/id/1134445458/es/foto/vi%C3%B1edos-y-paisajes-de-la-toscana-italia.jpg?s=2048x2048&w=is&k=20&c=FS5pCWs2uuhKnZbQc2kwHeIxzKWGaSpJ-eiU-h2pvGA="
+        },
+        "gastronomia": {
+            "url1": "https://media.istockphoto.com/id/611075624/es/foto/comida-mediterr%C3%A1nea-alfesco.jpg?s=2048x2048&w=is&k=20&c=jKmPbh8DpyZFFsTxFby6xE5aHLfeRiq0wh_IgMAv08Y=",
+            "url2": "https://media.istockphoto.com/id/184366281/es/foto/paella-de-pescados-y-mariscos.jpg?s=2048x2048&w=is&k=20&c=dpTMNzXutb1SFFEpGVDUhzYNxHibIi4b6NzZ4VXiroo=",
+            "url3": "https://media.istockphoto.com/id/1153738783/es/foto/grupo-de-amigos-pidiendo-comida-en-japon%C3%A9s-izakaya.jpg?s=2048x2048&w=is&k=20&c=vhGjH_zKcHKo6jT3PnxS56fADkmp6zdUrNM-z-iHy8s=",
+            "url4": "https://media.istockphoto.com/id/155378392/es/foto/el-vino-y-el-queso-de-toscana.jpg?s=2048x2048&w=is&k=20&c=zyrk48FALoFeLNDEFPBo6x0LDcVvBgnf2w5evJhSr2s="
+        },
+        "playa": {
+            "url1": "https://media.istockphoto.com/id/928161554/es/foto/choza-del-%C3%A1rbol-de-palma-en-la-playa-en-cancum-mexico.jpg?s=2048x2048&w=is&k=20&c=tG_SOWwkvgramSPpv67l4pYSHTpQ-eguyuXQDgdipLA=",
+            "url2": "https://media.istockphoto.com/id/928161672/es/foto/choza-del-%C3%A1rbol-de-palma-en-la-playa-en-cancum-mexico.jpg?s=2048x2048&w=is&k=20&c=E6Opin8ksqeklnXTO8q4O6bwGvrGCa_3ezqi9T0luhQ=",
+            "url3": "https://media.istockphoto.com/id/1421035568/es/foto/vista-a%C3%A9rea-de-la-isla-de-antipaxos-cerca-de-corf%C3%BA-grecia.jpg?s=2048x2048&w=is&k=20&c=URKYQhWg0-1sdy74SKjlN8glgFy55OiSVRHitG5UYvQ=",
+            "url4": "https://media.istockphoto.com/id/1365898408/es/foto/vista-de-la-ventana-de-santorini-con-flores.jpg?s=2048x2048&w=is&k=20&c=EYu3NwSR9Rstr_N2Z9xFpaTXwhuIIj9Czwueb0AqnJs="
+        },
+        "entretenimiento": {
+            "url1": "https://media.istockphoto.com/id/136144077/es/foto/cartel-de-broadway.jpg?s=2048x2048&w=is&k=20&c=r2Xpedd23EuTntG5ArtclBvYUKWOdFtWtX3ZnO38CRs=",
+            "url2": "https://media.istockphoto.com/id/1220486437/es/foto/papel-mexicano-tradicional-para-la-decoraci%C3%B3n-en-las-calles-de-m%C3%A9xico.jpg?s=2048x2048&w=is&k=20&c=zfDwZ7k_fko2hvvLKUxhm4Q4Me3IDk-Oak-I532tQnw=",
+            "url3": "https://media.istockphoto.com/id/1055157620/es/foto/tradicionales-fuegos-artificiales-calle.jpg?s=2048x2048&w=is&k=20&c=1DV2u9LbrV52nCXD6aPubmzwccY8FE898ipfAB3AbZA=",
+            "url4": "https://media.istockphoto.com/id/1464080529/es/foto/la-calle-para-mochileros-de-la-ciudad-de-ho-chi-minh-con-multitudes-de-personas-en-la-noche-de.webp?s=1024x1024&w=is&k=20&c=SUSNuZd7xplpHN1CDJuZLoGqdPkffsV0-q7NdkSDDuI="
+        },
+        "aventura": {
+            "url1": "https://media.istockphoto.com/id/941275746/es/foto/mujer-palas-kayak-en-el-lago-con-agua-color-turquesa.jpg?s=2048x2048&w=is&k=20&c=VIO5t3fa_B-TCwj7TSqtMuxv-F_do2rS5g0USkkyL_o=",
+            "url2": "https://media.istockphoto.com/id/1132442986/es/foto/back-view-mujer-asi%C3%A1tica-turista-mochilero-viaje-en-khao-san-road-bangkok-tailandia.jpg?s=2048x2048&w=is&k=20&c=gQ9iGa5AoNbvoAaiEjsqXhNdIPN9-5jMqK4ZovRD2G4=",
+            "url3": "https://media.istockphoto.com/id/1198107702/es/foto/familia-disfrutando-del-senderismo-juntos.jpg?s=2048x2048&w=is&k=20&c=U9qcwutkq2jaImSatKFGEqmA3-ncROn6oyHX9Q0ot7M=",
+            "url4": "https://media.istockphoto.com/id/1454056753/es/foto/torres-del-paine-peaks.jpg?s=2048x2048&w=is&k=20&c=RkfC7aT6P97VV2aaNpaU6Hh-x2f3QaAQLqUCLZyenw8="
+        }
+    }
+]

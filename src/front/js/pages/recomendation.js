@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
 import "./recomendation.css"
@@ -7,6 +8,11 @@ export const Recomendation = () => {
     const { store, actions } = useContext(Context);
     const [recommendedDestination, setRecommendedDestination] = useState(null);
     const [recommendedDescription, setRecommendedDescription] = useState(null);
+    const [recommendedApiID, setRecommendedApiID] = useState(null);
+    const [alertVariant, setAlertVariant] = useState("");
+    const [alertMessage, setAlertMessage] = useState("");
+    const [buttonClicked, setButtonClicked] = useState(false);
+
 
     console.log('desde el funky flux baby:', store.userSelections);
 
@@ -14,10 +20,11 @@ export const Recomendation = () => {
         let maxScore = 0;
         let recommendedDestination = null;
         let recommendedDescription = null;
+        let recommendedApiID = null;
 
         for (const i in destinationWeights) {
             const destinationWeight = destinationWeights[i];
-            const { destination, description, weights } = destinationWeight;
+            const { destination, description, weights, apiID } = destinationWeight;
             let score = 0;
 
             for (const category in store.userSelections) {
@@ -30,10 +37,12 @@ export const Recomendation = () => {
                 maxScore = score;
                 recommendedDestination = destination;
                 recommendedDescription = description;
+                recommendedApiID = apiID;
             }
         }
         setRecommendedDestination(recommendedDestination);
         setRecommendedDescription(recommendedDescription);
+        setRecommendedApiID(recommendedApiID);
         console.log("Recommended Destination:", recommendedDestination); // Imprimir destino recomendado en la consola
     };
 
@@ -44,9 +53,11 @@ export const Recomendation = () => {
     return (
         <div className="recommendation-container">
             <div className="recommendation-content">
-                <h2>Tu destino recomendado es cc:</h2>
+                <h2>Tu destino recomendado es:</h2>
                 <h1 className="recommended-destination">{recommendedDestination}</h1>
                 <p className="recommended-description">{recommendedDescription}</p>
+                <p className="recommended-description">Valor de la propiedad apiID en el json:</p>
+                <p className="recommended-description">{recommendedApiID}</p>
             </div>
         </div>
     )
