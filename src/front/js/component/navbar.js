@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css"
 
 export const Navbar = () => {
+
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
+
 	return (
 		<nav className="navbar">
 			<div className="navbar-container">
@@ -15,7 +23,11 @@ export const Navbar = () => {
 					</a>
 					<i className="fa-brands fa-facebook"></i>
 				</button>
-				<div className="navbar-buttons-container">
+				<button className="navbar-menu-button" onClick={toggleMenu}>
+					<i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+				</button>
+
+				<div className={`navbar-links-container ${isMenuOpen ? "navbar-links-dropdown" : ""}`}>
 					<Link to="/aboutus" className="navbar-link">
 						About Us
 					</Link>
@@ -29,12 +41,8 @@ export const Navbar = () => {
 						Login
 					</Link>
 					<Link to="/planner" className="navbar-link">
-						Planner
+						Fav Trips
 					</Link>
-					<Link to="/" className="navbar-link">
-						<i className="fa-solid fa-star"></i>
-					</Link>
-
 				</div>
 			</div>
 		</nav>

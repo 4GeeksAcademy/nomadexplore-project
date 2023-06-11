@@ -15,14 +15,10 @@ export const Home = () => {
 					<h1>DISCOVER AND FIND THE PERFECT DESTINATION FOR U</h1>
 					<div className="container-button">
 						<Link to="/signup">
-							<button className="btn-registrer">REGISTRER AND ENJOY</button>
+							<button className="btn-register">REGISTER AND ENJOY</button>
 						</Link>
 					</div>
 				</div>
-			</div>
-			<div className="card-image-container"></div>
-			<div className="card">
-				<img src="https://media.istockphoto.com/id/682070916/es/foto/trabajador-balineso-del-campo-del-arroz-en-el-campo-del-arroz.jpg?s=612x612&w=0&k=20&c=P-1lOXsYyMfHKsEH4_wnKVisrEvDEhlznEeENaO0Tro=" alt="Card Image" />
 			</div>
 		</div>
 	);

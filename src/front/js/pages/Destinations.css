@@ -49,12 +49,13 @@
 .quiz-container {
     font-size: 16px;
     font-weight: 500;
-    padding: 30px 50px;
+    padding: 2rem;
     border-radius: 6px;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.835);
-    width: 800px;
-    height: 450px;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
     color: white;
     backdrop-filter: blur(10px);
 }
@@ -64,7 +65,7 @@
 .title-destinations {
     text-align: center;
     color: rgb(255, 255, 255);
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 24px;
     align-items: center;
     font-weight: 900;
@@ -75,7 +76,7 @@
 .subtitle-destinations {
     text-align: center;
     color: rgb(128, 244, 61);
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: 24px;
     font-style: italic;
@@ -89,9 +90,12 @@
   }
   
    .image {
-    width: 50%; 
-    height: 200px;
+    flex: 1;
+    max-width: 50%; 
+    height: auto;
     margin-right: 20px; 
+    margin-left: 17px;
+    margin-bottom: 1rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
@@ -108,14 +112,16 @@
   align-items: center;
   display: flex;
   margin-top: 0;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
  .btn-fav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
   
  }
 

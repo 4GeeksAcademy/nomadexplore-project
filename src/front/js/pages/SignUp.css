@@ -12,7 +12,7 @@
     background-size: cover;
    
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         img {
             width: 100%;
             height: auto;
@@ -26,25 +26,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
-    width: 370px;
-    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 25rem;
+    border-radius: 1.2rem;
     backdrop-filter: blur(48px);
 }
 
 .form-title {
     color: white;
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 900;
 }
 
 .form-label {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 6px;
-    margin-top: 12px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    margin-top: 0.6rem;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.12);
     width: 100%;
@@ -61,18 +62,18 @@
 }
 
 .form-control::placeholder {
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 500;
     text-transform: capitalize;
 }
 
 .btn-form {
     margin-top: 18px;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 900;
-    padding: 12px;
+    padding: 0.8rem;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     background-color: rgba(0, 0, 0, 0.601);
     color: white;
     border: 2px solid white;
@@ -86,10 +87,10 @@
 }
 
 .form-hyperlink {
-    font-size: 12px;
+    font-size: 0.6rem;
     font-weight: 600;
     color: white;
-    margin-top: 12px;
+    margin-top: 0.6rem;
     color: rgba(235, 229, 229, 0.834);
     transition: 12s ease-in-out;
 }
@@ -143,7 +144,6 @@
 
 .planner-title {
     justify-content: center;
-    display: flex;
     align-items: center;
     color: white;
     font-weight: 700;
