@@ -32,7 +32,7 @@ export const ListMyFavs = () => {
 
 
   useEffect(() => {
-    // const token = localStorage.getItem("miTokenJWT");
+    const token = localStorage.getItem("miTokenJWT");
     if (!token) {
         // No se encontró el token, redirige al usuario a la página principal
         navigate("/");
@@ -48,7 +48,7 @@ export const ListMyFavs = () => {
         {
           method: "DELETE",
           headers: {
-            // Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
           },
         }
       );

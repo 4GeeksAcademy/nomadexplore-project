@@ -151,11 +151,15 @@ def post_favorite():
 
 #DELETE FAVORITE
 @api.route('/favs/<int:id_fav>', methods=['DELETE'])
+@jwt_required()
 def delete_favorite(id_fav):
 
-    user_id = current_logged_user_id
+    current_user = get_jwt_identity()
 
-    favorite = Favorites.query.filter_by(user_id=user_id, id=id_fav).first()
+    # ID de usuario
+    current_user_id = current_user['id']
+
+    favorite = Favorites.query.filter_by(user_id=current_user_id, id=id_fav).first()
 
     if favorite is None:
         return jsonify({'msg' : 'funky favorito no encontrado'}), 404
