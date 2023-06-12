@@ -25,13 +25,13 @@ export const SignUp = () => {
       if (response.ok) {
         console.log("User created");
         // Aquí puedes hacer algo con la respuesta exitosa, como redireccionar o mostrar un mensaje de éxito.
-        setMessage('¡Usuario creado con éxito!');
+        setMessage('¡User created sucessfully!');
       } else {
         console.error("Error creating user. Maybe you are using an existing email?");
         if (data.error === "user_exists") {
-          setMessage("El usuario ya está registrado. Por favor, inicia sesión en su lugar."); // Mensaje específico para usuario existente
+          setMessage("The user is already registered. Please log in instead."); // Mensaje específico para usuario existente
         } else {
-          setMessage("Hubo un error al crear el usuario. Por favor, intenta nuevamente.");
+          setMessage("There was an error creating the user. Please try again.");
         }
       }
     } catch (error) {

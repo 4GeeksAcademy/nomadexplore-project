@@ -66,7 +66,7 @@ export const Navbar = () => {
 								Select Destination
 							</Link>
 							<Link to="/planner" className="navbar-link">
-								Favorites
+								Plan your trip
 							</Link>
 							<br />
 							<button onClick={handleLogout}>
