@@ -65,7 +65,7 @@
         }
     },
     {
-        "destination": "Bankok",
+        "destination": "Bangkok",
         "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
         "apiID": "600XXX",
         "weights": {
