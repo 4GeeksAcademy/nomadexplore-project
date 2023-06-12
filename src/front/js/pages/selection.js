@@ -4,29 +4,30 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import imagesDB from '../data/imagesDB.json';
 import { string } from "prop-types";
 
-const randomUrl = (categoria) => {
-    let string = 'url'
-    let length = Object.keys(imagesDB[0][categoria]).length
-    string += Math.floor(Math.random() * length) + 1
-    return imagesDB[0][categoria][string]
-}
 
-const imagePairs = [
-    { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
-    { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
-    { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
-    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
-    { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
-    { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
-];
+const randomUrl = (categoria) => {
+    const categoryImages = imagesDB[0][categoria];
+    const imageKeys = Object.keys(categoryImages);
+    const randomKey = imageKeys[Math.floor(Math.random() * imageKeys.length)];
+    return categoryImages[randomKey];
+  };
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate(); // hook que funciona como link pero se puede usar en js
     const [pairIndex, setPairIndex] = useState(0);
+
+    const imagePairs = [
+        { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
+        { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
+        { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
+        { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+        { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
+        { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+    ];
     
     useEffect(() => {
         actions.resetUserSelections();
