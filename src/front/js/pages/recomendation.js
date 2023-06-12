@@ -12,6 +12,7 @@ export const Recomendation = () => {
     const [alertVariant, setAlertVariant] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
     const [buttonClicked, setButtonClicked] = useState(false);
+    const [weatherDescription, setWeatherDescription] = useState("");
 
 
     console.log('desde el funky flux baby:', store.userSelections);
@@ -49,6 +50,26 @@ export const Recomendation = () => {
     useEffect(() => {
         calculateRecommendation();
     }, []);
+
+    useEffect(() => {
+        calculateRecommendation();
+        apiCall();
+    }, [recommendedDestination]);
+
+    const api = {
+        key: "&appid=0dc5a4cf75951d34619605b76e3b6f73",
+        base: "https://api.openweathermap.org/data/2.5/weather?q="
+        }
+    
+        const apiCall = () => {
+            console.log(recommendedDestination,)
+            fetch(api.base + recommendedDestination + api.key)
+                .then((res) => res.json())
+                .then((result) => {
+                    const weather = result.weather[0].description;
+                    setWeatherDescription(weather);
+                });
+            };
 
     const handleAddFav = async () => {
 
