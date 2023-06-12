@@ -6,7 +6,6 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Selection } from "./pages/selection";
 import { AboutUs } from "./pages/AboutUs"
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -16,8 +15,6 @@ import { Destinations } from "./pages/Destinations";
 import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
 import { Login } from "./pages/Login";
-import { FavList } from "./pages/favList";
-// import { ListMyFavs } from "./pages/listMyfavs";
 
 
 //create your first component
@@ -42,7 +39,6 @@ const Layout = () => {
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Planner />} path="/planner" />
-                        <Route element={<FavList />} path="/fav-list" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
