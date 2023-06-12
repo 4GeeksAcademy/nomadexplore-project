@@ -73,7 +73,7 @@ export const Navbar = () => {
 									Selection
 								</Link>
 								<Link to="/listFavs" className="nav-link">
-									Planner
+									Plan your Trip
 								</Link>
 								<a className="nav-link" href="#" onClick={handleLogout}>
 									Hello: {loggedUserName}- Logout
