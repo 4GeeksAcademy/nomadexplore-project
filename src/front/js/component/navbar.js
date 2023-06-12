@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const [loggedUserEmail, setLoggedUserEmail] = useState('');
 	const [loggedUserName, setLoggedUserName] = useState('');
 
-// console.log('name local', loggedUserName);
+	// console.log('name local', loggedUserName);
 
 	const navigate = useNavigate();
 
@@ -43,31 +43,55 @@ export const Navbar = () => {
 	};
 
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+		<nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+			<div className="container-fluid">
+				<Link to="/" className="navbar-brand">
+					NOMAD EXPLORE
 				</Link>
-				{tokenExists && (
-					<>
-						<Link to="/listFavs">
-							<button className="btn btn-primary">Mis Favoritos</button>
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span className="navbar-toggler-icon" />
+				</button>
+				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div className="navbar-nav ms-auto">
+						<Link to="/" className="nav-link">
+							Social Media
 						</Link>
-						<button className="btn btn-primary" onClick={handleLogout}>
-							Hello: {loggedUserName}- Logout
-						</button>
-					</>
-				)}
-				{!tokenExists && (
-					<>
-						<Link to="/login">
-							<button className="btn btn-primary">Login</button>
+						<Link to="/" className="nav-link">
+							About Us
 						</Link>
-						<Link to="/signup">
-							<button className="btn btn-primary">Signup</button>
-						</Link>
-					</>
-				)}
+						{tokenExists && (
+							<>
+								<Link to="/selection" className="nav-link">
+									Selection
+								</Link>
+								<Link to="/listFavs" className="nav-link">
+									Planner
+								</Link>
+								<a className="nav-link" href="#" onClick={handleLogout}>
+									Hello: {loggedUserName}- Logout
+								</a>
+							</>
+						)}
+						{!tokenExists && (
+							<>
+								<Link to="/login" className="nav-link">
+									Login
+								</Link>
+								<Link to="/signup" className="nav-link">
+									Signup
+								</Link>
+							</>
+						)}
+					</div>
+				</div>
 			</div>
 		</nav>
 	);
