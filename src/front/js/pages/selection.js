@@ -5,14 +5,20 @@ import '../../styles/selection.css'
 import imagesDB from '../data/imagesDB.json';
 import { string } from "prop-types";
 
-// console.log('length:', Object.keys(imagesDB[0].cultura).length);
 
 const randomUrl = (categoria) => {
-    let string = 'url'
-    let length = Object.keys(imagesDB[0][categoria]).length
-    string += Math.floor(Math.random() * length) + 1
-    return imagesDB[0][categoria][string]
-}
+    const categoryImages = imagesDB[0][categoria];
+    const imageKeys = Object.keys(categoryImages);
+    const randomKey = imageKeys[Math.floor(Math.random() * imageKeys.length)];
+    return categoryImages[randomKey];
+  };
+
+// const randomUrl = (categoria) => {
+//     let string = 'url'
+//     let length = Object.keys(imagesDB[0][categoria]).length
+//     string += Math.floor(Math.random() * length) + 1
+//     return imagesDB[0][categoria][string]
+// }
 
 const imagePairs = [
     { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
@@ -30,6 +36,7 @@ export const Selection = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
     const [pairIndex, setPairIndex] = useState(0);
+    const [randomUrls, setRandomUrls] = useState([]);
 
     useEffect(() => {
         actions.resetUserSelections();

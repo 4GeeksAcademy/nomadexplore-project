@@ -71,7 +71,7 @@ export const ListMyFavs = () => {
     if (isDeleteSuccess) {
       timer = setTimeout(() => {
         setIsDeleteSuccess(false);
-      }, 3000);
+      }, 2000);
     }
     return () => {
       clearTimeout(timer);
@@ -79,7 +79,7 @@ export const ListMyFavs = () => {
   }, [isDeleteSuccess]);
 
   useEffect(() => {
-    if (isDeleteSuccess) {
+    if (isDeleteSuccess || favs.length === 0) {
       fetchFavs(); // Llamar al fetch después de borrar un favorito
     }
   }, [isDeleteSuccess]);
