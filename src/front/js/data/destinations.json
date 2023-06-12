@@ -1,8 +1,8 @@
 [
     {
-        "destination": "Islas Griegas",
-        "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
-        "apiID": "100XXX",
+        "destination": "Greek Islands",
+        "description": "Mediterranean paradise with beautiful beaches, rich history, and culture. Popular tourist destinations with unique charm and something for everyone.",
+        "apiID": "264371",
         "weights": {
             "cultura": 2,
             "naturaleza": 10,
@@ -13,9 +13,9 @@
         }
     },
     {
-        "destination": "La Toscana",
-        "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
-        "apiID": "200XXX",
+        "destination": "Toscana",
+        "description": "Charming Italian region. Breathtaking landscapes, Renaissance history. Delicious cuisine and wines.",
+        "apiID": "3176959",
         "weights": {
             "cultura": 4,
             "naturaleza": 9,
@@ -27,8 +27,8 @@
     },
     {
         "destination": "New York",
-        "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
-        "apiID": "300XXX",
+        "description": "The city that never sleeps. Iconic and vibrant as ever.",
+        "apiID": "5128581",
         "weights": {
             "cultura": 4,
             "naturaleza": 1,
@@ -38,10 +38,11 @@
             "aventura": 2
         }
     },
+    
     {
-        "destination": "Rivera Maya",
-        "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
-        "apiID": "400XXX",
+        "destination": "Mayan Riviera",
+        "description": "Caribbean paradise with beaches, Mayan ruins, and exciting activities. Luxury and relaxation in a tropical environment.",
+        "apiID": "2003141", 
         "weights": {
             "cultura": 1,
             "naturaleza": 3,
@@ -53,8 +54,8 @@
     },
     {
         "destination": "Patagonia",
-        "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
-        "apiID": "500XXX",
+        "description": "Majestic nature in the south of South America. Mountains, glaciers, and wildlife. Adventure and serenity in a unique destination.",
+        "apiID": "3860443",
         "weights": {
             "cultura": 1,
             "naturaleza": 10,
@@ -66,8 +67,8 @@
     },
     {
         "destination": "Bangkok",
-        "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
-        "apiID": "600XXX",
+        "description": "Vibrant Thai city. Dazzling temples, lively markets, and impressive skyscrapers. Delicious street food and exciting nightlife. A captivating metropolis.",
+        "apiID": "1609350",
         "weights": {
             "cultura": 8,
             "naturaleza": 1,
@@ -79,8 +80,8 @@
     },
     {
         "destination": "Barcelona",
-        "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
-        "apiID": "700XXX",
+        "description": "Cosmopolitan city with impressive architecture, beaches, and vibrant nightlife. The perfect blend of culture, history, and gastronomy.",
+        "apiID": "3128760",
         "weights": {
             "cultura": 9,
             "naturaleza": 2,
@@ -92,8 +93,8 @@
     },
     {
         "destination": "Tokyo",
-        "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
-        "apiID": "800XXX",
+        "description": "Vibrant Japanese metropolis. Futuristic, tradition, and culture. Impressive architecture, delicious food. Unique experience.",
+        "apiID": "1850147",
         "weights": {
             "cultura": 10,
             "naturaleza": 1,

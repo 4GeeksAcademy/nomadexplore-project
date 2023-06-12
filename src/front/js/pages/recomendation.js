@@ -103,22 +103,23 @@ export const Recomendation = () => {
     };
 
     return (
-        <div className="jumbotron recommendation-container">
-         <div className="jumbotron-content">
-             <h2 className="jumbotron-heading">Tu destino recomendado es:</h2>
-             <h1 className="jumbotron-destination">{recommendedDestination}</h1>
-         <p className="jumbotron-description">{recommendedDescription}</p>
-        <p className="jumbotron-description">Valor de la propiedad apiID en el json:</p>
-         <p className="jumbotron-description">{recommendedApiID}</p>
-         <button className="add-fav-button" onClick={handleAddFav}>
-      Agregar a favoritos
-    </button>
-    {alertMessage && (
-      <div className={`alert jumbotron-alert`} role="alert">
-        {alertMessage}
-      </div>
-    )}
-  </div>
-</div>
-    )
+        <div className="jumbotron recommendation-container fade-in-bg">
+          <div className="jumbotron-content">
+            <h2 className="jumbotron-heading">Your recommended destination is:</h2>
+            <h1 className="jumbotron-destination">{recommendedDestination}</h1>
+            <p className="jumbotron-description">{recommendedDescription}</p>
+            <p className="jumbotron-description">Valor de la propiedad apiID en el json:</p>
+            <p className="jumbotron-description">{recommendedApiID}</p>
+            <button className="add-fav-button" onClick={handleAddFav}>
+              Agregar a favoritos
+            </button>
+            {alertMessage && (
+              <div className={`alert jumbotron-alert`} role="alert">
+                {alertMessage}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+      
 }
