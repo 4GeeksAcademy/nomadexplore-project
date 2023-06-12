@@ -4,12 +4,13 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import imagesDB from '../data/imagesDB.json';
 import { string } from "prop-types";
 
+
 const randomUrl = (categoria) => {
-    let string = 'url'
-    let length = Object.keys(imagesDB[0][categoria]).length
-    string += Math.floor(Math.random() * length) + 1
-    return imagesDB[0][categoria][string]
-}
+    const categoryImages = imagesDB[0][categoria];
+    const imageKeys = Object.keys(categoryImages);
+    const randomKey = imageKeys[Math.floor(Math.random() * imageKeys.length)];
+    return categoryImages[randomKey];
+  };
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
