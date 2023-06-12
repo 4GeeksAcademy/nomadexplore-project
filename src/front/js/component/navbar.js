@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import "./navbar.css"
 
 export const Navbar = () => {
-
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
-
 
 	return (
 		<nav className="navbar">
@@ -19,7 +17,12 @@ export const Navbar = () => {
 				</Link>
 				<button className="social-buttons">
 					<i className="fa-brands fa-instagram"></i>
-					<a href="https://twitter.com/nomadexplore" style={{ color: "white" }} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i>
+					<a
+						href="https://twitter.com/nomadexplore"
+						style={{ color: "white" }}
+						target="_blank"
+						rel="noopener noreferrer">
+						<i className="fa-brands fa-twitter"></i>
 					</a>
 					<i className="fa-brands fa-facebook"></i>
 				</button>
@@ -27,7 +30,8 @@ export const Navbar = () => {
 					<i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
 				</button>
 
-				<div className={`navbar-links-container ${isMenuOpen ? "navbar-links-dropdown" : ""}`}>
+				<div className={`navbar-links-container ${isMenuOpen ? "navbar-links-dropdown" : ""
+					}`}>
 					<Link to="/aboutus" className="navbar-link">
 						About Us
 					</Link>
