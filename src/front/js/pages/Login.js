@@ -48,7 +48,6 @@ export const Login = () => {
         localStorage.setItem("loggedUserName", name);
 
         setLoginSuccess(true);
-
         setEmail('');
         setPassword('');
         navigate('/selection')
