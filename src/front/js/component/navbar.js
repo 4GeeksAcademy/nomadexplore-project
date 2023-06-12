@@ -75,7 +75,7 @@ export const Navbar = () => {
 								<Link to="/selection" className="nav-link">
 									Selection
 								</Link>
-								<Link to="/listFavs" className="nav-link">
+								<Link to="/planner" className="nav-link">
 									Planner
 								</Link>
 								<a className="nav-link" href="#" onClick={handleLogout}>
