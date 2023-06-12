@@ -1,9 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.recommendation-container {
+.jumbotron {
   position: relative;
   height: 100vh;
   background-color: #000000;
@@ -12,7 +7,7 @@ body {
   justify-content: center;
 }
 
-.recommendation-content {
+.jumbotron-content {
   position: relative;
   text-align: center;
   padding: 40px;
@@ -22,19 +17,19 @@ body {
   max-width: 500px;
 }
 
-.recommendation-heading {
+.jumbotron-heading {
   font-size: 24px;
   color: #333333;
   margin-bottom: 20px;
 }
 
-.recommended-destination {
+.jumbotron-destination {
   font-size: 36px;
   color: #ff9800;
   margin-bottom: 20px;
 }
 
-.recommended-description {
+.jumbotron-description {
   font-size: 20px;
   color: #666666;
   margin-bottom: 30px;
@@ -55,7 +50,7 @@ body {
   background-color: #f57c00;
 }
 
-.alert {
+.jumbotron-alert {
   background-color: #f44336;
   color: #ffffff;
   padding: 12px;
