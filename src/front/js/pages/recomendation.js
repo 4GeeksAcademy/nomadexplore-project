@@ -26,7 +26,7 @@ export const Recomendation = () => {
             for (const category in store.userSelections) {
                 score += store.userSelections[category] * weights[category];
             }
-            console.log(destination+":"+ score);
+            console.log(destination + ":" + score);
 
             if (score > maxScore) {
                 maxScore = score;
@@ -75,9 +75,47 @@ export const Recomendation = () => {
         }
     };
 
+    
+    const api = {
+        key: "&appid=0dc5a4cf75951d34619605b76e3b6f73",
+        base: "https://api.openweathermap.org/data/2.5/weather?q="
+    }
+    const apiCall = () => {
+        fetch(api.base + recommendedDestination + api.key)
+            .then((res) => res.json())
+            .then((result) => {
+                const weather = result.weather[0].description;
+                setWeatherDescription(weather);
+            });
+    };
+
+
     return (
         <div>
-            <div style={{ textAlign: "center", margin: "40px" }}>
+            <div className="container py-4">
+                <div className="p-5 mb-4 bg-light rounded-3">
+                    <div className="container-fluid py-5">
+                        <h1 className="display-5 fw-bold text-dark">{recommendedDestination}</h1>
+                        <p className="col-md-8 fs-4 text-dark">
+                            {recommendedDescription}
+                        </p>
+
+                        <button className="btn btn-primary btn-lg" type="button" onClick={handleAddFav}>
+                            Me gusta
+                        </button>
+                        {alertMessage && (
+                            <div className={`alert alert-${alertVariant}`} role="alert">
+                                {alertMessage}
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <footer className="pt-3 mt-4 text-muted border-top">© 2023</footer>
+            </div>
+
+
+
+            {/* <div style={{ textAlign: "center", margin: "40px" }}>
                 <h2>Tu destino recomendado es:</h2>
                 <h1>{recommendedDestination}</h1>
                 <p>{recommendedDescription}</p>
@@ -91,7 +129,7 @@ export const Recomendation = () => {
                 <div className={`alert alert-${alertVariant}`} role="alert">
                     {alertMessage}
                 </div>
-            )}
+            )} */}
         </div>
     );
 };

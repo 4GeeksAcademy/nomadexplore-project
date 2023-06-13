@@ -20,23 +20,23 @@ const randomUrl = (categoria) => {
 //     return imagesDB[0][categoria][string]
 // }
 
-const imagePairs = [
-    { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
-    { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
-    { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
-    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
-    { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
-    { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
-    { img1: randomUrl('playa'), img2: randomUrl('aventura') },
-];
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
     const [pairIndex, setPairIndex] = useState(0);
-    const [randomUrls, setRandomUrls] = useState([]);
+
+    const imagePairs = [
+        { img1: randomUrl('cultura'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('gastronomia'), img2: randomUrl('playa') },
+        { img1: randomUrl('entretenimiento'), img2: randomUrl('aventura') },
+        { img1: randomUrl('cultura'), img2: randomUrl('gastronomia') },
+        { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+        { img1: randomUrl('entretenimiento'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('cultura'), img2: randomUrl('entretenimiento') },
+        { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
+        { img1: randomUrl('playa'), img2: randomUrl('aventura') },
+    ];
 
     useEffect(() => {
         actions.resetUserSelections();
