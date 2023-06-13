@@ -1,9 +1,41 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .jumbotron {
   position: relative;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fade-in 3s linear;
+  margin-top: 80px;
+}
+
+.container-fluid.py-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jumbotron-destination,
+.jumbotron-description {
+  text-align: center;
+}
+
+.jumbotron-description {
+  /* Existing styles */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
+  height: 100%;
+  max-width: 100%;
 }
 
 .fade-in-bg {
@@ -12,11 +44,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../img/sunset.jpeg'); 
+  background-image: url('../../img/sunset.jpeg');
   background-size: cover;
   background-position: center;
-  animation: fade-in 3s linear;
-  z-index: -100; /* Set a lower z-index to position the background behind the jumbotron */
+  z-index: -100;
 }
 
 @keyframes fade-in {
@@ -28,50 +59,12 @@
   }
 }
 
-.jumbotron-content {
-  position: relative;
-  text-align: center;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-}
-
-/* Rest of the CSS code */
-
-
-.jumbotron-heading {
+.jumbotron-destination {
   font-size: 24px;
   color: #333333;
-  margin-bottom: 20px;
-  position: relative;
+  margin-bottom: 10px;
   text-align: center;
-}
-
-.jumbotron-heading::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ff9800;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.3s ease;
-}
-
-.jumbotron-heading:hover::after {
-  transform: scaleX(1);
-}
-
-.jumbotron-destination {
-  font-size: 36px;
-  color: #ff9800;
-  margin-bottom: 20px;
   position: relative;
-  text-align: center;
 }
 
 .jumbotron-destination::after {
@@ -91,22 +84,20 @@
   transform: scaleX(1);
 }
 
-.jumbotron-destination {
-  font-size: 36px;
-  color: #ff9800;
-  margin-bottom: 20px;
-}
-
-
-
 .jumbotron-description {
-  font-size: 20px;
+  font-size: 16px;
   color: #666666;
-  margin-bottom: 30px;
-  position: relative;
-  opacity: 0; /* Hide the element initially */
-  transform: translateY(20px); /* Move the element down */
-  animation: jumpWords 3s forwards; /* Apply the animation and retain the final state */
+  margin-bottom: 20px;
+  text-align: justify;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: jumpWords 3s forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%; /* Add this line to set the height to 100% */
+  max-width: 100%; /* Add this line to set the maximum width to 100% */
 }
 
 @keyframes jumpWords {
@@ -123,18 +114,19 @@
     transform: translateY(0);
   }
 }
+
 .add-fav-button {
-  position: relative;
   background-color: #ff9800;
   color: #ffffff;
   border: none;
   border-radius: 50px;
-  padding: 12px 24px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: background-color 0.3s ease;
 }
 
 .add-fav-button:before {
@@ -157,18 +149,26 @@
   height: 100%;
 }
 
-.add-fav-button span {
-  position: relative;
-  z-index: 2;
-}
-
-
-
 .jumbotron-alert {
   background-color: #f44336;
   color: #ffffff;
-  padding: 12px;
+  padding: 8px;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
+.pt-3 {
+  padding-top: 8px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.border-top {
+  border-top: 1px solid #dee2e6;
+}

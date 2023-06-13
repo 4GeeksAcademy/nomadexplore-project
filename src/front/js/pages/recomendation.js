@@ -62,7 +62,6 @@ export const Recomendation = () => {
         }
     
         const apiCall = () => {
-            console.log(recommendedDestination,)
             fetch(api.base + recommendedDestination + api.key)
                 .then((res) => res.json())
                 .then((result) => {
@@ -102,14 +101,47 @@ export const Recomendation = () => {
         }
     };
 
+
     return (
-        <div className="jumbotron recommendation-container fade-in-bg">
+<div>
+  <div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-dark jumbotron-destination">{recommendedDestination}</h1>
+        <p class="col-md-8 fs-4 text-dark jumbotron-description">
+          {recommendedDescription}
+        </p>
+        <p class="jumbotron-description">{recommendedApiID}</p>
+
+        <button class="btn btn-primary btn-lg add-fav-button" type="button" onClick={handleAddFav}>
+          Me gusta
+        </button>
+        {alertMessage && (
+          <div class={`alert jumbotron-alert alert-${alertVariant}`} role="alert">
+            {alertMessage}
+          </div>
+        )}
+      </div>
+    </div>
+    <footer class="pt-3 mt-4 text-muted border-top">© 2023</footer>
+  </div>
+</div>
+
+      );
+      
+}
+
+
+  {/*  <div className="jumbotron recommendation-container fade-in-bg">
           <div className="jumbotron-content">
             <h2 className="jumbotron-heading">Your recommended destination is:</h2>
             <h1 className="jumbotron-destination">{recommendedDestination}</h1>
             <p className="jumbotron-description">{recommendedDescription}</p>
             <p className="jumbotron-description">Valor de la propiedad apiID en el json:</p>
             <p className="jumbotron-description">{recommendedApiID}</p>
+
+
+
             <button className="add-fav-button" onClick={handleAddFav}>
               Agregar a favoritos
             </button>
@@ -118,8 +150,4 @@ export const Recomendation = () => {
                 {alertMessage}
               </div>
             )}
-          </div>
-        </div>
-      );
-      
-}
+          </div> */}
