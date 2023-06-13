@@ -2,7 +2,7 @@
     {
         "destination": "Islas Griegas",
         "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
-        "apiID": "100XXX",
+        "apiID": 8133832,
         "weights": {
             "cultura": 2,
             "naturaleza": 10,
@@ -15,7 +15,7 @@
     {
         "destination": "La Toscana",
         "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
-        "apiID": "200XXX",
+        "apiID": 6542285,
         "weights": {
             "cultura": 4,
             "naturaleza": 9,
@@ -28,7 +28,7 @@
     {
         "destination": "New York",
         "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
-        "apiID": "300XXX",
+        "apiID": 5128581,
         "weights": {
             "cultura": 4,
             "naturaleza": 1,
@@ -41,7 +41,7 @@
     {
         "destination": "Rivera Maya",
         "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
-        "apiID": "400XXX",
+        "apiID": 3515040,
         "weights": {
             "cultura": 1,
             "naturaleza": 3,
@@ -54,7 +54,7 @@
     {
         "destination": "Patagonia",
         "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
-        "apiID": "500XXX",
+        "apiID": 3837856,
         "weights": {
             "cultura": 1,
             "naturaleza": 10,
@@ -67,7 +67,7 @@
     {
         "destination": "Bankok",
         "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
-        "apiID": "600XXX",
+        "apiID": 1609348,
         "weights": {
             "cultura": 8,
             "naturaleza": 1,
@@ -80,7 +80,7 @@
     {
         "destination": "Barcelona",
         "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
-        "apiID": "700XXX",
+        "apiID": 1726707,
         "weights": {
             "cultura": 9,
             "naturaleza": 2,
@@ -93,7 +93,7 @@
     {
         "destination": "Tokio",
         "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
-        "apiID": "800XXX",
+        "apiID": 1850144,
         "weights": {
             "cultura": 10,
             "naturaleza": 1,

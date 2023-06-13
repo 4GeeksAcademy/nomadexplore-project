@@ -7,9 +7,11 @@ export const Recomendation = () => {
     const { store, actions } = useContext(Context);
     const [recommendedDestination, setRecommendedDestination] = useState(null);
     const [recommendedDescription, setRecommendedDescription] = useState(null);
+    const [recommendedApiID, setRecommendedApiID] = useState(null);
     const [alertVariant, setAlertVariant] = useState("");
     const [alertMessage, setAlertMessage] = useState("");
     const [buttonClicked, setButtonClicked] = useState(false);
+    const [tempCelsius, setTempCelcius] = useState("");
 
     const navigate = useNavigate();
 
@@ -17,10 +19,11 @@ export const Recomendation = () => {
         let maxScore = 0;
         let recommendedDestination = null;
         let recommendedDescription = null;
+        let recommendedApiID = null;
 
         for (const i in destinationWeights) {
             const destinationWeight = destinationWeights[i];
-            const { destination, description, weights } = destinationWeight;
+            const { destination, description, weights, apiID } = destinationWeight;
             let score = 0;
 
             for (const category in store.userSelections) {
@@ -32,10 +35,12 @@ export const Recomendation = () => {
                 maxScore = score;
                 recommendedDestination = destination;
                 recommendedDescription = description;
+                recommendedApiID = apiID;
             }
         }
         setRecommendedDestination(recommendedDestination);
         setRecommendedDescription(recommendedDescription);
+        setRecommendedApiID(recommendedApiID);
     };
 
     useEffect(() => {
@@ -75,19 +80,19 @@ export const Recomendation = () => {
         }
     };
 
-    
-    const api = {
-        key: "&appid=0dc5a4cf75951d34619605b76e3b6f73",
-        base: "https://api.openweathermap.org/data/2.5/weather?q="
-    }
-    const apiCall = () => {
-        fetch(api.base + recommendedDestination + api.key)
-            .then((res) => res.json())
-            .then((result) => {
-                const weather = result.weather[0].description;
-                setWeatherDescription(weather);
-            });
-    };
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id="
+    const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric"
+    const destinationApiId = 1726707
+
+    useEffect(() => {
+        fetch(apiUrl + recommendedApiID + apiKey)
+            .then((response) => response.json())
+            .then((data) => {
+                setTempCelcius(data.main.temp);
+                console.log('api clima', data.main.temp);
+            })
+            .catch((error) => console.log(error));
+    }, [recommendedApiID]);
 
 
     return (
@@ -99,7 +104,10 @@ export const Recomendation = () => {
                         <p className="col-md-8 fs-4 text-dark">
                             {recommendedDescription}
                         </p>
-
+                        <p className="col-md-8 fs-4 text-dark">
+                            {recommendedApiID}
+                        </p>
+                        <p className="display-5 fw-bold text-dark">Temperatura: {tempCelsius} º C</p>
                         <button className="btn btn-primary btn-lg" type="button" onClick={handleAddFav}>
                             Me gusta
                         </button>
@@ -112,24 +120,6 @@ export const Recomendation = () => {
                 </div>
                 <footer className="pt-3 mt-4 text-muted border-top">© 2023</footer>
             </div>
-
-
-
-            {/* <div style={{ textAlign: "center", margin: "40px" }}>
-                <h2>Tu destino recomendado es:</h2>
-                <h1>{recommendedDestination}</h1>
-                <p>{recommendedDescription}</p>
-                {!buttonClicked && (
-                    <button onClick={handleAddFav} style={{ margin: '10px' }}>
-                        Agregar a favoritos
-                    </button>
-                )}
-            </div>
-            {alertMessage && (
-                <div className={`alert alert-${alertVariant}`} role="alert">
-                    {alertMessage}
-                </div>
-            )} */}
         </div>
     );
 };
