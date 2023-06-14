@@ -62,7 +62,6 @@ export const Recomendation = () => {
         }
     
         const apiCall = () => {
-            console.log(recommendedDestination,)
             fetch(api.base + recommendedDestination + api.key)
                 .then((res) => res.json())
                 .then((result) => {
@@ -102,23 +101,33 @@ export const Recomendation = () => {
         }
     };
 
+
     return (
-        <div className="recommendation-container">
-            <div className="recommendation-content">
-                <h2>Tu destino recomendado es:</h2>
-                <h1 className="recommended-destination">{recommendedDestination}</h1>
-                <p className="recommended-description">{recommendedDescription}</p>
-                <p className="recommended-description">Valor de la propiedad apiID en el json:</p>
-                <p className="recommended-description">{recommendedApiID}</p>
-                <button onClick={handleAddFav} style={{ color: 'black', margin: '10px' }}>
-                    Agregar a favoritos
-                </button>
-            {alertMessage && (
-                <div className={`alert alert-${alertVariant}`} role="alert">
-                    {alertMessage}
-                </div>
-            )}
-            </div>
-        </div>
-    )
+<div>
+  <div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-dark jumbotron-destination">{recommendedDestination}</h1>
+        <p class="col-md-8 fs-4 text-dark jumbotron-description">
+          {recommendedDescription}
+        </p>
+        <p class="jumbotron-description">{recommendedApiID}</p>
+
+        <button class="btn btn-primary btn-lg add-fav-button" type="button" onClick={handleAddFav}>
+          Me gusta
+        </button>
+        {alertMessage && (
+          <div class={`alert jumbotron-alert alert-${alertVariant}`} role="alert">
+            {alertMessage}
+          </div>
+        )}
+      </div>
+    </div>
+    <footer class="pt-3 mt-4 text-muted border-top">© 2023</footer>
+  </div>
+</div>
+
+      );
+      
 }
+
