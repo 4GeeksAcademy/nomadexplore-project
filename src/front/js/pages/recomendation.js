@@ -12,9 +12,9 @@ export const Recomendation = () => {
   const [alertVariant, setAlertVariant] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [tempMain, setTempMain] = useState("");
   const [weatherIconId, setWeatherIconId] = useState("");
   const [weatherDescription, setWeatherDescription] = useState("");
+  const [tempMain, setTempMain] = useState({ temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0 });
 
   const navigate = useNavigate();
 
@@ -119,21 +119,21 @@ export const Recomendation = () => {
             {/* <p className="col-md-8 fs-4 text-dark">{recommendedApiID}</p> */}
             <div className="row">
               <div className="col-md-3 d-flex justify-content-center">
-                <img style={{ width: "300px" }} src={recommendedImage} alt="image" />
+                <img style={{ width: "250px" }} src={recommendedImage} alt="image" />
               </div>
               <div className="col-md-6 d-flex justify-content-center align-items-center">
                 <div>
                   <img style={{ width: '100px' }} src={weatherIcon} alt="icon" />
-                  <p className="display-5 fw-bold text-dark">Temp: {tempMain.temp}ºC</p>
-                  <p className="display-6 fw-bold text-dark">Feels like: {tempMain.feels_like}ºC</p>
+                  <p className="display-5 fw-bold text-dark">Temp: {tempMain.temp !== 0 && tempMain.temp.toFixed(1)}ºC</p>
+                  <p className="display-6 fw-bold text-dark">Feels like: {tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}ºC</p>
                 </div>
               </div>
               <div className="col-md-3 d-flex justify-content-center align-items-center">
                 <div>
                   <p className="display-6 fw-bold text-dark">{weatherDescription}</p>
-                  <p className="display-7 fw-bold text-dark">Min: {tempMain.temp_min}ºC</p>
-                  <p className="display-7 fw-bold text-dark">Max: {tempMain.temp_max}ºC</p>
-                  <p className="display-7 fw-bold text-dark">Humidity: {tempMain.humidity}%</p>
+                  <p className="display-7 fw-bold text-dark">Min: {tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}ºC</p>
+                  <p className="display-7 fw-bold text-dark">Max: {tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}ºC</p>
+                  <p className="display-7 fw-bold text-dark">Humidity: {tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}%</p>
                 </div>
               </div>
             </div>

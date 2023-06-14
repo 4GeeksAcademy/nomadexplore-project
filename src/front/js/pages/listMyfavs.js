@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const ListMyFavs = () => {
   const [favs, setFavs] = useState([]);
@@ -34,8 +34,8 @@ export const ListMyFavs = () => {
   useEffect(() => {
     const token = localStorage.getItem("miTokenJWT");
     if (!token) {
-        // No se encontró el token, redirige al usuario a la página principal
-        navigate("/");
+      // No se encontró el token, redirige al usuario a la página principal
+      navigate("/");
     }
     fetchFavs();
   }, []);
@@ -98,7 +98,9 @@ export const ListMyFavs = () => {
             <div className="card">
               <img src="" className="card-img-top" alt={fav.destination} />
               <div className="card-body">
-                <h5 className="card-title text-dark">{fav.destination}</h5>
+                <Link to={`/${fav.destination}`}>
+                  <h5 className="card-title text-dark">{fav.destination}</h5>
+                </Link >
                 <button
                   className="btn btn-danger"
                   onClick={() => handleDeleteFav(fav.id_fav)}

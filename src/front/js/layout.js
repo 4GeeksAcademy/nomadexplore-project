@@ -12,6 +12,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Recomendation } from "./pages/recomendation";
+import { RecomendationFav } from "./pages/recomendationFav";
 import { ListMyFavs } from "./pages/listMyfavs";
 
 //create your first component
@@ -31,6 +32,7 @@ const Layout = () => {
                         <Route element={<Selection />} path="/" />
                         <Route element={<Selection />} path="/selection" />
                         <Route element={<Recomendation />} path="/reco" />
+                        <Route element={<RecomendationFav />} path="/listFavs/:id" />
                         <Route element={<ListMyFavs />} path="/listFavs" />
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Login />} path="/login" />
