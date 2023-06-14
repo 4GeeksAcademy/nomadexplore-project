@@ -1,6 +1,6 @@
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%;
+  background-image: url(https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=800);
 }
 
 .jumbotron {
