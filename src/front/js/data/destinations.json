@@ -1,8 +1,9 @@
 [
     {
-        "destination": "Greek Islands",
-        "description": "Mediterranean paradise with beautiful beaches, rich history, and culture. Popular tourist destinations with unique charm and something for everyone.",
-        "apiID": "264371",
+        "destination": "Islas Griegas",
+        "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
+        "apiID": 8133832,
+        "imageUrl": "https://images.pexels.com/photos/17078888/pexels-photo-17078888/free-photo-of-mar-ciudad-paisaje-vacaciones.jpeg",
         "weights": {
             "cultura": 2,
             "naturaleza": 10,
@@ -13,9 +14,10 @@
         }
     },
     {
-        "destination": "Toscana",
-        "description": "Charming Italian region. Breathtaking landscapes, Renaissance history. Delicious cuisine and wines.",
-        "apiID": "3176959",
+        "destination": "La Toscana",
+        "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
+        "apiID": 6542285,
+        "imageUrl": "https://images.pexels.com/photos/10406386/pexels-photo-10406386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 4,
             "naturaleza": 9,
@@ -27,8 +29,9 @@
     },
     {
         "destination": "New York",
-        "description": "The city that never sleeps. Iconic and vibrant as ever.",
-        "apiID": "5128581",
+        "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
+        "apiID": 5128581,
+        "imageUrl": "https://images.pexels.com/photos/12168226/pexels-photo-12168226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 4,
             "naturaleza": 1,
@@ -38,11 +41,11 @@
             "aventura": 2
         }
     },
-    
     {
-        "destination": "Mayan Riviera",
-        "description": "Caribbean paradise with beaches, Mayan ruins, and exciting activities. Luxury and relaxation in a tropical environment.",
-        "apiID": "2003141", 
+        "destination": "Rivera Maya",
+        "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
+        "apiID": 3515040,
+        "imageUrl": "https://images.pexels.com/photos/11447571/pexels-photo-11447571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 1,
             "naturaleza": 3,
@@ -54,8 +57,9 @@
     },
     {
         "destination": "Patagonia",
-        "description": "Majestic nature in the south of South America. Mountains, glaciers, and wildlife. Adventure and serenity in a unique destination.",
-        "apiID": "3860443",
+        "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
+        "apiID": 3837856,
+        "imageUrl": "https://images.pexels.com/photos/15172864/pexels-photo-15172864/free-photo-of-resfriado-glaciar-nieve-madera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 1,
             "naturaleza": 10,
@@ -66,9 +70,10 @@
         }
     },
     {
-        "destination": "Bangkok",
-        "description": "Vibrant Thai city. Dazzling temples, lively markets, and impressive skyscrapers. Delicious street food and exciting nightlife. A captivating metropolis.",
-        "apiID": "1609350",
+        "destination": "Bankok",
+        "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
+        "apiID": 1609348,
+        "imageUrl": "https://images.pexels.com/photos/3393546/pexels-photo-3393546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 8,
             "naturaleza": 1,
@@ -80,8 +85,9 @@
     },
     {
         "destination": "Barcelona",
-        "description": "Cosmopolitan city with impressive architecture, beaches, and vibrant nightlife. The perfect blend of culture, history, and gastronomy.",
-        "apiID": "3128760",
+        "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
+        "apiID": 1726707,
+        "imageUrl": "https://images.pexels.com/photos/14948887/pexels-photo-14948887.jpeg",
         "weights": {
             "cultura": 9,
             "naturaleza": 2,
@@ -93,8 +99,9 @@
     },
     {
         "destination": "Tokyo",
-        "description": "Vibrant Japanese metropolis. Futuristic, tradition, and culture. Impressive architecture, delicious food. Unique experience.",
-        "apiID": "1850147",
+        "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
+        "apiID": 1850144,
+        "imageUrl": "https://images.pexels.com/photos/15925240/pexels-photo-15925240/free-photo-of-gente-noche-oscuro-multitud.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 10,
             "naturaleza": 1,
