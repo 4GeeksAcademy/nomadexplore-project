@@ -30,7 +30,6 @@ export const RecomendationFav = () => {
           <div className="container-fluid py-5">
             <h1 className="display-5 fw-bold text-dark">{recommendedDestination}</h1>
             <p className="col-md-8 fs-4 text-dark">{params.id}</p>
-            {/* <p className="col-md-8 fs-4 text-dark">{recommendedApiID}</p> */}
             <div className="row">
               <div className="col-md-3 d-flex justify-content-center">
                 <img style={{ width: "250px" }} src={recommendedImage} alt="image" />
@@ -51,14 +50,6 @@ export const RecomendationFav = () => {
                 </div>
               </div>
             </div>
-            {/* <button className="btn btn-primary btn-lg" type="button" onClick={handleAddFav}>
-              Me gusta
-            </button>
-            {alertMessage && (
-              <div className={`alert alert-${alertVariant}`} role="alert">
-                {alertMessage}
-              </div>
-            )} */}
           </div>
         </div>
         <footer className="pt-3 mt-4 text-muted border-top">© 2023</footer>
