@@ -1,60 +1,91 @@
 
-.container-about {
-    background-image: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=800);
-    width: 100%;
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    padding-top: 100px;
-    align-items: center;
-    overflow: hidden; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+.aboutus-container {
+  background-image: url(https://images.pexels.com/photos/1276518/pexels-photo-1276518.jpeg?auto=compress&cs=tinysrgb&w=800);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  color: white;
+  padding: 10vh;
 }
-
-.container-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 180px; /* Espacio horizontal interno */
-    position: relative;
-    z-index: 1;
-    min-height: 200px;
-  }
-
-.container-info hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
-} 
 
 .aboutus-title {
-    text-align: left;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 50px; 
-    margin-top: 100px;
+  margin-bottom: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 60px;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
- .aboutus-text {
-    font-weight: 700;
-    color: white;
-    font-size: 70px;
-    letter-spacing: 0.1em;
-    
- } 
-  
+.aboutus-description {
+  margin-bottom: 5vh;
+}
+
+.text-container1 {
+  margin-top: 30px;
+}
+.text-container2 {
+  margin-bottom: 30px;
+}
+
 .text-container1,
 .text-container2 {
-    margin-bottom: 20px; /* Espacio entre los textos */
-    text-align: left;
-    color:white;
-    font-weight: 150;
-  }
+  font-size: 16px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px;
+  border-radius: 50%;
+  background-color: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.circle-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
   
-  hr {
-    border-color: white;
-    width: 80%;
-  }  
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 21px;
+  font-weight: 900;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+}
+
