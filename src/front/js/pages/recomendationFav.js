@@ -4,11 +4,9 @@ import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
 
 
+
 export const RecomendationFav = () => {
   const { store, actions } = useContext(Context);
-  const [recommendedDestination, setRecommendedDestination] = useState("Roma");
-  const [recommendedDescription, setRecommendedDescription] = useState("lalalalaalalalalaal");
-  const [recommendedApiID, setRecommendedApiID] = useState(null);
   const [recommendedImage, setRecommendedImage] = useState(null);
   const [alertVariant, setAlertVariant] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -18,21 +16,43 @@ export const RecomendationFav = () => {
   const [tempMain, setTempMain] = useState({ temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0 });
   
   const params = useParams();
+  const [recommendedDestination, setRecommendedDestination] = useState(params.id);
   const navigate = useNavigate();
 
 
-
+  const recommendedData = destinationWeights.find(
+    (destination) => destination.destination === recommendedDestination
+  );
+  
+  if (recommendedData) {
+    const {
+      description,
+      imageUrl,
+      weights: {
+        cultura,
+        naturaleza,
+        gastronomia,
+        playa,
+        entretenimiento,
+        aventura,
+      },
+    } = recommendedData;
+  
+    // Luego puedes utilizar los datos encontrados en tu JSX para mostrar la información correspondiente
+  }
+  console.log(recommendedData.description);
+  
 
   return (
     <div>
       <div className="container py-4">
         <div className="p-5 mb-4 bg-light rounded-3">
           <div className="container-fluid py-5">
-            <h1 className="display-5 fw-bold text-dark">{recommendedDestination}</h1>
-            <p className="col-md-8 fs-4 text-dark">{params.id}</p>
+            <h1 className="display-5 fw-bold text-dark">{recommendedData.destination}</h1>
+            <p className="col-md-8 fs-4 text-dark">{recommendedData.description}</p>
             <div className="row">
               <div className="col-md-3 d-flex justify-content-center">
-                <img style={{ width: "250px" }} src={recommendedImage} alt="image" />
+                <img style={{ width: "250px" }} src={recommendedData.imageUrl} alt="image" />
               </div>
               <div className="col-md-6 d-flex justify-content-center align-items-center">
                 <div>

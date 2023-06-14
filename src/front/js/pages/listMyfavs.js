@@ -98,7 +98,7 @@ export const ListMyFavs = () => {
             <div className="card">
               <img src="" className="card-img-top" alt={fav.destination} />
               <div className="card-body">
-                <Link to={`/${fav.destination}`}>
+                <Link to={`reco/${fav.destination}`}>
                   <h5 className="card-title text-dark">{fav.destination}</h5>
                 </Link >
                 <button
