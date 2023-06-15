@@ -1,7 +1,7 @@
 [
     {
-        "destination": "Islas Griegas",
-        "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
+        "destination": "Greek Islands",
+        "description": "The Greek Islands offer a captivating blend of stunning natural beauty, rich history, and vibrant culture. With their crystalline turquoise waters, picturesque white-washed villages, and ancient ruins, the Greek Islands are a dream destination for travelers seeking a paradise getaway. From the iconic Santorini, famous for its breathtaking sunsets and blue-domed churches, to Mykonos with its lively nightlife and charming narrow streets, each island has its own unique charm and allure.",
         "apiID": 8133832,
         "imageUrl": "https://images.pexels.com/photos/17078888/pexels-photo-17078888/free-photo-of-mar-ciudad-paisaje-vacaciones.jpeg",
         "weights": {
@@ -14,8 +14,8 @@
         }
     },
     {
-        "destination": "La Toscana",
-        "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
+        "destination": "Tuscany",
+        "description": "Tuscany, located in the heart of Italy, is renowned for its pastoral charm, picturesque landscapes, and rich cultural heritage. With its rolling hills covered in vineyards, olive groves, and cypress trees, Tuscany offers a stunning backdrop that has inspired artists and poets for centuries. Explore the historic cities of Florence, with its magnificent cathedral and renowned art galleries, and Siena, with its impressive medieval architecture and famous horse race, the Palio.",
         "apiID": 6542285,
         "imageUrl": "https://images.pexels.com/photos/10406386/pexels-photo-10406386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
@@ -29,7 +29,7 @@
     },
     {
         "destination": "New York",
-        "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
+        "description": "New York, also known as the Big Apple, is a vibrant and iconic city that never sleeps. It's a melting pot of cultures, offering a unique blend of history, art, entertainment, and culinary delights. Explore the bustling streets of Manhattan, home to famous landmarks like Times Square, Central Park, and the Empire State Building. Immerse yourself in the world-class museums, such as the Metropolitan Museum of Art and the Museum of Modern Art.",
         "apiID": 5128581,
         "imageUrl": "https://images.pexels.com/photos/12168226/pexels-photo-12168226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
@@ -43,7 +43,7 @@
     },
     {
         "destination": "Rivera Maya",
-        "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
+        "description": "The Riviera Maya, located on the eastern coast of Mexico's Yucatan Peninsula, is a tropical paradise renowned for its stunning beaches, ancient Mayan ruins, and vibrant biodiversity. Stretching along the Caribbean Sea, the Riviera Maya offers a diverse range of experiences for travelers. Explore the world-famous archaeological site of Tulum, perched on cliffs overlooking turquoise waters, or visit the ancient city of Chichen Itza, a UNESCO World Heritage site.",
         "apiID": 3515040,
         "imageUrl": "https://images.pexels.com/photos/11447571/pexels-photo-11447571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
@@ -56,8 +56,8 @@
         }
     },
     {
-        "destination": "Patagonia",
-        "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
+        "destination": "La Patagonia",
+        "description": "Patagonia, located at the southern tip of South America, is a land of breathtaking natural beauty and rugged wilderness. It encompasses both Argentina and Chile, offering a vast and diverse landscape. Explore the majestic peaks of the Andes Mountains, including the iconic Mount Fitz Roy and Torres del Paine. Discover pristine glacial lakes, such as Lake Argentino and Lake Nahuel Huapi, reflecting the stunning surrounding mountains.",
         "apiID": 3837856,
         "imageUrl": "https://images.pexels.com/photos/15172864/pexels-photo-15172864/free-photo-of-resfriado-glaciar-nieve-madera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
@@ -70,8 +70,8 @@
         }
     },
     {
-        "destination": "Bankok",
-        "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
+        "destination": "Bangkok",
+        "description": "Bangkok, the vibrant capital of Thailand, is a city that never fails to impress with its bustling street life, ornate temples, and tantalizing cuisine. Explore the magnificent Grand Palace, home to the revered Emerald Buddha, and visit iconic temples such as Wat Arun and Wat Phra Kaew. Indulge in the vibrant street food scene, sampling delicious dishes at the famous floating markets and night bazaars.",
         "apiID": 1609348,
         "imageUrl": "https://images.pexels.com/photos/3393546/pexels-photo-3393546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
@@ -85,7 +85,7 @@
     },
     {
         "destination": "Barcelona",
-        "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
+        "description": "Barcelona, located on the northeastern coast of Spain, is a vibrant city renowned for its unique blend of culture, architecture, and Mediterranean charm. Immerse yourself in the artistic wonders of Antoni Gaudí, as you explore his iconic masterpieces like the Sagrada Familia and Park Güell. Stroll along the lively boulevard of La Rambla, visit the historic Gothic Quarter, and indulge in delectable Catalan cuisine.",
         "apiID": 1726707,
         "imageUrl": "https://images.pexels.com/photos/14948887/pexels-photo-14948887.jpeg",
         "weights": {
@@ -99,7 +99,7 @@
     },
     {
         "destination": "Tokyo",
-        "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
+        "description": "Tokyo, the bustling capital of Japan, is a city where ancient traditions meet futuristic innovation. Explore the vibrant neighborhoods of Shibuya and Shinjuku, famous for their neon lights, towering skyscrapers, and bustling streets. Immerse yourself in Japanese culture by visiting historic temples and shrines like Meiji Shrine and Senso-ji Temple. Discover the world of Japanese cuisine.",
         "apiID": 1850144,
         "imageUrl": "https://images.pexels.com/photos/15925240/pexels-photo-15925240/free-photo-of-gente-noche-oscuro-multitud.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
