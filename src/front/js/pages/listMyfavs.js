@@ -19,7 +19,7 @@ export const ListMyFavs = () => {
       if (response.ok) {
         const data = await response.json();
         setFavs(data);
-        console.log(data);
+        console.log('data',data);
       } else {
         // Si hay un error en la respuesta, redirige al usuario a la página principal
         navigate("/");
@@ -84,6 +84,8 @@ export const ListMyFavs = () => {
     }
   }, [isDeleteSuccess]);
 
+console.log(favs);
+
   return (
     <div style={{ margin: "10px" }}>
       {isDeleteSuccess && (
@@ -96,9 +98,9 @@ export const ListMyFavs = () => {
         {favs.map((fav, index) => (
           <div className="col-md-4 mb-4" key={index}>
             <div className="card">
-              <img src="" className="card-img-top" alt={fav.destination} />
+              <img src={fav.imageUrl} className="card-img-top" alt={fav.destination} />
               <div className="card-body">
-                <Link to={`reco/${fav.destination}`}>
+                <Link to={`reco/${fav.api_id}`}>
                   <h5 className="card-title text-dark">{fav.destination}</h5>
                 </Link >
                 <button

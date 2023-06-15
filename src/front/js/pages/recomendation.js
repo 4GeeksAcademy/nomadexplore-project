@@ -50,55 +50,27 @@ export const Recomendation = () => {
     setRecommendedImage(recommendedImage);
   };
 
+  console.log('api id: ', recommendedApiID);
+
   useEffect(() => {
     calculateRecommendation();
   }, []);
 
-  const handleAddFav = async () => {
-
-    const token = localStorage.getItem("miTokenJWT");
-
-    if (!token) {
-      // Mmmmm... no tengo el token, no debería poder acceder a está página de React
-      navigate('/login');
-    }
-
-
-
-    const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ recommendedDestination }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      setAlertVariant("success");
-      setAlertMessage("Favorito añadido correctamente");
-      setButtonClicked(true);
-    } else {
-      setAlertVariant("danger");
-      setAlertMessage(data.error || "Error al añadir el favorito. Mira la consola o en el terminal del servidor de Python");
-      setButtonClicked(true);
-    }
-  };
-
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id="
   const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric"
-  // const destinationApiId = 1726707
+  const test = 1726707
   const iconUrl = "https://openweathermap.org/img/wn/"
-  // const weatherIcon = iconUrl + weatherIconId + ".png"
   const weatherIcon = weatherIconId ? `${iconUrl}${weatherIconId}.png` : null;
   console.log(weatherIcon);
-  console.log('id destino: ', recommendedApiID);
+  console.log('ApiId destino: ', recommendedApiID);
 
   useEffect(() => {
-    if (recommendedApiID) {
-      fetch(apiUrl + recommendedApiID + apiKey)
+    calculateRecommendation();
+  }, []);
+
+  useEffect(() => {
+    if (test) {
+      fetch(apiUrl + test + apiKey)
         .then((response) => response.json())
         .then((data) => {
           setTempMain(data.main);
@@ -112,10 +84,43 @@ export const Recomendation = () => {
     }
   }, [recommendedApiID]);
 
+  const handleAddFav = async () => {
 
+    const token = localStorage.getItem("miTokenJWT");
+
+    if (!token) {
+      // Mmmmm... no tengo el token, no debería poder acceder a está página de React
+      navigate('/login');
+    }
+
+    const data = {
+      recommendedDestination: recommendedDestination,
+      recommendedApiID: recommendedApiID
+    };
+
+    const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+
+    const respondeData = await response.json();
+    if (response.ok) {
+      setAlertVariant("success");
+      setAlertMessage("Favorito añadido correctamente");
+      setButtonClicked(true);
+    } else {
+      setAlertVariant("danger");
+      setAlertMessage(respondeData.error || "Error al añadir el favorito. Mira la consola o en el terminal del servidor de Python");
+      setButtonClicked(true);
+    }
+  };
+console.log(recommendedApiID, recommendedDestination);
   return (
     <>
-
       <RecommendedSingle
         recommendedDestination={recommendedDestination}
         recommendedDescription={recommendedDescription}
@@ -129,7 +134,7 @@ export const Recomendation = () => {
         humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
       />
 
-      <div className="container pb-2">
+      {/* <div className="container pb-2">
         <div className="p-2 bg-light rounded-3">
           <button className="btn btn-primary btn-lg" type="button" onClick={handleAddFav}>
             Add to Planner
@@ -140,7 +145,7 @@ export const Recomendation = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
     </>
 
 

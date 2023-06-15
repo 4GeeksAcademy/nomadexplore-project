@@ -16,6 +16,8 @@ api = Blueprint('api', __name__)
 current_logged_user_id = 4
 
 # LOGIN
+
+
 @api.route('/login', methods=['POST'])
 def login():
     # Obtener los datos del usuario desde el cliente
@@ -42,9 +44,7 @@ def login():
         "name": user.name
     }
 
-
     return jsonify(response_body), 200
-
 
 
 # REGISTRAR USER
@@ -59,6 +59,8 @@ def add_user():
     return jsonify('user added:', request_body_user), 200
 
 # [GET] /users Listar todos los usuarios
+
+
 @api.route('/user', methods=['GET'])
 def get_users():
     users = User.query.all()
@@ -66,6 +68,8 @@ def get_users():
     return jsonify(all_users), 200
 
 # [GET] Listar favoritos
+
+
 @api.route("/favs", methods=["GET"])
 @jwt_required()
 def get_user_favs():
@@ -88,6 +92,7 @@ def get_user_favs():
             "id_fav": fav.id,
             "id_user": fav.user_id,
             "destination": fav.destination,
+            "api_id": fav.api_id,
         })
 
     return jsonify(fav_data), 200
@@ -118,6 +123,8 @@ def get_user_id_favs(user_id):
     return jsonify(fav_data), 200
 
 # ADD FAVORITE
+
+
 @api.route("/favs", methods=["POST"])
 @jwt_required()
 def post_favorite():
@@ -128,6 +135,7 @@ def post_favorite():
 
     data = request.json
     destination = data.get("recommendedDestination")
+    api_id = data.get("recommendedApiId")
 
     if not destination:
         return jsonify({"error": "Destino obligatorio"}), 400
@@ -141,7 +149,8 @@ def post_favorite():
         return jsonify({"error": "El destino ya está en favoritos"}), 400
 
     # Crea un nuevo objeto Favorites relacionado con el usuario actual
-    fav = Favorites(destination=destination, user_id=current_user_id)
+    fav = Favorites(destination=destination,
+                    user_id=current_user_id, api_id=api_id)
 
     # Guarda el nuevo favorito en la base de datos
     db.session.add(fav)
@@ -149,7 +158,9 @@ def post_favorite():
 
     return jsonify({"success": "Destino agregado exitosamente"}), 200
 
-#DELETE FAVORITE
+# DELETE FAVORITE
+
+
 @api.route('/favs/<int:id_fav>', methods=['DELETE'])
 @jwt_required()
 def delete_favorite(id_fav):
@@ -159,13 +170,14 @@ def delete_favorite(id_fav):
     # ID de usuario
     current_user_id = current_user['id']
 
-    favorite = Favorites.query.filter_by(user_id=current_user_id, id=id_fav).first()
+    favorite = Favorites.query.filter_by(
+        user_id=current_user_id, id=id_fav).first()
 
     if favorite is None:
-        return jsonify({'msg' : 'funky favorito no encontrado'}), 404
+        return jsonify({'msg': 'funky favorito no encontrado'}), 404
 
     db.session.delete(favorite)
     db.session.commit()
 
-    response_body = {'msg' : 'funky favorito eliminado'}
+    response_body = {'msg': 'funky favorito eliminado'}
     return jsonify(response_body), 200

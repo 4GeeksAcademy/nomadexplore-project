@@ -19,13 +19,13 @@ class User(db.Model):
             "name": self.name,
             "email": self.email,
             "password": self.password,
-            # do not serialize the password, its a security breach
         }
 
 class Favorites(db.Model):
     __tablename__ = 'favorites'
     id = db.Column(db.Integer, primary_key=True)
     destination = db.Column(db.String(120), nullable=False)
+    api_id = db.Column(db.Integer, nullable=False)
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref='favorites')

@@ -2,7 +2,7 @@
     {
         "destination": "Islas Griegas",
         "description": "Paraíso mediterráneo con playas hermosas, historia y cultura ricas. Destinos turísticos populares con encanto único y opciones para todos los gustos.",
-        "apiID": 8133832,
+        "apiId": 8133832,
         "imageUrl": "https://images.pexels.com/photos/17078888/pexels-photo-17078888/free-photo-of-mar-ciudad-paisaje-vacaciones.jpeg",
         "weights": {
             "cultura": 2,
@@ -16,7 +16,7 @@
     {
         "destination": "La Toscana",
         "description": "Región italiana encantadora. Paisajes impresionantes, historia renacentista. Gastronomía y vinos deliciosos.",
-        "apiID": 6542285,
+        "apiId": 6542285,
         "imageUrl": "https://images.pexels.com/photos/10406386/pexels-photo-10406386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 4,
@@ -30,7 +30,7 @@
     {
         "destination": "New York",
         "description": "Ciudad icónica y vibrante. Rascacielos, cultura, arte y compras. ¡Nunca duerme!",
-        "apiID": 5128581,
+        "apiId": 5128581,
         "imageUrl": "https://images.pexels.com/photos/12168226/pexels-photo-12168226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 4,
@@ -44,7 +44,7 @@
     {
         "destination": "Rivera Maya",
         "description": "Paraíso caribeño con playas, ruinas mayas y actividades emocionantes. Lujo y relajación en un entorno tropical.",
-        "apiID": 3515040,
+        "apiId": 3515040,
         "imageUrl": "https://images.pexels.com/photos/11447571/pexels-photo-11447571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 1,
@@ -58,7 +58,7 @@
     {
         "destination": "Patagonia",
         "description": "Naturaleza majestuosa en el sur de América del Sur. Montañas, glaciares y vida silvestre. Aventura y serenidad en un destino único.",
-        "apiID": 3837856,
+        "apiId": 3837856,
         "imageUrl": "https://images.pexels.com/photos/15172864/pexels-photo-15172864/free-photo-of-resfriado-glaciar-nieve-madera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 1,
@@ -72,7 +72,7 @@
     {
         "destination": "Bankok",
         "description": "Ciudad tailandesa vibrante. Templos deslumbrantes, mercados animados y rascacielos impresionantes. Comida callejera deliciosa y vida nocturna emocionante. Una metrópolis cautivadora.",
-        "apiID": 1609348,
+        "apiId": 1609348,
         "imageUrl": "https://images.pexels.com/photos/3393546/pexels-photo-3393546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 8,
@@ -86,7 +86,7 @@
     {
         "destination": "Barcelona",
         "description": "Ciudad cosmopolita con arquitectura impresionante, playas y vibrante vida nocturna. Mezcla perfecta de cultura, historia y gastronomía.",
-        "apiID": 1726707,
+        "apiId": 1726707,
         "imageUrl": "https://images.pexels.com/photos/14948887/pexels-photo-14948887.jpeg",
         "weights": {
             "cultura": 9,
@@ -100,7 +100,7 @@
     {
         "destination": "Tokyo",
         "description": "Metrópolis japonesa vibrante. Futurista, tradición y cultura. Impresionante arquitectura, comida deliciosa. Experiencia única.",
-        "apiID": 1850144,
+        "apiId": 1850144,
         "imageUrl": "https://images.pexels.com/photos/15925240/pexels-photo-15925240/free-photo-of-gente-noche-oscuro-multitud.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "weights": {
             "cultura": 10,
