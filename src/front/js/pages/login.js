@@ -50,7 +50,7 @@ export const Login = () => {
 
                 setEmail('');
                 setPassword('');
-                navigate('/')
+                navigate('/selection')
             } else {
                 setLoginSuccess(false);
                 setLoginError(true);

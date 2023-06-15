@@ -13,13 +13,6 @@ const randomUrl = (categoria) => {
     return categoryImages[randomKey];
   };
 
-// const randomUrl = (categoria) => {
-//     let string = 'url'
-//     let length = Object.keys(imagesDB[0][categoria]).length
-//     string += Math.floor(Math.random() * length) + 1
-//     return imagesDB[0][categoria][string]
-// }
-
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
