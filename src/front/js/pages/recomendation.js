@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
+import "./recomendation.css"
+
 
 export const Recomendation = () => {
   const { store, actions } = useContext(Context);
@@ -110,49 +112,47 @@ export const Recomendation = () => {
 
 
   return (
-    <div className="container">
-      <div className="p-5 mb-4 bg-light rounded-3">
-        <div className="container-fluid py-5">
-          <h1 className="display-5 fw-bold text-dark">{recommendedDestination}</h1>
-
-
-          <div className="row">
-            <div className="col-md-3 d-flex justify-content-center">
-              <img style={{ width: "250px" }} src={recommendedImage} alt="image" />
-            </div>
-            <div className="col-md-9 d-flex align-items-center">
-              <div>
-                <p className="col-md-8 fs-4 text-dark">{recommendedDescription}</p>
-                <div className="col-md-6 d-flex justify-content-center align-items-center">
-                  <div>
-                    <img style={{ width: '100px' }} src={weatherIcon} alt="icon" />
-                    <p className="display-5 fw-bold text-dark">Temp: {tempMain.temp !== 0 && tempMain.temp.toFixed(1)}ºC</p>
-                    <p className="display-6 fw-bold text-dark">Feels like: {tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}ºC</p>
-                  </div>
-                </div>
-                <div className="col-md-6 d-flex justify-content-center align-items-center">
-                  <div>
-                    <p className="display-6 fw-bold text-dark">{weatherDescription}</p>
-                    <p className="display-7 fw-bold text-dark">Min: {tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}ºC</p>
-                    <p className="display-7 fw-bold text-dark">Max: {tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}ºC</p>
-                    <p className="display-7 fw-bold text-dark">Humidity: {tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}%</p>
-                  </div>
-                </div>
-              </div>
+    <div className="container-recommendation">
+      <div className="jumbotron">
+        <h1 className="jumbotron-destination">{recommendedDestination}</h1>
+        <div className="col-md-12">
+          <div className="jumbotron-weather">
+            <div className="weather-info">
+              <img className="weather-icon" src={weatherIcon} alt="icon" />
+              <p className="temperature-info">{weatherDescription}</p>
+              <p className="temperature-info">Temp: {tempMain.temp !== 0 && tempMain.temp.toFixed(1)}ºC</p>
+              <p className="temperature-info">Feels like: {tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}ºC</p>
+              <p className="temperature-info">Min: {tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}ºC</p>
+              <p className="temperature-info">Max: {tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}ºC</p>
+              <p className="temperature-info">Humidity: {tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}%</p>
             </div>
           </div>
-
-          <button className="btn btn-primary btn-lg mt-4" type="button" onClick={handleAddFav}>
-            Me gusta
-          </button>
-          {alertMessage && (
-            <div className={`alert alert-${alertVariant} mt-4`} role="alert">
-              {alertMessage}
+        </div>
+        <div className="row">
+          <div className="col-md-4">
+            <div className="jumbotron-description">
+              <img className="jumbotron-image" src={recommendedImage} alt="image" />
             </div>
-          )}
+          </div>
+          <div className="col-md-8">
+            <hr></hr>
+            <div className="jumbotron-description">
+              <p className="jumbotron-text">{recommendedDescription}</p>
+            </div>
+            <hr></hr>
+          </div>
         </div>
       </div>
-      <footer className="pt-3 mt-4 text-muted border-top">© 2023</footer>
+      <div className="button-recomendation">
+        <button className="btn-recomendation btn-lg mt-4" type="button" onClick={handleAddFav}>
+          Click here and save your destination
+        </button>
+        {alertMessage && (
+          <div className={`alert alert-${alertVariant} mt-4`} role="alert">
+            {alertMessage}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

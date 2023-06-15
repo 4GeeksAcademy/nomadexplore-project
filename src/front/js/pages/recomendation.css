@@ -1,70 +1,34 @@
-.container {
-  max-width: 100%;
-  background-image: url(https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=800);
+
+.container-recommendation {
+  background-image: url(https://images.pexels.com/photos/2421196/pexels-photo-2421196.jpeg?auto=compress&cs=tinysrgb&w=800);
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
 }
 
 .jumbotron {
-  position: relative;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #404040ca;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  animation: fade-in 3s linear;
-  margin-top: 80px;
-  position: relative;
-  z-index: 1;
-}
-
-.container-fluid.py-5 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.jumbotron-destination,
-.jumbotron-description {
-  text-align: center;
-}
-
-.jumbotron-description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  height: 100%;
-  max-width: 100%;
-}
-
-.fade-in-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../../img/sunset.jpeg');
-  background-size: cover;
-  background-position: center;
-  z-index: -100;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: fade-in 2s linear;
+  width: 80%;
+  height: auto;
 }
 
 .jumbotron-destination {
-  font-size: 24px;
-  color: #333333;
+  font-size: 50px;
+  color: #dfd8d8;
   margin-bottom: 10px;
-  text-align: center;
   position: relative;
 }
 
@@ -78,7 +42,7 @@
   background-color: #ff9800;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .jumbotron-destination:hover::after {
@@ -86,116 +50,81 @@
 }
 
 .jumbotron-description {
-  font-size: 16px;
-  color: #666666;
+  justify-content: center;
   margin-bottom: 20px;
-  text-align: justify;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: jumpWords 3s forwards;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  max-width: 100%;
 }
 
-@keyframes jumpWords {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.jumbotron-image {
+  height: auto;
+  max-height: 250px;
+  margin-left: 30px;
+  margin-right: 30px;
+  max-width: 80%;
 }
 
-.add-fav-button {
-  background-color: #ff9800;
-  color: #ffffff;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.add-fav-button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: #f57c00;
-  z-index: -1;
-  transition: height 0.3s ease;
-}
-
-.add-fav-button:hover {
-  background-color: #f57c00;
-}
-
-.add-fav-button:hover:before {
-  height: 100%;
-}
-
-.jumbotron-alert {
-  background-color: #f44336;
-  color: #ffffff;
-  padding: 8px;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.pt-3 {
-  padding-top: 8px;
-}
-
-.mt-4 {
-  margin-top: 16px;
-}
-
-.text-muted {
-  color: #6c757d;
-}
-
-.border-top {
-  border-top: 1px solid #dee2e6;
-}
-
-.temperature-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.temperature-text {
-  font-size: 14px;
-  color: #666666;
-  margin: 5px;
-}
-
-.display-6 {
+.jumbotron-text {
   font-size: 18px;
+  color: #dfd8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.display-5 {
-  font-size: 24px;
+.jumbotron-weather {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-right: 0;
 }
 
 .weather-icon {
-  width: 100px;
-  
+  width: 8vh;
+  height: auto;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.temperature-info {
+  display: inline;
+  font-size: 16px;
+  color: #dfd8d8;
+  margin-right: 50px;
+}
+
+.temperature-info-group {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.btn-recomendation {
+  margin-bottom: 80px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #dfd8d8;
+  background-color: #404040ca;
+}
+
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+hr {
+  color: white;
+  margin-top: 15px;
+  margin-right: 30px;
+  margin-bottom: 15px;
 }
