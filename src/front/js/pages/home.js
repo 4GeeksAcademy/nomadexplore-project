@@ -8,18 +8,16 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="landing-container">
-			<div className="background-image">
-				<img src={Palm} alt="Background" />
-				<div className="content-container">
-					<h1>DISCOVER AND FIND THE PERFECT DESTINATION FOR U</h1>
-					<div className="container-button">
-						<Link to="/signup">
-							<button className="btn-registrer">REGISTRER AND ENJOY</button>
-						</Link>
-					</div>
-				</div>
+		<div className="container-fluid px-0">
+		  <img src={Palm} alt="Background" className="img-fluid" />
+		  <div className="content-container">
+		    <h1>DISCOVER AND FIND THE PERFECT DESTINATION FOR U</h1>
+			<div className="container-button">
+			  <Link to="/signup">
+				<button className="btn-registrer">REGISTER AND ENJOY</button>
+			  </Link>
 			</div>
-		</div>
-	);
-};
+			</div>
+		  </div>
+	  );
+	};
