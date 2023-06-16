@@ -4,7 +4,7 @@ export const DestinationCard = (props) => {
 
     return (
         <>
-            <div className="container-recommendation">
+            <div className="0container-recommendation">
                 <div className="jumbotron">
                     <h1 className="jumbotron-destination">{props.recommendedDestination}</h1>
                     <div className="col-md-12">

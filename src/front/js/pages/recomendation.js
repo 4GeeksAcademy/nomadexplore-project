@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
+import { DestinationCard } from "./destinationCard";
 import "./recomendation.css"
-
 
 export const Recomendation = () => {
   const { store, actions } = useContext(Context);
@@ -113,36 +113,20 @@ export const Recomendation = () => {
 
   return (
     <div className="container-recommendation">
-      <div className="jumbotron">
-        <h1 className="jumbotron-destination">{recommendedDestination}</h1>
-        <div className="col-md-12">
-          <div className="jumbotron-weather">
-            <div className="weather-info">
-              <img className="weather-icon" src={weatherIcon} alt="icon" />
-              <p className="temperature-info">{weatherDescription}</p>
-              <p className="temperature-info">Temp: {tempMain.temp !== 0 && tempMain.temp.toFixed(1)}ºC</p>
-              <p className="temperature-info">Feels like: {tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}ºC</p>
-              <p className="temperature-info">Min: {tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}ºC</p>
-              <p className="temperature-info">Max: {tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}ºC</p>
-              <p className="temperature-info">Humidity: {tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}%</p>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-4">
-            <div className="jumbotron-description">
-              <img className="jumbotron-image" src={recommendedImage} alt="image" />
-            </div>
-          </div>
-          <div className="col-md-8">
-            <hr></hr>
-            <div className="jumbotron-description">
-              <p className="jumbotron-text">{recommendedDescription}</p>
-            </div>
-            <hr></hr>
-          </div>
-        </div>
-      </div>
+      <DestinationCard
+        recommendedDestination={recommendedDestination}
+        recommendedDescription={recommendedDescription}
+        recommendedImage={recommendedImage}
+        weatherIcon={weatherIcon}
+        temp={tempMain.temp !== 0 && tempMain.temp.toFixed(1)}
+        feels_like={tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}
+        weatherDescription={weatherDescription}
+        temp_min={tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}
+        temp_max={tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}
+        humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
+      />
+
+
       <div className="button-recomendation">
         <button className="btn-recomendation btn-lg mt-4" type="button" onClick={handleAddFav}>
           Click here and save your destination
@@ -153,7 +137,7 @@ export const Recomendation = () => {
           </div>
         )}
       </div>
-    </div>
-  );
+      </div>
+      );
 };
 
