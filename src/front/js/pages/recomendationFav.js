@@ -9,7 +9,7 @@ export const RecomendationFav = () => {
   const [tempMain, setTempMain] = useState({ temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0 });
 
   const params = useParams();
-  const [recommendedApiId, setRecommendedApiId] = useState(parseInt(params.id));
+  const [recommendedApiId, setRecommendedApiId] = useState(params.id);
 
   const recommendedData = destinationWeights.find(
     (destination) => destination.apiId === recommendedApiId
@@ -19,7 +19,7 @@ export const RecomendationFav = () => {
     const {
       destination,
       description,
-      apiID,
+      apiId,
       imageUrl,
       weights: {
         cultura,
