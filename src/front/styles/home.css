@@ -5,14 +5,23 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-.img-fluid{
-   object-fit: cover;
+
+.container-fluid {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../img/palm.jpeg');
 }
 
-/* .background-image h1 {
-    color: white;
+/* 
+
+.content-container h1 {
+    color:black;
     font-size: 80px;
-} */
+}
 
 .container-button {
     margin-top: 30px;
@@ -25,7 +34,7 @@
     font-size: 15px;
     font-family: inherit;
     border: none;
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
     z-index: 1;
     box-shadow: 6px 6px 12px #c5c5c5,
@@ -37,7 +46,7 @@
     width: 0;
     height: 3em;
     border-radius: 30em;
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     background-image: linear-gradient(to right, #087e2d58 0%, #6bb707d1 100%);
@@ -50,6 +59,6 @@
     width: 15em;
    }
 
-
+ */
 
   
