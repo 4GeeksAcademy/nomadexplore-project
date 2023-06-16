@@ -61,7 +61,7 @@ export const DestinationSingle = () => {
   }, [recommendedData]);
 
   return (
-    <>
+    <div className="container-recommendation">
       <DestinationCard
         recommendedDestination={recommendedData.destination}
         recommendedDescription={recommendedData.description}
@@ -74,6 +74,6 @@ export const DestinationSingle = () => {
         temp_max={tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}
         humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
       />
-    </>
+    </div>
   );
 };
