@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 export const Planner = () => {
@@ -41,7 +41,7 @@ export const Planner = () => {
         }
         fetchFavs();
     }, []);
-
+    console.log('favs: ', favs);
     const handleDeleteFav = async (id) => {
         console.log('id a borrar: ', id);
         try {
@@ -91,7 +91,9 @@ export const Planner = () => {
             <div className="planner-container">
                 {favs.map((fav, index) => (
                     <div className="title-container">
-                        <h1 className="planner-title">{fav.destination}</h1>
+                        <Link to={`destination/${fav.api_id}`}>
+                            <h1 className="planner-title">{fav.destination}</h1>
+                        </Link>
                         <button
                             className="btn btn-danger"
                             onClick={() => handleDeleteFav(fav.id_fav)}

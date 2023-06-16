@@ -111,6 +111,7 @@ def get_user_favs():
             "id_fav": fav.id,
             "id_user": fav.user_id,
             "destination": fav.destination,
+            "api_id": fav.api_id,
         })
 
     return jsonify(fav_data), 200

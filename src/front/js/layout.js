@@ -15,7 +15,8 @@ import { Destinations } from "./pages/Destinations";
 import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
 import { Login } from "./pages/Login";
-
+import { DestinationCard } from "./pages/destinationCard";
+import { DestinationSingle } from "./pages/destinationSingle";
 
 //create your first component
 const Layout = () => {
@@ -39,6 +40,7 @@ const Layout = () => {
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Planner />} path="/planner" />
+                        <Route element={<DestinationSingle />} path="/planner/destination/:id" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
