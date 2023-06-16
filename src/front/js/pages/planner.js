@@ -68,17 +68,17 @@ export const Planner = () => {
     };
 
 
-    // useEffect(() => {
-    //     let timer;
-    //     if (isDeleteSuccess) {
-    //         timer = setTimeout(() => {
-    //             setIsDeleteSuccess(false);
-    //         }, 2000);
-    //     }
-    //     return () => {
-    //         clearTimeout(timer);
-    //     };
-    // }, [isDeleteSuccess]);
+    useEffect(() => {
+        let timer;
+        if (isDeleteSuccess) {
+            timer = setTimeout(() => {
+                setIsDeleteSuccess(false);
+            }, 2000);
+        }
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [isDeleteSuccess]);
 
     useEffect(() => {
         if (isDeleteSuccess || favs.length === 0) {

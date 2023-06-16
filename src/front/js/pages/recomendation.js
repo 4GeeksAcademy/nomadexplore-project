@@ -9,7 +9,7 @@ export const Recomendation = () => {
   const { store, actions } = useContext(Context);
   const [recommendedDestination, setRecommendedDestination] = useState(null);
   const [recommendedDescription, setRecommendedDescription] = useState(null);
-  const [recommendedApiID, setRecommendedApiID] = useState(null);
+  const [recommendedApiId, setRecommendedApiId] = useState(null);
   const [recommendedImage, setRecommendedImage] = useState(null);
   const [alertVariant, setAlertVariant] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -24,12 +24,12 @@ export const Recomendation = () => {
     let maxScore = 0;
     let recommendedDestination = null;
     let recommendedDescription = null;
-    let recommendedApiID = null;
+    let recommendedApiId = null;
     let recommendedImage = null;
 
     for (const i in destinationWeights) {
       const destinationWeight = destinationWeights[i];
-      const { destination, description, weights, apiID, imageUrl } = destinationWeight;
+      const { destination, description, weights, apiId, imageUrl } = destinationWeight;
       let score = 0;
 
       for (const category in store.userSelections) {
@@ -41,13 +41,13 @@ export const Recomendation = () => {
         maxScore = score;
         recommendedDestination = destination;
         recommendedDescription = description;
-        recommendedApiID = apiID;
+        recommendedApiId = apiId;
         recommendedImage = imageUrl;
       }
     }
     setRecommendedDestination(recommendedDestination);
     setRecommendedDescription(recommendedDescription);
-    setRecommendedApiID(recommendedApiID);
+    setRecommendedApiId(recommendedApiId);
     setRecommendedImage(recommendedImage);
   };
 
@@ -72,7 +72,7 @@ export const Recomendation = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ recommendedDestination }),
+      body: JSON.stringify({ recommendedDestination, recommendedApiId }),
     });
 
     const data = await response.json();
@@ -94,11 +94,11 @@ export const Recomendation = () => {
   const iconUrl = "https://openweathermap.org/img/wn/"
   const weatherIcon = iconUrl + weatherIconId + ".png"
   console.log(weatherIcon);
-  console.log('id destino: ', recommendedApiID);
+  console.log('id destino: ', recommendedApiId);
 
   useEffect(() => {
-    if (recommendedApiID) {
-      fetch(apiUrl + recommendedApiID + apiKey)
+    if (recommendedApiId) {
+      fetch(apiUrl + recommendedApiId + apiKey)
         .then((response) => response.json())
         .then((data) => {
           setTempMain(data.main);
@@ -108,7 +108,7 @@ export const Recomendation = () => {
         })
         .catch((error) => console.log(error));
     }
-  }, [recommendedApiID]);
+  }, [recommendedApiId]);
 
 
   return (

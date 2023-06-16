@@ -72,6 +72,7 @@ def post_favorite():
 
     data = request.json
     destination = data.get("recommendedDestination")
+    api_id = data.get("recommendedApiId")
 
     if not destination:
         return jsonify({"error": "Destino obligatorio"}), 400
@@ -85,7 +86,7 @@ def post_favorite():
         return jsonify({"error": "El destino ya está en favoritos"}), 400
 
     # Crea un nuevo objeto Favorites relacionado con el usuario actual
-    fav = Favorites(destination=destination, user_id=current_user_id)
+    fav = Favorites(destination=destination, user_id=current_user_id, api_id=api_id)
 
     # Guarda el nuevo favorito en la base de datos
     db.session.add(fav)
@@ -98,19 +99,13 @@ def post_favorite():
 @jwt_required()
 def get_user_favs():
 
-    # Obtengo el usuario al que pertenece el token JWT
     current_user = get_jwt_identity()
-
-    # ID de usuario
     current_user_id = current_user['id']
 
-    # Busca todos los gatos asociados al usuario actual
     favs = Favorites.query.filter_by(user_id=current_user_id)
 
-    # Crea una lista para almacenar los datos de los favs
     fav_data = []
 
-    # Recorre los favs y agrega sus datos a la lista
     for fav in favs:
         fav_data.append({
             "id_fav": fav.id,
