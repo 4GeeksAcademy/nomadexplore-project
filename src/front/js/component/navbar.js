@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styles/navbar.css";
+import "../../styles/navbar.css"
 
 export const Navbar = () => {
   const [tokenExists, setTokenExists] = useState(false);
@@ -14,11 +14,6 @@ export const Navbar = () => {
   const handleForceUpdate = () => {
     setUpdateFlag(!updateFlag);
   };
-
-  const toggleNavbar = () => {
-    setNavbarOpen(!navbarOpen);
-  };
-
   useEffect(() => {
     const token = localStorage.getItem("miTokenJWT");
     const loggedUserEmail = localStorage.getItem("loggedUserEmail");
@@ -28,29 +23,31 @@ export const Navbar = () => {
       setTokenExists(true);
       setLoggedUserEmail(loggedUserEmail);
       setLoggedUserName(loggedUserName);
+
     } else {
       setTokenExists(false);
       setLoggedUserEmail('');
+      setLoggedUserName('');
     }
-  }, []);
+  });
 
   const handleLogout = () => {
     localStorage.removeItem("miTokenJWT");
     localStorage.removeItem("loggedUserEmail");
+    localStorage.removeItem("loggedUserName");
 
     setTokenExists(false);
     navigate('/');
     handleForceUpdate();
   };
 
-  const clickCollapse = () => {
-    toggleNavbar();
+  const toggleNavbar = () => {
+    setNavbarOpen(!navbarOpen);
   };
-
-  // El logout quedo sin la llamada a clickCollapse, se puede implementar envolviendo
-  // las dos funciones (collapse y logout) en una nueva funcion y llamar con el onClick a esta nueva funcion.
-
+  console.log('toggleNavbar', navbarOpen);
+  console.log('tokenExist: ', tokenExists);
   return (
+
     <nav className="navbar navbar-dark navbar-expand-lg">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
@@ -63,68 +60,45 @@ export const Navbar = () => {
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup"
-          aria-expanded={navbarOpen} // Actualizar el atributo aria-expanded con el valor del estado navbarOpen
+          // aria-expanded="false"
+          aria-expanded={navbarOpen ? "true" : "false"}
           aria-label="Toggle navigation"
-          onClick={() => {toggleNavbar(); clickCollapse();}} // Llamar a toggleNavbar y clickCollapse en el evento onClick
+          onClick={toggleNavbar}
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div
-          className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} // Agregar la clase 'show' si navbarOpen es true
-          id="navbarNavAltMarkup"
-        >
+        <div className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
             <div className="navbar-icons text-white">
-              <a
-                href="https://twitter.com/NomadExplore"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
                 <i className="twitter-icon fa-brands fa-twitter text-white"></i>
               </a>
-              <a
-                href="https://twitter.com/NomadExplore"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
                 <i className="instagram-icon fa-brands fa-instagram text-white"></i>
               </a>
-              <a
-                href="https://twitter.com/NomadExplore"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
                 <i className="facebook-icon fa-brands fa-facebook text-white"></i>
               </a>
             </div>
-            <Link
-              to="/aboutus"
-              className="nav-link text-white"
-              onClick={clickCollapse}
-            >
+            <Link to="/aboutus" className="nav-link text-white" onClick={toggleNavbar}>
               About Us
             </Link>
             {tokenExists && (
               <>
-                <Link to="/selection" className="nav-link text-white" onClick={clickCollapse}>
+                <Link to="/selection" className="nav-link text-white" onClick={toggleNavbar}>
                   Selection
                 </Link>
-                <Link to="/planner" className="nav-link text-white" onClick={clickCollapse}>
+                <Link to="/planner" className="nav-link text-white" onClick={toggleNavbar}>
                   Plan your trip
                 </Link>
-                <a
-                  className="nav-link text-white"
-                  href="#"
-                  onClick={handleLogout}
-                >
-                  <span className="mr-2">Hi {loggedUserName}!</span>{" "}
-                  <i className="fa-solid fa-person-walking-arrow-right mt-1 mr-2"></i>
+                <a className="nav-link text-white" href="#" onClick={handleLogout}>
+                  <span className="mr-2">Hi {loggedUserName}!</span> <i className="fa-solid fa-person-walking-arrow-right mt-1 mr-2"></i>
                 </a>
               </>
             )}
             {!tokenExists && (
               <>
-                <Link to="/login" className="nav-link text-white" onClick={clickCollapse}>
+                <Link to="/login" className="nav-link text-white" onClick={toggleNavbar}>
                   Login
                 </Link>
               </>
@@ -133,5 +107,6 @@ export const Navbar = () => {
         </div>
       </div>
     </nav>
+
   );
 };
