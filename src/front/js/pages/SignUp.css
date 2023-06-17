@@ -119,6 +119,7 @@
     overflow: hidden; 
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
    
 
     @media (max-width: 768px) {
@@ -149,3 +150,5 @@
     font-weight: 700;
     letter-spacing: 0.2em;
 }
+
+

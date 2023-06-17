@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 
 export const Footer = () => (
 	<footer className="footer py-2 text-center">
 		<p>
 			2023 <i className="fa-regular fa-copyright" />  {" "}
-			<a href="http://www.4geeksacademy.com" style={{ color: "green" }}><strong>Nomad Explore</strong></a> All rights reserved
+			<Link to="/" style={{ color: "white" }}><strong>Nomad Explore</strong></Link> All rights reserved.
 		</p>
 	</footer>
 );
