@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import imagesDB from '../data/imagesDB.json';
-import { string } from "prop-types";
+import '../../styles/selection.css'
 
 
 const randomUrl = (categoria) => {
@@ -97,18 +97,17 @@ export const Selection = () => {
 
 
     return (
-        <div className="destinations-container">
-            <div className="row center-container">
-                <div className="col-sm-12 quiz-container">
-                    <h1 className="title-destinations">THIS or THAT</h1>
-                    <p className="text2">Choose your favorite and know your ideal destination.</p>
+        <div className="selection-body">
+            <div className="row selection-container">
+                <div className="col-sm-12">
+                    <h1 className="selection-title">THIS or THAT</h1>
+                    <p className="selection-text">Choose your favorite and know your ideal destination.</p>
                 </div>
-                <hr></hr>
-                <div className="col-sm-6 image-container">
-                    <img src={imagePairs[pairIndex].img1} onClick={clickImage1} alt="Imagen 1" className="image img-fluid" />
+                <div className="col-sm-6 selection-image-container">
+                    <img src={imagePairs[pairIndex].img1} onClick={clickImage1} alt="Imagen 1" className="selection-image img-fluid" />
                 </div>
-                <div className="col-sm-6 image-container">
-                    <img src={imagePairs[pairIndex].img2} onClick={clickImage2} alt="Imagen 2" className="image img-fluid" />
+                <div className="col-sm-6 selection-image-container">
+                    <img src={imagePairs[pairIndex].img2} onClick={clickImage2} alt="Imagen 2" className="selection-image img-fluid" />
                 </div>
             </div>
         </div>
