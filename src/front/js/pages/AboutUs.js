@@ -20,9 +20,8 @@ export const AboutUs = () => {
             <hr className="border-top" />
           </div>
         </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-md-4">
+
+        <div className="col-md-4 contenido-circulos">
           <div className="circle">
             <div className="circle-content">
               <img src="https://media.istockphoto.com/id/1176438482/es/foto/escritor-de-blogs-de-estilo-de-vida-digital-o-persona-de-negocios-que-utiliza-un-dispositivo.jpg?s=612x612&w=0&k=20&c=kF2AmluvIf-dSTazUn-a8Ej8fmsh28US4MQm2doGPXo="
@@ -32,7 +31,7 @@ export const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-4 contenido-circulos">
           <div className="circle">
             <div className="circle-content">
               <img src="https://media.istockphoto.com/id/828687016/es/foto/hombre-joven-con-un-globo-del-mundo-en-sus-manos.jpg?s=612x612&w=0&k=20&c=3pMkUD87BdyU3GwBtvGeQZvoAOmNykd28U6dl7OlMAQ="
@@ -42,7 +41,7 @@ export const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-4 contenido-circulos">
           <div className="circle">
             <div className="circle-content">
               <img src="https://media.istockphoto.com/id/1055429966/es/foto/adulto-joven-relajante-en-un-columpio-en-un-para%C3%ADso-tropical.jpg?s=612x612&w=0&k=20&c=CXC4QJeisbfAntBptsQnot81jiCLTPp-AQ_VvvSMEWY="
@@ -53,6 +52,6 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
