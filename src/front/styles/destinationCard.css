@@ -1,0 +1,118 @@
+.destinationCard {
+    /* margin-top: 120px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    padding: 30px;
+    background-color: #404040ca;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fade-in 2s linear;
+    /* width: 80%; */
+    margin: 0 10% 0 10%;
+    /* height: auto; */
+  }
+
+  .destinationCard-title-destination {
+    font-size: 50px;
+    color: #dfd8d8;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .destinationCard-title-destination::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff9800;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+  }
+  
+  .destinationCard-title-destination:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .destinationCard-description {
+    justify-content: center;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .jumbotron-image {
+    height: auto;
+    max-height: 250px;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 80%;
+  }
+  
+  .jumbotron-text {
+    font-size: 18px;
+    color: #dfd8d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .destinationCard-weather {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  
+  .weather-icon {
+    width: 8vh;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+  
+  .temperature-info {
+    display: inline;
+    font-size: 16px;
+    color: #dfd8d8;
+    margin-right: 50px;
+  }
+  
+  .temperature-info-group {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  
+  .btn-recomendation {
+    margin-bottom: 80px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #dfd8d8;
+    background-color: #404040ca;
+  }
+  
+  
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  hr {
+    color: white;
+    margin-top: 15px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+  }
