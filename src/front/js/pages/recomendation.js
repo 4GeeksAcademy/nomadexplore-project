@@ -14,6 +14,7 @@ export const Recomendation = () => {
   const [alertVariant, setAlertVariant] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [buttonText, setButtonText] = useState("Click here and save");
   const [weatherIconId, setWeatherIconId] = useState("");
   const [weatherDescription, setWeatherDescription] = useState("");
   const [tempMain, setTempMain] = useState({ temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0 });
@@ -45,6 +46,7 @@ export const Recomendation = () => {
         recommendedImage = imageUrl;
       }
     }
+    
     setRecommendedDestination(recommendedDestination);
     setRecommendedDescription(recommendedDescription);
     setRecommendedApiId(recommendedApiId);
@@ -60,11 +62,8 @@ export const Recomendation = () => {
     const token = localStorage.getItem("miTokenJWT");
 
     if (!token) {
-      // Mmmmm... no tengo el token, no debería poder acceder a está página de React
       navigate('/login');
     }
-
-
 
     const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
       method: "POST",
@@ -79,20 +78,21 @@ export const Recomendation = () => {
 
     if (response.ok) {
       setAlertVariant("success");
-      setAlertMessage("Favorito añadido correctamente");
+      setAlertMessage("Destination added to favorites");
+      setButtonText("Destination saved!");
       setButtonClicked(true);
     } else {
       setAlertVariant("danger");
-      setAlertMessage(data.error || "Error al añadir el favorito. Mira la consola o en el terminal del servidor de Python");
+      setAlertMessage(data.error || "Error adding the destination to favorites");
+      setButtonText("Destination already saved...");
       setButtonClicked(true);
     }
   };
 
-  const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id="
-  const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric"
-  // const destinationApiId = 1726707
-  const iconUrl = "https://openweathermap.org/img/wn/"
-  const weatherIcon = iconUrl + weatherIconId + ".png"
+  const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=";
+  const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric";
+  const iconUrl = "https://openweathermap.org/img/wn/";
+  const weatherIcon = iconUrl + weatherIconId + ".png";
   console.log(weatherIcon);
   console.log('id destino: ', recommendedApiId);
 
@@ -110,7 +110,6 @@ export const Recomendation = () => {
     }
   }, [recommendedApiId]);
 
-
   return (
     <div className="container-recommendation">
       <DestinationCard
@@ -126,18 +125,16 @@ export const Recomendation = () => {
         humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
       />
 
-
-      <div className="button-recomendation">
-        <button className="btn-recomendation btn-lg mt-4" type="button" onClick={handleAddFav}>
-          Click here and save your destination
+      <div className="">
+        <button className="btn-recomendation btn-lg mt-4" type="button" onClick={handleAddFav} disabled={buttonClicked}>
+          {buttonText}
         </button>
-        {alertMessage && (
+        {/* {alertMessage && (
           <div className={`alert alert-${alertVariant} mt-4`} role="alert">
             {alertMessage}
           </div>
-        )}
+        )} */}
       </div>
-      </div>
-      );
+    </div>
+  );
 };
-

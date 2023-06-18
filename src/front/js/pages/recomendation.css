@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow: auto;
+  padding-top: 100px;
 }
 
 .jumbotron {
