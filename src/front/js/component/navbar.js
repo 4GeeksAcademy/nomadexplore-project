@@ -88,7 +88,7 @@ export const Navbar = () => {
                 <Link to="/selection" className="nav-link text-white" onClick={toggleNavbar}>
                   Selection
                 </Link>
-                <Link to="/planner" className="nav-link text-white" onClick={toggleNavbar}>
+                <Link to="/planyourtrip" className="nav-link text-white" onClick={toggleNavbar}>
                   Plan your trip
                 </Link>
                 <a className="nav-link text-white" href="#" onClick={handleLogout}>
