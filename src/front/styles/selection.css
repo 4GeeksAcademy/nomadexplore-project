@@ -1,0 +1,67 @@
+.selection-body {
+    background-image: url(https://images.unsplash.com/photo-1499591934245-40b55745b905?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+}
+
+.selection-container {
+    max-width: 80%;
+    /* max-height: 100%; */
+    border: 1px solid rgba(255, 255, 255, 0.835);
+    padding: 20px;
+    border-radius: 6px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+    /* margin-top: 150px; */
+    margin-bottom: 100px;
+}
+
+.selection-image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.selection-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #faf8f8ce;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.selection-image:hover {
+    box-shadow: 0px 0px 9px 4px #ffffff;
+}
+
+.selection-image:active {
+    transform: scale(0.9);
+}
+
+.selection-text {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    font-size: 16px;
+    display: flex;
+    font-weight: 200;
+}
+
+.selection-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+}

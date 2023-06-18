@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import imagesDB from '../data/imagesDB.json';
-import { string } from "prop-types";
+import '../../styles/selection.css'
 
 
 const randomUrl = (categoria) => {
@@ -10,7 +10,7 @@ const randomUrl = (categoria) => {
     const imageKeys = Object.keys(categoryImages);
     const randomKey = imageKeys[Math.floor(Math.random() * imageKeys.length)];
     return categoryImages[randomKey];
-  };
+};
 
 export const Selection = () => {
     const { store, actions } = useContext(Context);
@@ -28,7 +28,7 @@ export const Selection = () => {
         { img1: randomUrl('gastronomia'), img2: randomUrl('naturaleza') },
         { img1: randomUrl('playa'), img2: randomUrl('aventura') },
     ];
-    
+
     useEffect(() => {
         actions.resetUserSelections();
     }, []);
@@ -95,23 +95,21 @@ export const Selection = () => {
         }
     };
 
+
     return (
-        <div className="destinations-container">
-                <div className="quiz-container">
-                    <h1 className="title-destinations">THIS OR THAT</h1>
-                    <div className="subtitle-destinations">
-                        <h5 className="text1">¿What do you prefer?</h5>
-                    </div>
-                    <p className="text2"> Choose your favorite and know your ideal destination</p>
-                    <div className="image-container">
-                        <img src={imagePairs[pairIndex].img1}
-                            onClick={clickImage1}
-                            alt="Imagen 1" className="image" />
-                        <img src={imagePairs[pairIndex].img2}
-                            onClick={clickImage2}
-                            alt="Imagen 2" className="image" />
-                    </div>
+        <div className="selection-body">
+            <div className="row selection-container">
+                <div className="col-sm-12">
+                    <h1 className="selection-title">THIS or THAT</h1>
+                    <p className="selection-text">Choose your favorite and know your ideal destination.</p>
                 </div>
+                <div className="col-sm-6 selection-image-container">
+                    <img src={imagePairs[pairIndex].img1} onClick={clickImage1} alt="Imagen 1" className="selection-image img-fluid" />
+                </div>
+                <div className="col-sm-6 selection-image-container">
+                    <img src={imagePairs[pairIndex].img2} onClick={clickImage2} alt="Imagen 2" className="selection-image img-fluid" />
+                </div>
+            </div>
         </div>
     );
 };
