@@ -26,7 +26,7 @@ export const Home = () => {
 							<div className="carousel-item active">
 							<img src="https://images.unsplash.com/photo-1601836743857-4d1e6da20a32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Card Image" className="d-block w-100 h-100"/>
 							</div>
-							<div className="carousel-item">
+							<div className="carousel-item 1">
 								<img src="https://images.unsplash.com/photo-1632660967293-ec569f27dfd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=978&q=80" alt="Card Image" className="d-block w-100 h-100"/>
 							</div>
 							<div className="carousel-item ">
