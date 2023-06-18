@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 
+
+
 export const Planner = () => {
 
     const [favs, setFavs] = useState([]);
@@ -88,7 +90,7 @@ export const Planner = () => {
 
     return (
         <>
-            <div className="planner-container">
+            <div className="planner-body">
                 {favs.map((fav, index) => (
                     <div className="title-container">
                         <Link to={`destination/${fav.api_id}`}>
@@ -101,7 +103,35 @@ export const Planner = () => {
                             Borrar
                         </button>
                     </div>
+
                 ))}
+                {/*<div className="body-planner">
+                <div className="row planner-container">
+                    <div className="col-md-12 plan-container d-flex">
+                        <h1 className="plan-title">MY TRIPS</h1>
+                    </div>
+                    <div className="col-sm-4 card-planner-container">
+                        <h1 className="planner-title">ROMA</h1>
+                        <div className="button-planner-container">
+                            <div>
+                                <button
+                                    className="btn-planner"
+                                    onClick={() => handleDeleteFav}>
+                                    MORE INFO
+                                </button>
+                            </div>
+                            <div>
+                                <button
+                                    className="btn-planner"
+                                    onClick={() => handleDeleteFav}>
+                                    JOURNEY DONE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>*/}
+
                 {/* {isDeleteSuccess && (
                     <div className="alert alert-success" role="alert">
                         Favorito borrado exitosamente
