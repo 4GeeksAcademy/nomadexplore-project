@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import destinationWeights from '../data/destinations.json';
 import { DestinationCard } from "./destinationCard";
+import '../../styles/destinationSingle.css'
 
 export const DestinationSingle = () => {
   const [weatherIconId, setWeatherIconId] = useState("");
@@ -61,19 +62,21 @@ export const DestinationSingle = () => {
   }, [recommendedData]);
 
   return (
-    <div className="container-recommendation">
-      <DestinationCard
-        recommendedDestination={recommendedData.destination}
-        recommendedDescription={recommendedData.description}
-        recommendedImage={recommendedData.imageUrl}
-        weatherIcon={weatherIcon}
-        temp={tempMain.temp !== 0 && tempMain.temp.toFixed(1)}
-        feels_like={tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}
-        weatherDescription={weatherDescription}
-        temp_min={tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}
-        temp_max={tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}
-        humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
-      />
+    <div className="destinationSingle-body">
+      <div className="centrar-card">
+        <DestinationCard
+          recommendedDestination={recommendedData.destination}
+          recommendedDescription={recommendedData.description}
+          recommendedImage={recommendedData.imageUrl}
+          weatherIcon={weatherIcon}
+          temp={tempMain.temp !== 0 && tempMain.temp.toFixed(1)}
+          feels_like={tempMain.feels_like !== 0 && tempMain.feels_like.toFixed(1)}
+          weatherDescription={weatherDescription}
+          temp_min={tempMain.temp_min !== 0 && tempMain.temp_min.toFixed(1)}
+          temp_max={tempMain.temp_max !== 0 && tempMain.temp_max.toFixed(1)}
+          humidity={tempMain.humidity !== 0 && tempMain.humidity.toFixed(1)}
+        />
+      </div>
     </div>
   );
 };

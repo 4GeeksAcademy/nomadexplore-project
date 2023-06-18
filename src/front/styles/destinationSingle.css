@@ -1,0 +1,17 @@
+.destinationSingle-body {
+    background-image: url(https://images.pexels.com/photos/2421196/pexels-photo-2421196.jpeg?auto=compress&cs=tinysrgb&w=800);
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    padding-top: 100px;
+  }
+
+.centrar-card {
+margin-left: 20px;
+}
