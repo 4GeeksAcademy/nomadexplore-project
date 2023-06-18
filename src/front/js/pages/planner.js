@@ -88,26 +88,38 @@ export const Planner = () => {
 
     return (
         <>
-            <div className="planner-container">
-                {favs.map((fav, index) => (
-                    <div className="title-container">
-                        <Link to={`destination/${fav.api_id}`}>
-                            <h1 className="planner-title">{fav.destination}</h1>
-                        </Link>
-                        <button
-                            className="btn btn-danger"
-                            onClick={() => handleDeleteFav(fav.id_fav)}
-                        >
-                            Borrar
-                        </button>
+             <div className="body-planner">
+                <div className="row planner-container d-flex">
+                    
+                        <h1 className="planner-title">MY TRIPS</h1>
+                    
+                    
+                    {favs.map((fav, index) => (
+                    <div className="col-sm-4 card-planner-container">
+                        <h1 className="card-planner-title">{fav.destination}</h1>
+                        <div className="button-planner-container">
+                            <div>
+                            <Link to={`destination/${fav.api_id}`}>
+                                <button
+                                    className="btn-planner"
+                                    onClick={() => handleDeleteFav}>
+                                    MORE INFO
+                                </button>
+                                </Link>
+                            </div>
+                            <div>
+                                <button
+                                    className="btn-planner"
+                                    onClick={() => handleDeleteFav(fav.id_fav)}>
+                                    JOURNEY DONE
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                ))}
-                {/* {isDeleteSuccess && (
-                    <div className="alert alert-success" role="alert">
-                        Favorito borrado exitosamente
-                    </div>
-                )} */}
+                     ))}
+                </div>
             </div>
         </>
+
     );
 };
