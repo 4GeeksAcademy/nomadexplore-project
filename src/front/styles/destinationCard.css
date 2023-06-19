@@ -18,6 +18,9 @@
     color: #dfd8d8;
     margin-bottom: 10px;
     position: relative;
+    @media (max-width: 300px){
+      font-size: 40px;
+    }
   }
   
   .destinationCard-title-destination::after {
