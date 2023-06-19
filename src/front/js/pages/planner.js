@@ -90,12 +90,16 @@ export const Planner = () => {
         <>
              <div className="body-planner">
                 <div className="row planner-container d-flex">
-                    
-                        <h1 className="planner-title">MY TRIPS</h1>
-                    
+                    <div className="col-md-12 text-center mb-4">
+                        <h1 className="planner-title">YOUR TRIPS</h1>
+                        <hr></hr>
+                        <p>Here is the list of recommended destinations. To see the information about each destination, click on <u>more info</u> and if, on the contrary, you already made the trip, click on <u>journey done</u> and go to another destination. <i><strong>¡HAVE A GOOD TRIP!</strong></i></p>
+                        <hr></hr>
+                   </div>
                     
                     {favs.map((fav, index) => (
-                    <div className="col-sm-4 card-planner-container">
+                   <div className="col-sm-4">
+                    <div className="card-planner-container">
                         <h1 className="card-planner-title">{fav.destination}</h1>
                         <div className="button-planner-container">
                             <div>
@@ -115,6 +119,7 @@ export const Planner = () => {
                                 </button>
                             </div>
                         </div>
+                    </div>
                     </div>
                      ))}
                 </div>
