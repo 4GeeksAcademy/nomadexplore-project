@@ -20,12 +20,19 @@
 .title{
     color: white;
     font-size: 80px;
-    @media (max-width: 500px) {
-        font-size: 50px;
-        @media (max-width: 400px) {
-            font-size: 40px;
+    @media (max-width: 1024px) {
+        font-size: 60px;
+        @media (max-width: 500px) {
+            font-size: 50px;
+            @media (max-width: 400px) {
+                font-size: 40px;
+                @media (max-width: 280px) {
+                    font-size: 30px;
+                }
+            }
         }
     }
+    
     
 }
 
@@ -70,10 +77,19 @@
     width: 500px; /* Ajusta el ancho según tus necesidades */
     height: 300px;
     display: flex; /* Ajusta la altura según tus necesidades */
-    @media (max-width: 850px) {
-      width: 300px;
-      height: 200px;
-    }
+    @media (max-width: 1024px) {
+        width: 400px;
+        height: 200px;
+        @media (max-width: 850px) {
+            width: 280px;
+            height: 180px;
+            @media (max-width: 280px) {
+              width: 230px;
+              height: 130px;
+            }
+          }
+      }
+   
   }
   
 .carousel-inner img {
