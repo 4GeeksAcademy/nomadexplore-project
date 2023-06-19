@@ -36,7 +36,7 @@ MIGRATE = Migrate(app, db, compare_type = True)
 db.init_app(app)
 
 # Allow CORS requests to this API
-CORS(app, resources={r"/api/*": {"origins": "https://sample-service-name-3ivn.onrender.com"}})
+CORS(app)
 
 # add the admin
 setup_admin(app)
