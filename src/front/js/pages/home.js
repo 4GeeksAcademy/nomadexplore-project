@@ -20,7 +20,7 @@ export const Home = () => {
 							<button className="btn-registrer">REGISTRER AND ENJOY</button>
 						</Link>
 					</div>
-				<div className="col-12 pt-5 pe-5 ps-0 d-flex justify-content-end">
+				<div className="col-12 pt-5 pe-5 ps-0 ms-0 d-flex justify-content-end">
 					<div className="carousel slide carousel-container" id="carouselSlider">
 						<div className="carousel-inner">
 							<div className="carousel-item active">
@@ -44,6 +44,7 @@ export const Home = () => {
 							<div className="carousel-item ">
 								<img src="https://images.unsplash.com/photo-1552751753-0fc84ae5b6c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Card Image" className="d-block w-100 h-100"/>
 							</div>
+							<div className="col-12"></div>
 							<button className="carousel-control-prev" type="button" data-bs-target="#carouselSlider" data-bs-slide="prev">
 								<span className="carousel-control-prev-icon" ></span>
 								<span className="visually-hidden">Previous</span>
