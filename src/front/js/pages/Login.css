@@ -51,6 +51,7 @@
 .form-control:focus {
   background-color: rgba(255, 255, 255, 0.06);
   outline: 2px solid rgba(255, 255, 255, 0.12);
+  color: white;
 }
 
 .form-control:first-of-type {
@@ -78,7 +79,7 @@
 }
 
 .btn-form:hover {
-  background-color: rgba(247, 129, 4, 0.793);
+  background-color:  #abc326cc;
   color: black;
 }
 
