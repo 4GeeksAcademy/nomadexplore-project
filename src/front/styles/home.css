@@ -20,7 +20,7 @@
 .title{
     color: white;
     font-size: 80px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1024px){
         font-size: 60px;
         @media (max-width: 500px) {
             font-size: 50px;
@@ -31,11 +31,14 @@
                 }
             }
         }
-    }
-    
-    
+    }   
 }
 
+.row h1{
+    @media(max-height:700px) {
+        font-size: 60px;
+    }
+}
 
 .container-button {
     margin-top: 30px;
