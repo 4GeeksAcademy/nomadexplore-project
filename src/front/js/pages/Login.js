@@ -15,17 +15,10 @@ export const Login = () => {
     e.preventDefault();
 
     try {
-      // Ejercicio 3: En este fetch hay DOS errores que impiden enviar correctamente el usuario y la contraseña al servidor Flask. 
-      // Además, falta enviar el email y la contraseña en el cuerpo de la petición POST
-
-      console.log("email a enviar: ", email)
-      console.log("password a enviar: ", password)
-
       const loginUser = {
         email: email,
         password: password,
       };
-
 
       const response = await fetch(process.env.BACKEND_URL + "/api/login", {
         method: "POST",
@@ -42,7 +35,6 @@ export const Login = () => {
         const token = data.token;
         const email = data.email;
         const name = data.name;
-        console.log('data: ', data);
         localStorage.setItem("miTokenJWT", token);
         localStorage.setItem("loggedUserEmail", email);
         localStorage.setItem("loggedUserName", name);
@@ -50,7 +42,7 @@ export const Login = () => {
         setLoginSuccess(true);
         setEmail('');
         setPassword('');
-        navigate('/selection')
+        navigate('/selection');
       } else {
         setLoginSuccess(false);
         setLoginError(true);
@@ -66,6 +58,7 @@ export const Login = () => {
     <div className="login-container">
       <div className="form-container">
         <h2 className="form-title">HERE WE GO!</h2>
+        {loginError && <p className="error-message">Email or password incorrect</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -93,8 +86,7 @@ export const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn-form">Log in</button>
-          <a className="form-hyperlink" href="">Forgot your password</a>
+          <button type="submit" className="btn-form btn-primary">Log in</button>
         </form>
       </div>
     </div>

@@ -16,7 +16,7 @@ export const SignUp = () => {
     if (message) {
       timeoutId = setTimeout(() => {
         setMessage("");
-      }, 5000); // Espera 5 segundos antes de limpiar el mensaje
+      }, 5000);
     }
 
     return () => {
@@ -36,30 +36,24 @@ export const SignUp = () => {
         body: JSON.stringify({ name, email, password }),
       });
 
-      const data = await response.json(); // Analizar la respuesta del servidor
+      const data = await response.json();
 
       if (response.ok) {
         console.log("User created");
-        // Aquí puedes hacer algo con la respuesta exitosa, como redireccionar o mostrar un mensaje de éxito.
-        setMessage("¡User created successfully!");
+        setMessage("User created successfully!");
         setTimeout(() => {
           navigate("/login");
-        }, 3000); // Espera 3 segundos antes de redirigir al login
+        }, 3000);
       } else {
-        console.error(
-          "Error creating user. Maybe you are using an existing email?"
-        );
+        console.error("Error creating user. Maybe you are using an existing email?");
         if (data.error === "user_exists") {
-          setMessage(
-            "The user is already registered. Please log in instead."
-          ); // Mensaje específico para usuario existente
+          setMessage("The user is already registered. Please log in instead.");
         } else {
           setMessage("There was an error creating the user. Please try again.");
         }
       }
     } catch (error) {
       console.error("Error:", error);
-      // Aquí puedes manejar cualquier error de red u otro tipo de error.
     }
   };
 
@@ -107,15 +101,17 @@ export const SignUp = () => {
               required
             />
           </div>
-          <div className={`alert alert-success ${!message && "d-none"}`} role="alert">
-            {message}
-          </div>
-          <button type="submit" className="btn-form">
+          {message && (
+            <div className="alert alert-success" role="alert">
+              {message}
+            </div>
+          )}
+          <button type="submit" className="btn-form btn-primary">
             Sign Up
           </button>
-          <a className="form-hyperlink" href="">
-            Forgot your password
-          </a>
+          <Link to="/login" className="form-hyperlink">
+            Already registered?
+          </Link>
         </form>
       </div>
     </div>

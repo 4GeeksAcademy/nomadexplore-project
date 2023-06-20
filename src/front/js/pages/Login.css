@@ -95,3 +95,8 @@
 .form-hyperlink:hover {
   color: white;
 }
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
