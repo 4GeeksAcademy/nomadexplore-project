@@ -89,7 +89,7 @@ export const Planner = () => {
     return (
         <>
              <div className="body-planner">
-                <div className="row planner-container d-flex">
+                <div className="row planner-container">
                     <div className="col-md-12 text-center mb-4">
                         <h1 className="planner-title">YOUR TRIPS</h1>
                         <hr></hr>

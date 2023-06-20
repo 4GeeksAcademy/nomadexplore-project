@@ -110,7 +110,7 @@ export const SignUp = () => {
           <div className={`alert alert-success ${!message && "d-none"}`} role="alert">
             {message}
           </div>
-          <button type="submit" className="btn-form btn-primary">
+          <button type="submit" className="btn-form">
             Sign Up
           </button>
           <a className="form-hyperlink" href="">

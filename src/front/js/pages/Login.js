@@ -93,7 +93,7 @@ export const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn-form btn-primary">Log in</button>
+          <button type="submit" className="btn-form">Log in</button>
           <a className="form-hyperlink" href="">Forgot your password</a>
         </form>
       </div>
