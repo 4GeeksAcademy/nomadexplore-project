@@ -34,12 +34,6 @@
     }   
 }
 
-.row h1{
-    @media(max-height:700px) {
-        font-size: 60px;
-    }
-}
-
 .container-button {
     margin-top: 30px;
 }
