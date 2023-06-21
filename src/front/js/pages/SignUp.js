@@ -10,19 +10,19 @@ export const SignUp = () => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    let timeoutId;
+  // useEffect(() => {
+  //   let timeoutId;
 
-    if (message) {
-      timeoutId = setTimeout(() => {
-        setMessage("");
-      }, 5000);
-    }
+  //   if (message) {
+  //     timeoutId = setTimeout(() => {
+  //       setMessage("");
+  //     }, 5000);
+  //   }
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [message]);
+  //   return () => {
+  //     clearTimeout(timeoutId);
+  //   };
+  // }, [message]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
