@@ -23,13 +23,22 @@ def get_users():
 # USER SIGNUP
 @api.route('/signup', methods=['POST'])
 def add_user():
-
     request_body_user = request.get_json()
+    email = request_body_user['email']
+
+    # Verificar si el correo electrónico ya está registrado
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        return jsonify({'error': 'The email is already registered.'}), 400
+
+    # El correo electrónico no está registrado, crear el nuevo usuario
     new_user = User(
-        email=request_body_user['email'], name=request_body_user['name'], password=request_body_user['password'])
+        email=email, name=request_body_user['name'], password=request_body_user['password'])
     db.session.add(new_user)
     db.session.commit()
-    return jsonify('user added:', request_body_user), 200
+
+    return jsonify({'message': 'User created successfully.'}), 200
+
 
 # USER LOGIN
 @api.route('/login', methods=['POST'])

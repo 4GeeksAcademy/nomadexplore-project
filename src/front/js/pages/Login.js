@@ -58,7 +58,6 @@ export const Login = () => {
     <div className="login-container">
       <div className="form-container">
         <h2 className="form-title">HERE WE GO!</h2>
-        {loginError && <p className="error-message">Email or password incorrect</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -86,6 +85,11 @@ export const Login = () => {
               required
             />
           </div>
+          {loginError && (
+            <div className="alert alert-danger" role="alert">
+              Email or password incorrect
+            </div>
+          )}
           <button type="submit" className="btn-form btn-primary">Log in</button>
         </form>
       </div>
