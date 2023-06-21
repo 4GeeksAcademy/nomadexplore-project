@@ -41,7 +41,7 @@ export const Planner = () => {
         }
         fetchFavs();
     }, []);
-    console.log('favs: ', favs);
+
     const handleDeleteFav = async (id) => {
         console.log('id a borrar: ', id);
         try {
@@ -98,7 +98,7 @@ export const Planner = () => {
                    </div>
                     
                     {favs.map((fav, index) => (
-                   <div className="col-sm-4">
+                   <div className="col-sm-4" key={index}>
                     <div className="card-planner-container">
                         <h1 className="card-planner-title">{fav.destination}</h1>
                         <div className="button-planner-container">

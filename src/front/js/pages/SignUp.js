@@ -10,23 +10,23 @@ export const SignUp = () => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   let timeoutId;
+  useEffect(() => {
+    let timeoutId;
 
-  //   if (message) {
-  //     timeoutId = setTimeout(() => {
-  //       setMessage("");
-  //     }, 5000);
-  //   }
+    if (message) {
+      timeoutId = setTimeout(() => {
+        setMessage("");
+      }, 5000);
+    }
 
-  //   return () => {
-  //     clearTimeout(timeoutId);
-  //   };
-  // }, [message]);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [message]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch(process.env.BACKEND_URL + "/api/signup", {
         method: "POST",
@@ -35,9 +35,9 @@ export const SignUp = () => {
         },
         body: JSON.stringify({ name, email, password }),
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         console.log("User created");
         setMessage("User created successfully!");
@@ -45,9 +45,9 @@ export const SignUp = () => {
           navigate("/login");
         }, 3000);
       } else {
-        console.error("Error creating user. Maybe you are using an existing email?");
-        if (data.error === "user_exists") {
-          setMessage("The user is already registered. Please log in instead.");
+        console.error("Error creating user");
+        if (response.status === 400) {
+          setMessage(data.error);
         } else {
           setMessage("There was an error creating the user. Please try again.");
         }

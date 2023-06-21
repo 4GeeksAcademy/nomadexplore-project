@@ -92,9 +92,10 @@ export const Recomendation = () => {
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=";
   const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric";
   const iconUrl = "https://openweathermap.org/img/wn/";
-  const weatherIcon = iconUrl + weatherIconId + ".png";
-  console.log(weatherIcon);
-  console.log('id destino: ', recommendedApiId);
+  const weatherIcon = weatherIconId ? iconUrl + weatherIconId + ".png" : "";
+  
+  // console.log(weatherIcon);
+  // console.log('id destino: ', recommendedApiId);
 
   useEffect(() => {
     if (recommendedApiId) {

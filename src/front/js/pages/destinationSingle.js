@@ -31,19 +31,18 @@ export const DestinationSingle = () => {
         aventura,
       },
     } = recommendedData;
-
-    // Luego puedes utilizar los datos encontrados en tu JSX para mostrar la información correspondiente
   }
 
-  console.log('params: ', params.id);
-  console.log('recomendedData', recommendedData);
+  // console.log('params: ', params.id);
+  // console.log('recomendedData', recommendedData);
 
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=";
   const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric";
   const iconUrl = "https://openweathermap.org/img/wn/";
-  const weatherIcon = weatherIconId ? `${iconUrl}${weatherIconId}.png` : null;
-  console.log(weatherIcon);
-  console.log('id destino: ', recommendedData.apiId);
+  const weatherIcon = weatherIconId ? iconUrl + weatherIconId + ".png" : "";
+
+  // console.log(weatherIcon);
+  // console.log('id destino: ', recommendedData.apiId);
 
   useEffect(() => {
     if (recommendedData) {

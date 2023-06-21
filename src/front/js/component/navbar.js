@@ -44,8 +44,10 @@ export const Navbar = () => {
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
   };
-  console.log('toggleNavbar', navbarOpen);
-  console.log('tokenExist: ', tokenExists);
+  
+  // console.log('toggleNavbar', navbarOpen);
+  // console.log('tokenExist: ', tokenExists);
+
   return (
 
     <nav className="navbar navbar-dark navbar-expand-lg">
