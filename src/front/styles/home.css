@@ -14,7 +14,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    padding-left: 25px;
 }
 
 .title{
@@ -40,22 +39,25 @@
 
 .btn-registrer {
     width: 15em;
-    height: 3em;
+    height: 3.5em;
     border-radius: 30em;
-    font-size: 15px;
-    font-family: inherit;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
+    z-index: 2;
+    box-shadow: 8px 8px 16px #c5c5c5,
+             6px 6px 12px #ffffff;
+    @media (max-width: 300px){
+        font-size: 12px;
+    }
 }
 
 .btn-registrer::before {
     content: '';
     width: 0;
-    height: 3em;
+    height: 3.5em;
     border-radius: 30em;
     position: absolute;
     top: 0;
