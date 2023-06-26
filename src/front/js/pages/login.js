@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import "./Login.css"
+import "../../styles/forms.css"
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -55,7 +55,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-body">
       <div className="form-container">
         <h2 className="form-title">HERE WE GO!</h2>
         <form onSubmit={handleSubmit}>

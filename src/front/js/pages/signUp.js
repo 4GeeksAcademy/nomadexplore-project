@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import "./SignUp.css";
+import '../../styles/forms.css'
 import { Link, useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
@@ -58,7 +58,7 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="signup-body">
       <div className="form-container">
         <h2 className="form-title">WELCOME TO EXPLORE</h2>
         <form onSubmit={handleSubmit}>
@@ -109,7 +109,7 @@ export const SignUp = () => {
           <button type="submit" className="btn-form btn-primary">
             Sign Up
           </button>
-          <Link to="/login" className="form-hyperlink">
+          <Link to="/login" className="form-label">
             Already registered?
           </Link>
         </form>
