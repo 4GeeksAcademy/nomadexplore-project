@@ -10,11 +10,11 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { SignUp } from "./pages/SignUp";
+import { SignUp } from "./pages/signUp";
+import { Login } from "./pages/login";
 import { Destinations } from "./pages/Destinations";
 import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
-import { Login } from "./pages/Login";
 import { DestinationCard } from "./pages/destinationCard";
 import { DestinationSingle } from "./pages/destinationSingle";
 
