@@ -17,7 +17,7 @@ export const Home = () => {
 				</div>
 				<div className="col-12 container-button">
 						<Link to="/signup">
-							<button className="btn-registrer">REGISTRER AND ENJOY</button>
+							<button className="btn-registrer">REGISTER AND ENJOY</button>
 						</Link>
 					</div>
 				</div>
