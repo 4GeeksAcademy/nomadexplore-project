@@ -39,9 +39,9 @@
 
 .btn-registrer {
     width: 15em;
-    height: 3em;
+    height: 3.5em;
     border-radius: 30em;
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     position: relative;
@@ -57,7 +57,7 @@
 .btn-registrer::before {
     content: '';
     width: 0;
-    height: 3em;
+    height: 3.5em;
     border-radius: 30em;
     position: absolute;
     top: 0;
