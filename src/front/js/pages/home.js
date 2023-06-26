@@ -10,7 +10,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid landing" style={{ backgroundImage: `url(${Palm})` }}>
+		<div className="container-fluid landing ps-5" style={{ backgroundImage: `url(${Palm})` }}>
 			<div className="row">
 				<div className="col-12 justify-content-center alig-content-center">
 					<h1 className="title">DISCOVER AND FIND THE PERFECT DESTINATION FOR U</h1>

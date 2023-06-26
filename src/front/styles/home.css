@@ -14,7 +14,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    padding-left: 30px;
 }
 
 .title{
@@ -50,6 +49,9 @@
     z-index: 2;
     box-shadow: 8px 8px 16px #c5c5c5,
              6px 6px 12px #ffffff;
+    @media (max-width: 300px){
+        font-size: 12px;
+    }
 }
 
 .btn-registrer::before {
