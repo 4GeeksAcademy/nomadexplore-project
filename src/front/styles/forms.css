@@ -1,0 +1,120 @@
+.signup-body {
+    background-image: url(https://images.pexels.com/photos/2346007/pexels-photo-2346007.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    @media (max-width: 480px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.login-body {
+    background-image: url(https://images.unsplash.com/photo-1684584959850-3d6df65f971a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 3px solid rgb(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 400px;
+    border-radius: 12px;
+    backdrop-filter: blur(48px);
+}
+
+.form-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.form-label {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 4px 8px;
+    margin: 8px 0 0 0;
+    background-color: transparent;
+    width: 100%;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 252, 252, 0.06);
+    outline: 2px solid rgba(255, 255, 255, 0.12);
+    color: white;
+}
+
+.form-control:first-of-type {
+    margin-top: 0;
+}
+
+.form-control::placeholder {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.btn-form {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.601);
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.12s ease-in-out;
+}
+
+.btn-form:hover {
+    background-color: #abc326cc;
+    color: black;
+}
+
+.form-hyperlink {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-top: 12px;
+    color: rgba(235, 229, 229, 0.834);
+    transition: 12s ease-in-out;
+}
+
+.form-hyperlink:hover {
+    color: white;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
