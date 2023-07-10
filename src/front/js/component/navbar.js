@@ -44,9 +44,7 @@ export const Navbar = () => {
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
   };
-  
-  // console.log('toggleNavbar', navbarOpen);
-  // console.log('tokenExist: ', tokenExists);
+
 
   return (
 
@@ -62,7 +60,6 @@ export const Navbar = () => {
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup"
-          // aria-expanded="false"
           aria-expanded={navbarOpen ? "true" : "false"}
           aria-label="Toggle navigation"
           onClick={toggleNavbar}
