@@ -14,6 +14,8 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //Estas logicas de requests, o logicas muy complejas o largas, siempre es mejor dejarla fuera del componente, hace mas facil de leer el código. Puedes crear un custom hooks para eso o funciones en archivos aparte. 
+
     try {
       const loginUser = {
         email: email,

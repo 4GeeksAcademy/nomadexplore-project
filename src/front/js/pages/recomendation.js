@@ -11,6 +11,7 @@ export const Recomendation = () => {
   const [recommendedDescription, setRecommendedDescription] = useState(null);
   const [recommendedApiId, setRecommendedApiId] = useState(null);
   const [recommendedImage, setRecommendedImage] = useState(null);
+  //Aqui tienes states sin usar, es preferible borralas, no queremos re-renders innecesarios.
   const [alertVariant, setAlertVariant] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -21,6 +22,8 @@ export const Recomendation = () => {
 
   const navigate = useNavigate();
 
+  //Para estos calculos grandes evalua si puedes usar useCallback, para que se guarde en memoria la funcion y no se tenga que crear en cada render (ayuda en performance)
+  //Aparte de eso seria mejor crear un helper (un archivo aparte) que devuelva la data que necesitas en los states
   const calculateRecommendation = () => {
     let maxScore = 0;
     let recommendedDestination = null;
@@ -28,14 +31,17 @@ export const Recomendation = () => {
     let recommendedApiId = null;
     let recommendedImage = null;
 
+    //Mejor usar destinationWeights.forEach
     for (const i in destinationWeights) {
       const destinationWeight = destinationWeights[i];
       const { destination, description, weights, apiId, imageUrl } = destinationWeight;
       let score = 0;
 
+      //aqui podrias evaluar usar el reduce de los arrays para este calculo
       for (const category in store.userSelections) {
         score += store.userSelections[category] * weights[category];
       }
+      //trata de no dejar console.logs
       console.log(destination + ":" + score);
 
       if (score > maxScore) {
@@ -46,7 +52,7 @@ export const Recomendation = () => {
         recommendedImage = imageUrl;
       }
     }
-    
+
     setRecommendedDestination(recommendedDestination);
     setRecommendedDescription(recommendedDescription);
     setRecommendedApiId(recommendedApiId);
@@ -65,6 +71,7 @@ export const Recomendation = () => {
       navigate('/login');
     }
 
+    //Este se podria mover a un archivo aparte, que retorne si estuvo o ok o no.
     const response = await fetch(process.env.BACKEND_URL + "/api/favs", {
       method: "POST",
       headers: {
@@ -93,7 +100,7 @@ export const Recomendation = () => {
   const apiKey = "&appid=4793b8122ea405851f5579246c1395fd&units=metric";
   const iconUrl = "https://openweathermap.org/img/wn/";
   const weatherIcon = weatherIconId ? iconUrl + weatherIconId + ".png" : "";
-  
+
   // console.log(weatherIcon);
   // console.log('id destino: ', recommendedApiId);
 
