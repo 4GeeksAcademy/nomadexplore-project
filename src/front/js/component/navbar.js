@@ -29,7 +29,7 @@ export const Navbar = () => {
       setLoggedUserEmail('');
       setLoggedUserName('');
     }
-  });
+  }, []); //Este efecto no tiene el array de dependencias, trata de que el linter te avise siempre de esto, si no tiene dependencias se ejecuta siempre, por lo que no tendria sentido usarlo, si querias hacerlo solo en el primer render debes colocar un array vacio [].
 
   const handleLogout = () => {
     localStorage.removeItem("miTokenJWT");
